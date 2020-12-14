@@ -1,5 +1,8 @@
 <?php
+require('../src/inc/functions.php');
+require('../src/inc/pdo.php');
 
+$title = 'Admin';
 
 ?>
 

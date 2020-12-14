@@ -1,0 +1,170 @@
+/* IMPORTATION */
+@import "reset.css";
+
+/* CSS START */
+
+/* 
+Couleurs:
+OR: #f8bd7f
+OR HOVER: #c29363
+BLEU: #1089ff
+BLEU HOVER: #0e69c2
+GRIS: #f6f5f5
+*/
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.wrap {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.btn-1 {
+    border: 1px #1089ff solid;
+    color: #1089ff !important;
+}
+.btn-1:hover {
+    border: 1px #1089ff solid;
+    background-color: #1089ff;
+    color: #f6f5f5 !important;
+}
+.btn-2 {
+    border: 1px #1089ff solid;
+    background-color: #1089ff;
+    color: #f6f5f5 !important;
+}
+.btn-2:hover {
+    border: 1px #0e69c2 solid;
+    background-color: #0e69c2;
+}
+
+/* HEADER */
+#header {
+    padding: 30px 0;
+    background-color: #f6f5f5;
+    position: fixed;
+    width: 100%;
+    transition: .2s;
+}
+#header.sticky {
+    padding: 15px 0;
+}
+#header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#header nav .logo a {
+    text-decoration: none;
+    color: black;
+    padding: 5px 7px;
+}
+#header nav .logo h1 {
+    font-size: 2.5em;
+    transition: .2s;
+}
+#header.sticky nav .logo h1 {
+    font-size: 2em;
+}
+#header nav ul {
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+}
+#header nav ul li a {
+    text-decoration: none;
+    color: black;
+    transition: .2s;
+    padding: 7px 10px;
+}
+#header.sticky nav ul li a {
+    text-decoration: none;
+    color: black;
+    transition: .2s;
+    padding: 5px 7px;
+}
+#header nav ul li a:hover {
+    color: #1089ff;
+}
+
+/* ACCUEIL */
+#content {
+    padding: 150px 0;
+}
+/* A PROPOS DE NOUS */
+
+/* ESPACE CLIENT */
+
+/* FOOTER */
+#footer {
+    padding: 30px 0;
+    color: white;
+}
+#footer .nav-box {
+    background-color: #202020;
+    padding: 25px 0;
+}
+#footer .nav-box nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#footer .nav-box nav .logo a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 7px;
+}
+#footer .nav-box nav .logo h1 {
+    font-size: 2.5em;
+    transition: .2s;
+}
+#footer .nav-box nav ul {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+#footer .nav-box nav ul li a {
+    text-decoration: none;
+    font-size: .9em;
+    color: white;
+    transition: .2s;
+    padding: 5px 7px;
+}
+#footer .nav-box nav ul li a:hover {
+    color: #1089ff;
+}
+#footer .crafted-box {
+    background-color: #202020;
+    border-top: 1px #303030 solid;
+    padding: 20px 0;
+}
+#footer .crafted-box p {
+    text-align: center;
+    font-size: .9em;
+    color: white;
+    cursor: default;
+}
+#footer .crafted-box p i {
+    color: red;
+}
+#footer .copyright-box {
+    background-color: #1089ff;
+    padding: 15px 0;
+}
+#footer .copyright-box p {
+    text-align: center;
+    color: #dedede;
+    cursor: default;
+}
+
+/* RESPONSIVE START */
+@media screen and (max-width: 900px) {
+
+}
+
+/* CSS END */
