@@ -1,3 +1,24 @@
+/* Style Modal  */
+.login_select {
+    margin-bottom: 2px;
+}
+.login_container {
+    border: 2px solid black;
+    padding: 25px;
+}
+.btn_login {
+    border: 1px solid black;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    text-decoration: none;
+    color: black;
+}
+.active_login {
+    background-color: grey;
+}
+.connexion {
+    display: none;
+}
 /* IMPORTATION */
 @import "reset.css";
 
