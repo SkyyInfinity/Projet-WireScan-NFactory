@@ -1,15 +1,11 @@
 <?php
-require('./src/inc/functions.php');
-require('./src/inc/pdo.php');
+require('src/inc/functions.php');
+require('src/inc/pdo.php');
 
 $title = 'Accueil';
 
-?>
-
-<?php
-include('src/template/header.php'); 
-include('./LoginModal.php');
-?>
+include('src/inc/modal.php');
+include('src/template/header.php'); ?>
 
 
 

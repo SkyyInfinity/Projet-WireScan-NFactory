@@ -255,3 +255,36 @@ body {
 }
 
 /* CSS END */
+/* Style Modal  */
+.login_select {
+
+}
+.login_container {
+    border: 2px solid black;
+    padding: 25px;
+}
+.btn_login {
+    border: 1px solid black;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    text-decoration: none;
+    color: black;
+}
+.active_login {
+    background-color: grey;
+}
+.connexion_cont {
+    display: none;
+}
+.formulaire {
+    display: grid;
+    text-align: center;
+    position: relative
+}
+.formulaire input[type="submit"] {
+    position: absolute;
+    width: 20%;
+    left: 40%;
+    right: 40%;
+    bottom: 5%;
+}
