@@ -116,31 +116,6 @@ function showJson($data) {
     die('Error in json encoding');
   }
 }
-<?php
-
-function showJson($data)
-{
-  header("Content-type: application/json");
-  $json = json_encode($data, JSON_PRETTY_PRINT);
-  if($json) {
-    die($json);
-  } else {
-    die('error in json encoding');
-  }
-}
-
-// Fonctions Debug 
-function debug($tableau)
-{
-  echo '<pre>';
-    print_r($tableau);
-  echo '</pre>';
-}
-
-// Fonctions Securité
-function cleanXss($toClean){
-   return trim(strip_tags($toClean));
-}
 // Fonction SQL 
 function SQL_INSERT($table_name,$columns,$values,$debug = false) {
   $incre = 1; // Variable d'incrementation pour la creations de varaible dynamique 
