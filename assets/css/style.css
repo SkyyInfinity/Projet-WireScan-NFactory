@@ -45,14 +45,17 @@ body {
 
 /* HEADER */
 #header {
-    padding: 30px 0;
+    padding: 30px 2%;
     background-color: #f6f5f5;
     position: fixed;
     width: 100%;
     transition: .2s;
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(120,120,120,.4);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(120,120,120,.4);
+    box-shadow: 0px 5px 5px 0px rgba(120,120,120,.4);
 }
 #header.sticky {
-    padding: 15px 0;
+    padding: 15px 2%;
 }
 #header nav {
     display: flex;
@@ -91,10 +94,31 @@ body {
 #header nav ul li a:hover {
     color: #1089ff;
 }
+#header .hamburger {
+    display: none;
+}
+#header .hamburger a {
+    text-decoration: none;
+    padding: 5px;
+    color: black;
+    transition: .2s;
+}
+#header .hamburger a:hover {
+    color: #1089ff;
+}
+#header .hamburger i {
+    font-size: 1.7em;
+}
+.openned-hamburger {
+    transform: translate(-2%, 60%) !important;
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(120,120,120,.4);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(120,120,120,.4);
+    box-shadow: 0px 5px 5px 0px rgba(120,120,120,.4);
+}
 
 /* ACCUEIL */
 #content {
-    padding: 150px 0;
+    padding: 150px 2%;
 }
 /* A PROPOS DE NOUS */
 
@@ -102,12 +126,14 @@ body {
 
 /* FOOTER */
 #footer {
-    padding: 30px 0;
     color: white;
+    -webkit-box-shadow: 0px -5px 5px 0px rgba(120,120,120,.4);
+    -moz-box-shadow: 0px -5px 5px 0px rgba(120,120,120,.4);
+    box-shadow: 0px -5px 5px 0px rgba(120,120,120,.4);
 }
 #footer .nav-box {
     background-color: #202020;
-    padding: 25px 0;
+    padding: 25px 2%;
 }
 #footer .nav-box nav {
     display: flex;
@@ -141,7 +167,7 @@ body {
 #footer .crafted-box {
     background-color: #202020;
     border-top: 1px #303030 solid;
-    padding: 20px 0;
+    padding: 20px 2%;
 }
 #footer .crafted-box p {
     text-align: center;
@@ -154,7 +180,7 @@ body {
 }
 #footer .copyright-box {
     background-color: #1089ff;
-    padding: 15px 0;
+    padding: 15px 2%;
 }
 #footer .copyright-box p {
     text-align: center;
@@ -163,8 +189,45 @@ body {
 }
 
 /* RESPONSIVE START */
+@media screen and (max-width: 1280px) {
+    #header {
+        z-index: 999;
+    }
+    #header nav ul {
+        padding: 15px 0;
+        flex-direction: column;
+        text-align: center;
+        background-color: #f6f5f5;
+        position: absolute;
+        width: 103%;
+        transform: translate(0, -120%);
+        z-index: -1;
+        transition: .2s ease-out;
+    }
+    #header nav ul li {
+        margin: 20px 0;
+    }
+    #header .hamburger {
+        display: block;
+    }
+    #footer .nav-box nav {
+        flex-direction: column;
+    }
+    #footer .nav-box nav ul {
+        width: 60%;
+    }
+    #footer .nav-box nav .logo h1 {
+        margin-bottom: 35px;
+    }
+}
 @media screen and (max-width: 900px) {
-
+    #footer .nav-box nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    #footer .nav-box nav ul li {
+        margin: 10px 0;
+    }
 }
 
 /* CSS END */

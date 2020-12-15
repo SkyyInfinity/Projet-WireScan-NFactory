@@ -21,7 +21,10 @@
                     <div class="logo">
                         <h1><a href="./index.php">Name</a></h1>
                     </div>
-                    <ul>
+                    <div class="hamburger">
+                        <a id="js_hamburger" href="#"><i class="fas fa-bars"></i></a>
+                    </div>
+                    <ul id="js_nav-links">
                         <li><a href="./index.php">Accueil</a></li>
                         <li><a href="#">Qui sommes-nous ?</a></li>
                         <li><a class="btn-1" href="#">Connexion</a></li>
