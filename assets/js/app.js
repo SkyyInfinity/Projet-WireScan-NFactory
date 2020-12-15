@@ -44,25 +44,4 @@ $( document ).ready(function() {
              }
          })
      })
-     $('#modal_btn').click(function(e) {
-         $('#login-modal').modal({
-           fadeDuration: 250
-         });
-         return false;
-     });
-     $('#btn_inscription').click(function(e) {
-         e.preventDefault();
-         $('#btn_connexion').removeClass('active_login');
-         $(this).addClass('active_login');
-         $('.connexion_cont').css('display', 'none');
-         $('.inscription_cont').css('display', 'block');
-     });
-     $('#btn_connexion').click(function(e) {
-         e.preventDefault();
-         console.log('ok')
-         $('#btn_inscription').removeClass('active_login');
-         $(this).addClass('active_login');
-         $('.inscription_cont').css('display', 'none');
-         $('.connexion_cont').css('display', 'block');
-     });
  });

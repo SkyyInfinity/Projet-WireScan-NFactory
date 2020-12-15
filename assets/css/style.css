@@ -115,38 +115,95 @@ body {
     -moz-box-shadow: 0px 5px 5px 0px rgba(120,120,120,.4);
     box-shadow: 0px 5px 5px 0px rgba(120,120,120,.4);
 }
+/* MODAL  */
+.blocker {
+    z-index: 99 !important;
+    width: 150% !important;
+    left: -25% !important;
+}
+.modal {
+    padding: 0 !important;
+}
+.modal form {
+    padding: 0 40px 40px 40px;
+}
+.modal .login_select {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #f6f5f5;
+    border-radius: 0 0 50px 50px;
+}
+.modal a.btn_login {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #1089ff;
+    border: 1px #1089ff solid;
+    background-color: #f6f5f5;
+    transition: .2s;
+}
+.modal a.btn_login:hover {
+    color: white;
+    border: 1px #1089ff solid;
+    background-color:#1089ff;
+}
+.modal a.active_login {
+    border: 1px #1089ff solid;
+    background-color: #1089ff;
+    color: white;
+    transition: .2s;
+    cursor: not-allowed;
+}
+.modal a.active_login:hover {
+    border: 1px #0e69c2 solid;
+    background-color: #0e69c2;
+}
+.modal h1.title-form {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 2.7em;
+    font-weight: bold;
+}
+.modal form label {
+    display: block;
+    margin: 5px 0;
+    font-size: 1.4em;
+}
+.modal form input[type=text], form input[type=email], form input[type=password] {
+    width: 100%;
+    padding: 7px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    outline: none;
+    border: 1px #dedede solid;
+    transition: .2s;
+    border-radius: none;
+}
+.modal form input[type=text]:focus, form input[type=email]:focus, form input[type=password]:focus {
+    border: 1px #1089ff solid;
+    border-top: 1px white solid;
+}
+.modal form input[type=submit] {
+    width: 100%;
+    padding: 10px 0;
+    margin: 25px 0;
+    outline: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: .2s;
+}
 
 /* ACCUEIL */
 #content {
     padding: 150px 2%;
 }
-/* Style Modal  */
-.blocker {
-    z-index: 99;
-}
-.login_select {
-    margin-bottom: 2px;
-}
-.login_container {
-    border: 2px solid black;
-    padding: 25px;
-}
-.btn_login {
-    border: 1px solid black;
-    width: 100%;
-    border-radius: 10px 10px 0 0;
-    text-decoration: none;
-    color: black;
-}
-.active_login {
-    background-color: grey;
-}
-.connexion {
-    display: none;
-}
+
 /* A PROPOS DE NOUS */
 
+
 /* ESPACE CLIENT */
+
 
 /* FOOTER */
 #footer {
@@ -243,6 +300,10 @@ body {
     #footer .nav-box nav .logo h1 {
         margin-bottom: 35px;
     }
+    .blocker {
+        width: 200% !important;
+        left: -50% !important;
+    }
 }
 @media screen and (max-width: 900px) {
     #footer .nav-box nav ul {
@@ -252,39 +313,22 @@ body {
     #footer .nav-box nav ul li {
         margin: 10px 0;
     }
+    .blocker {
+        width: 250% !important;
+        left: -75% !important;
+    }
+}
+@media screen and (max-width: 600px) {
+    .blocker {
+        width: 300% !important;
+        left: -100% !important;
+    }
+}
+@media screen and (max-width: 400px) {
+    .blocker {
+        width: 350% !important;
+        left: -125% !important;
+    }
 }
 
 /* CSS END */
-/* Style Modal  */
-.login_select {
-
-}
-.login_container {
-    border: 2px solid black;
-    padding: 25px;
-}
-.btn_login {
-    border: 1px solid black;
-    width: 100%;
-    border-radius: 10px 10px 0 0;
-    text-decoration: none;
-    color: black;
-}
-.active_login {
-    background-color: grey;
-}
-.connexion_cont {
-    display: none;
-}
-.formulaire {
-    display: grid;
-    text-align: center;
-    position: relative
-}
-.formulaire input[type="submit"] {
-    position: absolute;
-    width: 20%;
-    left: 40%;
-    right: 40%;
-    bottom: 5%;
-}
