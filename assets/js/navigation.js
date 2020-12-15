@@ -1,5 +1,6 @@
 $(document).ready(function(){
     // START JQUERY
+
     // STICKY NAV
     $(window).on("scroll touchmove", function () {
         $('#header').toggleClass('sticky', $(document).scrollTop() > 100);
@@ -10,5 +11,6 @@ $(document).ready(function(){
         e.preventDefault();
         $('#js_nav-links').toggleClass('openned-hamburger');
     });
+    
     // END JQUERY
  });
