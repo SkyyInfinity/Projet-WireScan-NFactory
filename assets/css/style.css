@@ -1,6 +1,6 @@
 /* Style Modal  */
 .login_select {
-    margin-bottom: 2px;
+
 }
 .login_container {
     border: 2px solid black;
@@ -16,8 +16,20 @@
 .active_login {
     background-color: grey;
 }
-.connexion {
+.connexion_cont {
     display: none;
+}
+.formulaire {
+    display: grid;
+    text-align: center;
+    position: relative
+}
+.formulaire input[type="submit"] {
+    position: absolute;
+    width: 20%;
+    left: 40%;
+    right: 40%;
+    bottom: 5%;
 }
 /* IMPORTATION */
 @import "reset.css";
