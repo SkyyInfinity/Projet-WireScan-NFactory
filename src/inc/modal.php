@@ -13,7 +13,7 @@
                 <div class="champ nom">
                     <label for="nom">Nom</label>
                     <input type="text" id="nom" name="nom">
-                    <span class="error" id="error_nom"></span>
+                    <span class="error" id="error_nom">Veuillez renseigner un champ</span>
                 </div>
                 <!-- PRENOM -->
                 <div class="champ prenom">
@@ -56,7 +56,7 @@
             <form id="connexion" class="formulaire">
                 <!-- EMAIL -->
                 <div class="champ email">
-                    <label for="email2">Adresse Email ou Pseudo</label>
+                    <label for="email2">Adresse Email</label>
                     <input type="email" id="email2" name="email">
                     <span class="error" id="error_email"></span>
                 </div>

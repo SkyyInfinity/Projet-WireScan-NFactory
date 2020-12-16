@@ -18,6 +18,7 @@ body {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 .wrap {
     width: 100%;
@@ -53,9 +54,10 @@ body {
     -webkit-box-shadow: 0px 5px 5px 0px rgba(120,120,120,.4);
     -moz-box-shadow: 0px 5px 5px 0px rgba(120,120,120,.4);
     box-shadow: 0px 5px 5px 0px rgba(120,120,120,.4);
+    z-index: 99;
 }
 #header.sticky {
-    padding: 15px 2%;
+    padding: 10px 2%;
 }
 #header nav {
     display: flex;
@@ -67,12 +69,11 @@ body {
     color: black;
     padding: 5px 7px;
 }
-#header nav .logo h1 {
-    font-size: 2.5em;
+#header nav .logo img {
     transition: .2s;
 }
-#header.sticky nav .logo h1 {
-    font-size: 2em;
+#header.sticky nav .logo img {
+    transform: scale(.8);
 }
 #header nav ul {
     display: flex;
@@ -123,6 +124,7 @@ body {
 }
 .modal {
     padding: 0 !important;
+    border-radius: 0;
 }
 .modal form {
     padding: 0 40px 40px 40px;
@@ -133,9 +135,23 @@ body {
     justify-content: space-around;
     background-color: #f6f5f5;
     border-radius: 0 0 50px 50px;
+    background-image: url('../img/exchange-alt-solid.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px;
+}
+.modal a.close-modal {
+    background-image: url('../img/times-solid.svg') !important;
+    background-position-y: 7px !important;
+    background-color:  #202020;
+    border-radius: 50%;
+    transition: .2s;
+}
+.modal a.close-modal:hover {
+    background-color:  #1089ff;
 }
 .modal a.btn_login {
-    padding: 10px 15px;
+    padding: 10px 13px;
     text-decoration: none;
     color: #1089ff;
     border: 1px #1089ff solid;
@@ -166,7 +182,7 @@ body {
 }
 .modal form label {
     display: block;
-    margin: 5px 0;
+    margin: 15px 0 5px 0;
     font-size: 1.4em;
 }
 .modal form input[type=text], form input[type=email], form input[type=password] {
@@ -193,10 +209,21 @@ body {
     cursor: pointer;
     transition: .2s;
 }
+.modal .error {
+    color: crimson;
+    margin-left: 15px;
+    margin-bottom: 100px;
+    font-style: italic;
+}
 
 /* ACCUEIL */
 #content {
-    padding: 150px 2%;
+    padding: 100px 0;
+}
+.flexslider {
+    z-index: 1;
+    border: none;
+    background-color: transparent;
 }
 
 /* A PROPOS DE NOUS */
@@ -297,7 +324,7 @@ body {
     #footer .nav-box nav ul {
         width: 60%;
     }
-    #footer .nav-box nav .logo h1 {
+    #footer .nav-box nav .logo img {
         margin-bottom: 35px;
     }
     .blocker {
@@ -316,6 +343,11 @@ body {
     .blocker {
         width: 250% !important;
         left: -75% !important;
+    }
+}
+@media screen and (max-width: 700px) {
+    .modal .login_select {
+        background-image: none;
     }
 }
 @media screen and (max-width: 600px) {
