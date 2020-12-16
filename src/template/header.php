@@ -14,6 +14,7 @@
         <title>NAME | <?= $title; ?></title>
     </head>
     <body>
+    <?php include('src/inc/modal.php');?>
         <!-- HEADER -->
         <header id="header">
             <div class="wrap">

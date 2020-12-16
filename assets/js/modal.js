@@ -4,7 +4,7 @@ $( document ).ready(function() {
     // MODAL
     $('#modal_btn').click(function(e) {
         e.preventDefault();
-        $('login-modal').modal({
+        $('#login-modal').modal({
           fadeDuration: 250
         });
         return false;
