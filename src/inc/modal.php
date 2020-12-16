@@ -13,7 +13,7 @@
                 <div class="champ nom">
                     <label for="nom">Nom</label>
                     <input type="text" id="nom" name="nom">
-                    <span class="error" id="error_nom">Veuillez renseigner un champ</span>
+                    <span class="error" id="error_nom"></span>
                 </div>
                 <!-- PRENOM -->
                 <div class="champ prenom">
@@ -30,8 +30,11 @@
                 <!-- MDP1 -->
                 <div class="champ mdp1">
                     <label for="password">Mot de passe</label>
-                    <input type="password" id="password" name="password">
+                    <input type="text" id="password" name="password">
                     <span class="error" id="error_password"></span>
+                    <div class="info_mdp" id="info_mdp">
+                        <span class="verifmdp" id="verifmdp"></span>
+                    </div>
                 </div>
                 <!-- MDP2 -->
                 <div class="champ mdp2">

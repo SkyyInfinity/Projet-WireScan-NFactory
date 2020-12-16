@@ -3,6 +3,7 @@ $(document).ready(function() {
     //Inscriptions
     $('#inscription').on('submit', function(e) {
         e.preventDefault();
+
         let nom = $('#nom').val();
         let prenom = $('#prenom').val();
         // Verif si pseudo existe deja 
@@ -10,8 +11,8 @@ $(document).ready(function() {
         let email = $('#email').val();
         let password = $('#password').val();
         let password2 = $('#password2').val();
-
         let entreprise = $('#entreprise').val();
+
         $.ajax({
             type: 'POST',
             url: 'ajax/login.php',
@@ -25,12 +26,10 @@ $(document).ready(function() {
             },
             dataType: 'json',
             success: function (response) {
-                console.log(response['success']);
                 if (response['success'] == true) {
-                    console.log('il n\'y a pas d\'erreurs') 
+                    
                 }  
                 else if (response['success'] == false){
-                    console.log('il y a des erreurs')
                     $('#error_nom,#error_prenom,#error_email,#error_password,#error_password2,#error_entreprise').empty();
                     $('#error_nom').html(response['errors']['nom']);
                     $('#error_prenom').html(response['errors']['prenom']);
@@ -39,11 +38,37 @@ $(document).ready(function() {
                     $('#error_password2').html(response['errors']['password2']);
                     $('#error_entreprise').html(response['errors']['entreprise']);
                 }    
-            },
-            error: function(response){
+            }, error: function(response){
                 console.log('error');
                 console.log(response);
             }
         })
     });
+    function checkPasswordStrength() {
+        var number = /([0-9])/;
+        var alphabets = /([a-zA-Z])/;
+        var special_characters = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<])/;
+        if($('#password').val().length<7) {
+            $('#error_password').html("Votre mot de passe doit faire plus de 8 caracteres");
+        } else {  	
+            if($('#password').val().match(number) && $('#password').val().match(alphabets) && $('#password').val().match(special_characters)) {            
+                $('#error_password').css('color','green');
+                $('#error_password').html("Mot de passe Valide");
+            } else {
+                $('#error_password').html("Votre mot de passe doit contenir ...");
+            }
+        }
+    }
+    $('#password').keydown(function() {
+        $('#info_mdp').hide();
+        checkPasswordStrength();
+    });
+    $('#password').focusin(function() {
+        $('#info_mdp').show();
+        $('#error_password').html("Votre mot de passe doit contenir 1 majuscule , 1 miniscule , 1 chiffre et 1 charctere spécial.");
+    })
+    $('#password').focusout(function() {
+        $('#error_password').hide();
+    })
+
 });
