@@ -6,7 +6,7 @@
                 <div class="wrap">
                     <nav>
                         <div class="logo">
-                            <h1><a href="#">Name</a></h1>
+                            <a href="./index.php"><img src="./assets/img/logox250-white.png" alt="logo du site"></a>
                         </div>
                         <ul>
                             <li><a href="./index.php">Accueil</a></li>
@@ -34,5 +34,6 @@
         <script src="./assets/js/modal.js" type="text/javascript" charset="utf-8"></script>
         <script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
         <script src="./assets/js/navigation.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./assets/js/flexslider.js" type="text/javascript" charset="utf-8"></script>
     </body>
 </html>
