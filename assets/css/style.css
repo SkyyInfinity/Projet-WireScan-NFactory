@@ -72,8 +72,11 @@ body {
 #header nav .logo img {
     transition: .2s;
 }
+#header nav .logo img:hover {
+    opacity: .8;
+}
 #header.sticky nav .logo img {
-    transform: scale(.8);
+    transform: scale(.7);
 }
 #header nav ul {
     display: flex;
@@ -90,7 +93,8 @@ body {
     text-decoration: none;
     color: black;
     transition: .2s;
-    padding: 5px 7px;
+    font-size: .9em;
+    padding: 7px 10px;
 }
 #header nav ul li a:hover {
     color: #1089ff;
@@ -218,12 +222,53 @@ body {
 
 /* ACCUEIL */
 #content {
-    padding: 100px 0;
+    padding-top: 120px;
 }
 .flexslider {
     z-index: 1;
     border: none;
+    margin: 0;
     background-color: transparent;
+}
+.flex-direction-nav a:before {
+    color: rgba(255, 255, 255, .8);
+}
+.section-subscribeNow {
+    padding: 50px 2%;
+    background-color: #202020;
+    text-align: center;
+}
+.section-subscribeNow a {
+    text-decoration: none;
+    padding: 10px 13px;
+    font-size: 1.3em;
+    transition: .2s;
+}
+.section-informations {
+    padding: 50px 2%;
+    background-color: #1089ff;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.section-informations .info-box {
+    padding: 20px;
+    cursor: default;
+}
+.section-informations .info-box i {
+    font-size: 8em;
+    color: white;
+    margin-bottom: 40px;
+}
+.section-informations .info-box h2 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.section-informations .info-box p {
+    line-height: 1.5em;
+    font-size: 1.1em;
 }
 
 /* A PROPOS DE NOUS */
@@ -253,9 +298,11 @@ body {
     color: white;
     padding: 5px 7px;
 }
-#footer .nav-box nav .logo h1 {
-    font-size: 2.5em;
+#footer .nav-box nav .logo img {
     transition: .2s;
+}
+#footer .nav-box nav .logo img:hover {
+    opacity: .8;
 }
 #footer .nav-box nav ul {
     display: flex;
@@ -308,7 +355,7 @@ body {
         background-color: #f6f5f5;
         position: absolute;
         width: 103%;
-        transform: translate(0, -120%);
+        transform: translate(-2%, -120%);
         z-index: -1;
         transition: .2s ease-out;
     }
@@ -332,6 +379,14 @@ body {
         left: -50% !important;
     }
 }
+@media screen and (max-width: 1080px) {
+    .section-informations {
+        flex-direction: column;
+    }
+    .section-informations .info-box {
+        margin: 25px 0;
+    }
+}
 @media screen and (max-width: 900px) {
     #footer .nav-box nav ul {
         flex-direction: column;
@@ -348,6 +403,9 @@ body {
 @media screen and (max-width: 700px) {
     .modal .login_select {
         background-image: none;
+    }
+    .flexslider img {
+        width: 150% !important;
     }
 }
 @media screen and (max-width: 600px) {

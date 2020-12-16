@@ -13,7 +13,7 @@
                 <div class="champ nom">
                     <label for="nom">Nom</label>
                     <input type="text" id="nom" name="nom">
-                    <span class="error" id="error_nom">Veuillez renseigner un champ</span>
+                    <span class="error" id="error_nom"></span>
                 </div>
                 <!-- PRENOM -->
                 <div class="champ prenom">
