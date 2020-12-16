@@ -199,6 +199,22 @@ body {
     border: 1px #1089ff solid;
     border-top: 1px white solid;
 }
+#inscription {
+    position: relative;
+}
+.info_mdp {
+    display: none;
+    background-color: #f6f5f5;
+    padding: 5px;
+    border: 1px solid grey;
+    text-align: center;
+    border-top: none;
+    width: 100%;
+    font-size: 0.8em;
+}
+#password {
+    margin-bottom: 0;
+}
 .modal form input[type=submit] {
     width: 100%;
     padding: 10px 0;
@@ -214,6 +230,17 @@ body {
     margin-left: 15px;
     margin-bottom: 100px;
     font-style: italic;
+}
+.success {
+  text-align: center; 
+  padding: 50px 0; 
+}
+.success p {
+    font-size: 2em;
+}
+.success img {
+    margin-top: 50px;
+    width: 25%;
 }
 
 /* ACCUEIL */

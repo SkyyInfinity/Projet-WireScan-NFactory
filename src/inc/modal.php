@@ -5,35 +5,35 @@
         <a href="#" class="btn_login" id="btn_connexion">Connexion</a>
     </div>
     <div class="login_container">
-        <div class="inscription_cont">
+        <div class="inscription_cont" id="inscription_cont">
             <h1 class="title-form">Inscription</h1>
 
             <form id="inscription" class="formulaire" novalidate>
                 <!-- NOM -->
                 <div class="champ nom">
                     <label for="nom">Nom</label>
-                    <input type="text" id="nom" name="nom">
+                    <input type="text" id="nom" name="nom" value="Dupont">
                     <span class="error" id="error_nom"></span>
                 </div>
                 <!-- PRENOM -->
                 <div class="champ prenom">
                     <label for="prenom">Prénom</label>
-                    <input type="text" id="prenom" name="prenom">
+                    <input type="text" id="prenom" name="prenom" value="Jean">
                     <span class="error" id="error_prenom"></span>
                 </div>
                 <!-- EMAIL -->
                 <div class="champ email">
                     <label for="email">Adresse Email</label>
-                    <input type="email" id="email" name="email">
+                    <input type="email" id="email" name="email" value="j.dupont@localhost.com">
                     <span class="error" id="error_email"></span>
                 </div>
                 <!-- MDP1 -->
                 <div class="champ mdp1">
                     <label for="password">Mot de passe</label>
-                    <input type="text" id="password" name="password">
+                    <input type="password" id="password" name="password">
                     <span class="error" id="error_password"></span>
                     <div class="info_mdp" id="info_mdp">
-                        <span class="verifmdp" id="verifmdp"></span>
+                        <span class="verifmdp" id="verifmdp">Votre mot de passe doit contenir au moins 8 caractéres ainsi qu'une majuscule , une minuscule , un chiffre et un charactére spécial."</span>
                     </div>
                 </div>
                 <!-- MDP2 -->
@@ -45,7 +45,7 @@
                 <!-- COMPANY -->
                 <div class="champ company">
                     <label for="entreprise">Votre entreprise</label>
-                    <input type="text" id="entreprise" name="entreprise">
+                    <input type="text" id="entreprise" name="entreprise" value="Orange">
                     <span class="error" id="error_entreprise"></span>
                 </div>
 

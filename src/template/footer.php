@@ -32,7 +32,6 @@
         <script src="https://cdn.jsdelivr.net/npm/flexslider@2.7.2/jquery.flexslider.min.js"></script>
         <script src="./src/plugins/jquery_modal/jquery.modal.js" type ="text/javascript" charset="utf-8"></script>
         <script src="./assets/js/modal.js" type="text/javascript" charset="utf-8"></script>
-        <script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
         <script src="./assets/js/navigation.js" type="text/javascript" charset="utf-8"></script>
         <script src="./assets/js/flexslider.js" type="text/javascript" charset="utf-8"></script>
     </body>

@@ -1,13 +1,40 @@
 $( document ).ready(function() {
+    //Function 
+    function checkPasswordStrength() {
+        var number = /([0-9])/;
+        var alphabets = /([a-zA-Z])/;
+        var special_characters = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<])/;
+        var verif = false;
+        if($('#password').val().length<7) {
+            $('#error_password').css('color','red');
+            $('#error_password').html("Votre mot de passe doit faire plus de 8 caracteres");
+        } else {  	
+            if($('#password').val().match(number) && $('#password').val().match(alphabets) && $('#password').val().match(special_characters)) {            
+                $('#error_password').css('color','green');
+                $('#error_password').html("Mot de passe Valide");
+                verif = true;
+            } else {
+                $('#error_password').html("Votre mot de passe doit contenir ...");
+            }
+        }
+        return verif;
+    }
     // START JQUERY
-
     // MODAL
-    $('#modal_btn').click(function(e) {
+    $('#js_connexion').click(function(e) {
         e.preventDefault();
-        $('#login-modal').modal({
-          fadeDuration: 250
+        $("#login-modal").modal({
+            fadeDuration: 100,
+            clickClose: false,
         });
-        return false;
+        return false
+    });
+    $('#js_inscription').click(function(e) {
+        e.preventDefault();
+        $("#login-modal").modal({
+            fadeDuration: 100
+        });
+        return false
     });
     $('#btn_inscription').click(function(e) {
         e.preventDefault();
@@ -23,8 +50,7 @@ $( document ).ready(function() {
         $('.inscription_cont').css('display', 'none');
         $('.connexion_cont').css('display', 'block');
     });
-    
-    // MODAL QUAND ON CLICK SUR LES BOUTONS DE LA NAVIGATION
+    // MODAL_BTN_ONCLICK
     $('#js_connexion').on('click', function(e) {
         e.preventDefault();
         $('#btn_connexion').addClass('active_login');
@@ -38,6 +64,99 @@ $( document ).ready(function() {
         $('#btn_connexion').removeClass('active_login');
         $('.connexion_cont').css('display', 'none');
         $('.inscription_cont').css('display', 'block');
+    });
+    //Gestion Formulaire
+    //Inscriptions
+    $('#inscription').on('submit', function(e) {
+        e.preventDefault();
+        let nom = $('#nom').val();
+        let prenom = $('#prenom').val();
+        let email = $('#email').val();
+        let password = $('#password').val();
+        let password2 = $('#password2').val();
+        let entreprise = $('#entreprise').val();
+        $.ajax({
+          type: 'POST',
+            url: 'ajax/verifEmail.php',
+            data: {
+                email: email
+            },
+            dataType: 'json',
+            success: function (response) {
+                if (response['success'] == true) {
+                    $.ajax({
+                        type: 'POST',
+                        url: 'ajax/login.php',
+                        data: {
+                            nom: nom,
+                            prenom: prenom,
+                            email: email,
+                            password: password,
+                            password2: password2, 
+                            entreprise: entreprise
+                        },
+                        dataType: 'json',
+                        success: function (response) {
+                            if (response['success'] == true) {
+                                $('#inscription_cont').html('<div class="success"><p>Compte crée avec succés !</p><img src="assets/img/succes.png"></div>')
+                            }  
+                            else if (response['success'] == false){
+                                $('#error_nom,#error_prenom,#error_email,#error_password,#error_password2,#error_entreprise').empty();
+                                $('#error_nom').html(response['errors']['nom']);
+                                $('#error_prenom').html(response['errors']['prenom']);
+                                $('#error_email').html(response['errors']['email']);
+                                $('#error_password').html(response['errors']['password']);
+                                $('#error_password2').html(response['errors']['password2']);
+                                $('#error_entreprise').html(response['errors']['entreprise']);
+                            }    
+                        }, error: function(response){
+
+                        }
+                    })
+                }  
+                else if (response['success'] == false){
+                    $('#error_email').html(response['errors']['email']);
+                }    
+            }, error: function(response){
+
+            }
+        })  
+    });
+    // Detection Email
+    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+    $('#email').on('input',function() {
+
+        if(emailReg.test($('#email').val())) {
+            $('#email').html('Les mots de passe  ne sont pas identiquent');
+        }
+    })
+    // Detection et aide MDP
+    $('#password').on('input',function() {
+        checkPasswordStrength();
+        $('#info_mdp').hide();
+        $('#error_password').show();
+    });
+    $('#password').focusin(function() {
+        $('#error_password').hide();
+        var verif = checkPasswordStrength();
+        if(verif != true) {
+            $('#info_mdp').show();
+        }
+    })
+    $('#password').focusout(function() {
+        $('#error_password').hide();
+        $('#info_mdp').hide();
+    })
+    $('#password2').on('input',function(e) { 
+        $('#error_password2').show();
+        if ($('#password2').val() != $('#password').val()) {
+            $('#error_password2').css('color','red');
+            $('#error_password2').html('Les mots de passe  ne sont pas identiquent');
+        } else {
+            $('#error_password2').css('color','green');
+            $('#error_password2').html('Les mots de passe sont identiquent');
+        }
+        
     });
 
     // END JQUERY

@@ -28,8 +28,8 @@
                     <ul id="js_nav-links">
                         <li><a href="./index.php">Accueil</a></li>
                         <li><a href="#">Qui sommes-nous ?</a></li>
-                        <li><a id="js_connexion" class="btn-1" href="#login-modal" rel="modal:open">Connexion</a></li>
-                        <li><a id="js_inscription" class="btn-2" href="#login-modal" rel="modal:open">Inscription</a></li>
+                        <li><a id="js_connexion" class="btn-1" href="#login-modal">Connexion</a></li>
+                        <li><a id="js_inscription" class="btn-2" href="#login-modal">Inscription</a></li>
                     </ul>
                 </nav>
             </div>

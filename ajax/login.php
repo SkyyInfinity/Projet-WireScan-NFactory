@@ -1,5 +1,6 @@
 <?php 
 require('../src/inc/functions.php');
+include('../src/inc/pdo.php');
 $errors = array();
 $success = false;
 $nom = trim(strip_tags($_POST['nom']));
@@ -20,8 +21,11 @@ $errors = validText($errors,$entreprise,'entreprise',4,30);
 if(count($errors) == 0 ) {
     $success = true;
     $passwordhash = password_hash($password, PASSWORD_DEFAULT);
-    $values = array($nom,$prenom,$email,$passwordhash,$entreprise);
-    SQL_INSERT('users','nom,prenom,email,password,entreprise',$values);
+    $token = openssl_random_pseudo_bytes(16);
+    $token = bin2hex($token);
+    $values = array($nom,$prenom,$email,$passwordhash,$token,date('Y-m-d H:i:s'),'1',$_SERVER['REMOTE_ADDR'],$entreprise);
+    $dateNow = date('Y-m-d H:i:s');
+    SQL_INSERT('users','nom,prenom,email,password,token,created_at,status,ip,entreprise',$values);
 }
 $data = array(
     'errors' => $errors,

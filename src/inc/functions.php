@@ -151,40 +151,27 @@ function SQL_INSERT($table_name,$columns,$values,$debug = false) {
   }
   $query->execute();
 }
-function SQL_SELECT($table_name,$fetchall = false,$param = '',$value = '',$debug = false) {
+function SQL_SELECT($table_name,$fetchall = false,$param = '',$value,$debug = false) {
   // Verification si where
   if (!empty($param)) {
     $piece = explode(' ',$param);
     $name = $piece[1];
     $sql = "SELECT * FROM $table_name ".$param;
-    echo $sql;
     global $pdo;
     $query = $pdo->prepare($sql);
     $query->bindValue(':'.$name,$value,PDO::PARAM_STR);
     $query->execute();
-    if($debug) {
-      if ($fetchall) {
-        debug($query->fetchall());
-      } else {
-        debug($query->fetch());
-      }
+    if ($fetchall) {
+      return $query->fetchall();
     } else {
-      if ($fetchall) {
-        return $query->fetchall();
-      } else {
-        return $query->fetch();
-      }
+      return $query->fetch();
     }
   }else {
     $sql = "SELECT * FROM $table_name";
     global $pdo;
     $query = $pdo->prepare($sql);
     $query->execute();
-    if($debug) {
-      debug($query->fetchall());
-    } else {
-      return $query->fetchall();
-    }
+    return $query->fetchall();
   }
 }
 
