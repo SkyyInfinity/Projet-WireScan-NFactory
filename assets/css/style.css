@@ -255,6 +255,7 @@ body {
 .section-informations .info-box {
     padding: 20px;
     cursor: default;
+    width: 33,3333333%;
 }
 .section-informations .info-box i {
     font-size: 8em;
