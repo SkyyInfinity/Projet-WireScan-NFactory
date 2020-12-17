@@ -5,7 +5,7 @@
         <a href="#" class="btn_login" id="btn_connexion">Connexion</a>
     </div>
     <div class="login_container">
-        <div class="inscription_cont">
+        <div class="inscription_cont" id="inscription_cont">
             <h1 class="title-form">Inscription</h1>
 
             <form id="inscription" class="formulaire" novalidate>
@@ -32,6 +32,9 @@
                     <label for="password">Mot de passe</label>
                     <input type="password" id="password" name="password">
                     <span class="error" id="error_password"></span>
+                    <div class="info_mdp" id="info_mdp">
+                        <span class="verifmdp" id="verifmdp">Votre mot de passe doit contenir au moins 8 caractéres ainsi qu'une majuscule , une minuscule , un chiffre et un charactére spécial."</span>
+                    </div>
                 </div>
                 <!-- MDP2 -->
                 <div class="champ mdp2">
@@ -53,18 +56,18 @@
         <div class="connexion_cont">
             <h1 class="title-form">Connexion</h1>
             
-            <form id="connexion" class="formulaire">
+            <form id="connexion" class="formulaire" novalidate>
                 <!-- EMAIL -->
                 <div class="champ email">
                     <label for="email2">Adresse Email</label>
-                    <input type="email" id="email2" name="email">
-                    <span class="error" id="error_email"></span>
+                    <input type="text" id="email2" name="email">
+                    <span class="error" id="error_email_log"></span>
                 </div>
                 <!-- MDP -->
                 <div class="champ mdp">
                     <label for="password_log">Mot de passe</label>
                     <input type="password" id="password_log" name="password">
-                    <span class="error" id="error_password"></span>
+                    <span class="error" id="error_password_log"></span>
                 </div>
 
                 <input class="btn-2" type="submit" value="Connexion">

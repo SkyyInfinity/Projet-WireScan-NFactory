@@ -4,7 +4,7 @@ require('src/inc/pdo.php');
 
 $title = 'Accueil';
 
-include('src/inc/modal.php');
+
 include('src/template/header.php'); ?>
 
 <div class="flexslider flexslider-home">
@@ -15,7 +15,7 @@ include('src/template/header.php'); ?>
   </ul>
 </div>
 <section class="section-subscribeNow">
-    <a id="js_inscription2" href="#login-modal" rel="modal:open" class="btn-2">S'inscrire maintenant !</a>
+    <a id="signinnow" class="btn-2" href="#login-modal">S'inscrire maintenant !</a>
 </section>
 <section class="section-informations">
     <div class="info-box">

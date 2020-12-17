@@ -29,7 +29,7 @@ function cleanXss($element) {
   return trim(strip_tags($element));
 }
 // V A L I D A T I O N   T E X T /////////////////////////////////////////////////////
-function validationText($errors, $data, $key, $min, $max) {
+function validText($errors, $data, $key, $min, $max) {
   if(!empty($data)) {
     if(mb_strlen($data) < $min) {
       $errors[$key] = 'Le champ doit être plus grand que ' . $min . ' caractères.';
@@ -42,10 +42,10 @@ function validationText($errors, $data, $key, $min, $max) {
   return $errors;
 }
 // V A L I D A T I O N   E M A I L ///////////////////////////////////////////////////
-function validationEmail($errors, $data, $key) {
+function validEmail($errors, $data, $key) {
   if(!empty($data)) {
     if(!filter_var($data, FILTER_VALIDATE_EMAIL)) {
-      $errors[$key] = 'L\'email doit être un email valide.';
+      $errors[$key] = 'Format de l\'email invalide.';
     }
   } else {
     $errors[$key] = 'Veuillez renseigner ce champ.';
@@ -53,23 +53,34 @@ function validationEmail($errors, $data, $key) {
   return $errors;
 }
 // V A L I D A T I O N   P A S S W O R D /////////////////////////////////////////////
-function validationPassword($errors, $data, $key, $min, $max) {
-  $majuscule        = preg_match('@[A-Z]@', $password);
-  $minuscule        = preg_match('@[a-z]@', $password);
-  $chiffre          = preg_match('@[0-9]@', $password);
-  $caractereSpecial = preg_match('@[^\w]@', $password);
-
+function validPassword($errors, $data, $data2, $key, $key2, $min, $max) {
+  $majuscule        = preg_match('@[A-Z]@', $data);
+  $minuscule        = preg_match('@[a-z]@', $data);
+  $chiffre          = preg_match('@[0-9]@', $data);
+  // $caractereSpecial = preg_match('@[^\w]@', $data);
+  
   if(!empty($data)) {
-    if(mb_strlen($data) < $min) {
-      $errors[$key] = 'Le mot de passe doit être plus grand que ' . $min . ' caractères.';
-    } elseif(mb_strlen($data) > $max) {
-      $errors[$key] = 'Le mot de passe doit être plus petit que ' . $max . ' caractères.';
-    } elseif(!$majuscule || !$minuscule || !$chiffre || !$caractereSpecial) {
-      $errors[$key] = 'Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractére spécial.';
+    if(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,12}$/', $data)) {
+      $errors[$key] = 'Le mot de passe doit contenirs ....';
     }
+    // if(mb_strlen($data) < $min) {
+    //   $errors[$key] = 'Le mot de passe doit être plus grand que ' . $min . ' caractères.';
+    // } elseif(mb_strlen($data) > $max) {
+    //   $errors[$key] = 'Le mot de passe doit être plus petit que ' . $max . ' caractères.';
+    // } elseif(!$majuscule || !$minuscule || !$chiffre) {
+    //   $errors[$key] = 'Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractére spécial.';
+    // }
   } else {
     $errors[$key] = 'Veuillez renseigner ce champ.';
   }
+  if (!empty($data2)) {
+    if ($data != $data2) {
+      $errors[$key] = 'Les mots de passe ne correspondent pas.';
+    }
+  } else {
+    $errors[$key2] = 'Veuillez renseigner ce champ.';
+  }
+  return $errors;
 }
 // G E N E R A T E   R A N D O M   S T R I N G ///////////////////////////////////////
 function generateRandomString($length = 10) {
@@ -140,61 +151,28 @@ function SQL_INSERT($table_name,$columns,$values,$debug = false) {
   }
   $query->execute();
 }
-function SQL_SELECT($table_name,$fetchall = false,$param = '',$value = '',$debug = false) {
+function SQL_SELECT($table_name,$fetchall = false,$param = '',$value,$debug = false) {
   // Verification si where
   if (!empty($param)) {
     $piece = explode(' ',$param);
     $name = $piece[1];
     $sql = "SELECT * FROM $table_name ".$param;
-    echo $sql;
     global $pdo;
     $query = $pdo->prepare($sql);
     $query->bindValue(':'.$name,$value,PDO::PARAM_STR);
     $query->execute();
-    if($debug) {
-      if ($fetchall) {
-        debug($query->fetchall());
-      } else {
-        debug($query->fetch());
-      }
+    if ($fetchall) {
+      return $query->fetchall();
     } else {
-      if ($fetchall) {
-        return $query->fetchall();
-      } else {
-        return $query->fetch();
-      }
+      return $query->fetch();
     }
   }else {
     $sql = "SELECT * FROM $table_name";
     global $pdo;
     $query = $pdo->prepare($sql);
     $query->execute();
-    if($debug) {
-      debug($query->fetchall());
-    } else {
-      return $query->fetchall();
-    }
+    return $query->fetchall();
   }
-}
-
-function validText($errors,$value,$key,$min,$max,$emailM = false)
-{
-  if(!empty($value)) {
-    if ($emailM == true) {
-      if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
-        $errors[$key] = 'Veuillez renseigner une email valide';
-      }
-    } else {
-      if(strlen($value) < $min) {
-        $errors[$key] = 'Min '.$min.' caractères';
-      } elseif(strlen($value) > $max) {
-        $errors[$key] = 'Max '.$max.' caractères';
-      }
-    }
-  } else {
-      $errors[$key] = 'Veuillez renseigner ce champ';
-  }
-  return $errors;
 }
 
 function is_logged(): bool

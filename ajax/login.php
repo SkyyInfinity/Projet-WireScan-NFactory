@@ -1,27 +1,34 @@
 <?php 
- require('../inc/function.php');
- $errors = array();
- $succes = false;
+require('../src/inc/functions.php');
+include('../src/inc/pdo.php');
+$errors = array();
+$success = false;
+$email = trim(strip_tags($_POST['email']));
+$password = trim(strip_tags($_POST['password'])); 
+$sql = SQL_SELECT('users',false,'WHERE email = :email',$email);
 
- $nom = trim(strip_tags($_POST['nom']));
- $prenom = trim(strip_tags($_POST['prenom']));
- $email = trim(strip_tags($_POST['email']));
- $password = trim(strip_tags($_POST['password'])); 
- $entreprise = trim(strip_tags($_POST['entreprise']));
+if (empty($email)) {
+    $errors['email'] = 'Veuillez renseigné ce champs';
+}
+if (empty($password)) {
+    $errors['password'] = 'Veuillez renseigné ce champs';
+}
+if (!empty($sql)) {
+    if(!password_verify($password, $sql['password'])) {
+        $errors['password'] = 'Erreur mot de passe incorrect.';
+    }
+} elseif (empty($sql)) {
+    if (empty($errors['email'])) {
+        $errors['email'] = 'Cette adresse ne correspond à aucun compte.';
+    }
+}
 
- $errors = validText($errors,$nom,'nom',4,30);
- $errors = validText($errors,$prenom,'prenom',4,30);
- $errors = validText($errors,$email,'email','','',$emailM = true);
- $errors = validText($errors,$password,'password');
- $errors = validText($errors,$entreprise,'entreprise');
+if(count($errors) == 0 ) {
+    $success = true;
 
- if(count($errors) == 0 ) {
-     $succes = true;
- }
-
- $data = array(
-     'errors' => $errors,
-     'succes' => $succes
- );
-
- showJson($data);
+}
+$data = array(
+    'errors' => $errors,
+    'success' => $success
+);
+showJson($data);
