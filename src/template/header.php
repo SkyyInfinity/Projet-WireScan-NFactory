@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flexslider@2.7.2/flexslider.css" integrity="sha256-d/dpEBCLcGIwnda/oxASOoZ/ygGxLu9iw35dLQ0Mx5Q=" crossorigin="anonymous">
         <link rel="stylesheet" href="./src/plugins/jquery_modal/jquery.modal.css">
         <link rel="stylesheet" href="./assets/css/style.css">
-        <title>NAME | <?= $title; ?></title>
+        <title>WireScan &bull; <?= $title; ?></title>
     </head>
     <body>
     <?php include('src/inc/modal.php');?>
@@ -27,7 +27,7 @@
                     </div>
                     <ul id="js_nav-links">
                         <li><a href="./index.php">Accueil</a></li>
-                        <li><a href="#">Qui sommes-nous ?</a></li>
+                        <li><a href="aboutus.php">Qui sommes-nous ?</a></li>
                         <li><a id="js_connexion" class="btn-1" href="#login-modal">Connexion</a></li>
                         <li><a id="js_inscription" class="btn-2" href="#login-modal">Inscription</a></li>
                     </ul>

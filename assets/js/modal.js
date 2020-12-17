@@ -19,21 +19,27 @@ $( document ).ready(function() {
         }
         return verif;
     }
-    // START JQUERY
-    // MODAL
-    $('#js_connexion').click(function(e) {
-        e.preventDefault();
+    //Fuction Modal
+    function showModal() {
         $("#login-modal").modal({
             fadeDuration: 100,
             clickClose: false,
-        });
+        });   
+    }
+    // START JQUERY
+
+    // MODAL
+    $('#js_connexion').click(function(e) {
+        e.preventDefault();
+        showModal();
         return false
     });
     $('#js_inscription').click(function(e) {
-        e.preventDefault();
-        $("#login-modal").modal({
-            fadeDuration: 100
-        });
+        showModal();
+        return false
+    });
+    $('#signinnow').click(function(e) {
+        showModal();
         return false
     });
     $('#btn_inscription').click(function(e) {

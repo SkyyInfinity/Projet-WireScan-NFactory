@@ -12,19 +12,19 @@
                 <!-- NOM -->
                 <div class="champ nom">
                     <label for="nom">Nom</label>
-                    <input type="text" id="nom" name="nom" value="Dupont">
+                    <input type="text" id="nom" name="nom">
                     <span class="error" id="error_nom"></span>
                 </div>
                 <!-- PRENOM -->
                 <div class="champ prenom">
                     <label for="prenom">Prénom</label>
-                    <input type="text" id="prenom" name="prenom" value="Jean">
+                    <input type="text" id="prenom" name="prenom">
                     <span class="error" id="error_prenom"></span>
                 </div>
                 <!-- EMAIL -->
                 <div class="champ email">
                     <label for="email">Adresse Email</label>
-                    <input type="email" id="email" name="email" value="j.dupont@localhost.com">
+                    <input type="email" id="email" name="email">
                     <span class="error" id="error_email"></span>
                 </div>
                 <!-- MDP1 -->
@@ -45,7 +45,7 @@
                 <!-- COMPANY -->
                 <div class="champ company">
                     <label for="entreprise">Votre entreprise</label>
-                    <input type="text" id="entreprise" name="entreprise" value="Orange">
+                    <input type="text" id="entreprise" name="entreprise">
                     <span class="error" id="error_entreprise"></span>
                 </div>
 
