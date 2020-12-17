@@ -86,7 +86,7 @@ $( document ).ready(function() {
                 if (response['success'] == true) {
                     $.ajax({
                         type: 'POST',
-                        url: 'ajax/login.php',
+                        url: 'ajax/signin.php',
                         data: {
                             nom: nom,
                             prenom: prenom,
@@ -117,8 +117,33 @@ $( document ).ready(function() {
                 else if (response['success'] == false){
                     $('#error_email').html(response['errors']['email']);
                 }    
-            }, error: function(response){
-
+            }
+        })  
+    });
+    // Connexion 
+    $('#connexion').on('submit', function(e) {
+        e.preventDefault();
+        let email = $('#email2').val();
+        let password = $('#password_log').val();
+        $.ajax({
+          type: 'POST',
+            url: 'ajax/login.php',
+            data: {
+                email: email,
+                password: password
+            },
+            dataType: 'json',
+            success: function (response) {
+                console.log(response)
+                if (response['success'] == true) {
+                    window.location='dashboard.php'
+                }  
+                else if (response['success'] == false){
+                    $('#error_email_log').empty();
+                    $('#error_password_log').empty();
+                    $('#error_email_log').html(response['errors']['email']);
+                    $('#error_password_log').html(response['errors']['password']);
+                }    
             }
         })  
     });

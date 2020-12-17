@@ -61,13 +61,13 @@
                 <div class="champ email">
                     <label for="email2">Adresse Email</label>
                     <input type="text" id="email2" name="email">
-                    <span class="error" id="error_email"></span>
+                    <span class="error" id="error_email_log"></span>
                 </div>
                 <!-- MDP -->
                 <div class="champ mdp">
                     <label for="password_log">Mot de passe</label>
                     <input type="password" id="password_log" name="password">
-                    <span class="error" id="error_password"></span>
+                    <span class="error" id="error_password_log"></span>
                 </div>
 
                 <input class="btn-2" type="submit" value="Connexion">
