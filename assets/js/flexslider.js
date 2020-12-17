@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $('.flexslider').flexslider({
+  $('.flexslider-carroussel').flexslider({
     animation: "slide",
     animationLoop: false,
     itemWidth: 500,
@@ -7,11 +7,9 @@ $(document).ready(function () {
     controlNav: false,
   });
 
-
   $('.flexslider-home').flexslider({
     animation: "slide",
     controlNav: false,
     directionNav: true
   });
-
 });

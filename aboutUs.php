@@ -1,9 +1,10 @@
 <?php
-
-
+$title = 'Qui sommes-nous ?';
 ?>
 
-<?php include('./src/template/header.php'); ?>
+<?php 
+include('src/inc/modal.php');
+include('./src/template/header.php'); ?>
 
   <!--  TITRE + PRESENTATION  -->
 
@@ -17,7 +18,7 @@
 </div>
       <!--   CARROUSEL     -->
 
-<div class="flexslider carousel">
+<div class="flexslider carousel flexslider-carroussel">
   <ul class="slides">
     <li>
       <img src="https://picsum.photos/1920/1080" />

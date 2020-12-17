@@ -12,7 +12,7 @@
                         </div>
                         <ul>
                             <li><a href="./index.php">Accueil</a></li>
-                            <li><a href="#">Qui sommes-nous ?</a></li>
+                            <li><a href="./aboutUs.php">Qui sommes-nous ?</a></li>
                             <li><a href="#">Mentions Légales</a></li>
                             <li><a href="#">Nous contacter</a></li>
                         </ul>
