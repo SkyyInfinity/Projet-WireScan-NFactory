@@ -3,7 +3,7 @@
 
 /* CSS START */
 
-/* 
+/*
 Couleurs:
 OR: #f8bd7f
 OR HOVER: #c29363
@@ -18,6 +18,7 @@ body {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 .wrap {
     width: 100%;
@@ -50,6 +51,7 @@ body {
     position: fixed;
     width: 100%;
     transition: .2s;
+    z-index: 99;
 }
 #header.sticky {
     padding: 15px 0;
@@ -94,10 +96,103 @@ body {
 
 /* ACCUEIL */
 #content {
-    padding: 150px 0;
+    padding: 100px 0;
 }
 /* A PROPOS DE NOUS */
 
+.titre3 {
+  background-color: #1089ff;
+  color: white;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+  font-size:2.5em;
+  padding: 30px 0;
+}
+.paraG {
+  font-size: 1.4em;
+  margin: 30px;
+  line-height: 1.8em;
+  font-weight: bold;
+  opacity: 99%;
+}
+.paraG p {
+  text-align: center;
+  margin: 10px;
+}
+.paraT {
+  line-height: 1.6em;
+  color: white;
+}
+.gras {
+  font-weight: bold;
+}
+.or {
+  color: #f8bd7f;
+}
+.flexslider {
+  margin-bottom: 30px;
+  z-index: 1;
+  border: none;
+  background-color: transparent;
+}
+.titre4 {
+  color: white;
+  font-weight: bold;
+  font-size:1.8em;
+  margin-bottom: 40px;
+}
+.titre5 {
+  text-align: center;
+  margin: 50px 0;
+  color: #1089ff;
+  font-weight: bold;
+  font-size:2em;
+  opacity: 90%;
+}
+.section_solution {
+  background-color: #1089ff;
+  font-size: 1.2em;
+  font-weight: bold;
+  opacity: 70%;
+  padding: 80px 0;
+  line-height: 1.6em;
+}
+.paraH {
+  padding: 20px 0;
+  margin-top: 20px;
+  font-weight: bold;
+  line-height: 1.6em;
+  font-size: 1.2em;
+}
+.section_presentation {
+  background-color: #202020;
+  color: white;
+  padding: 80px 0;
+}
+.fondateur-box {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+}
+.fondateur {
+  padding: 15px;
+}
+.fondateur h1 {
+  padding: 30px;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+.fondateur p {
+  font-size: 1.1em;
+  line-height: 1.3em;
+}
+
+
+
+.fondateur i {
+  font-size: 10em;
+}
 /* ESPACE CLIENT */
 
 /* FOOTER */
@@ -163,8 +258,11 @@ body {
 }
 
 /* RESPONSIVE START */
-@media screen and (max-width: 900px) {
-
+@media screen and (max-width: 800px) {
+  .fondateur-box {
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 /* CSS END */

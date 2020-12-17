@@ -34,5 +34,8 @@
         <script src="https://cdn.jsdelivr.net/npm/flexslider@2.7.2/jquery.flexslider.min.js"></script>
         <script src="./assets/js/app.js" type="text/javascript" charset="utf-8"></script>
         <script src="./assets/js/navigationSticky.js"></script>
+        <script src="./assets/js/flexslider.js" type="text/javascript">
+
+        </script>
     </body>
 </html>
