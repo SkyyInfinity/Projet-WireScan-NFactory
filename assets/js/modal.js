@@ -39,6 +39,13 @@ $( document ).ready(function() {
         $('.connexion_cont').css('display', 'none');
         $('.inscription_cont').css('display', 'block');
     });
+    $('#js_inscription2').on('click', function(e) {
+        e.preventDefault();
+        $('#btn_inscription').addClass('active_login');
+        $('#btn_connexion').removeClass('active_login');
+        $('.connexion_cont').css('display', 'none');
+        $('.inscription_cont').css('display', 'block');
+    });
 
     // END JQUERY
 });

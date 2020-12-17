@@ -15,7 +15,7 @@ include('src/template/header.php'); ?>
   </ul>
 </div>
 <section class="section-subscribeNow">
-    <a href="#" class="btn-2">S'inscrire maintenant !</a>
+    <a id="js_inscription2" href="#login-modal" rel="modal:open" class="btn-2">S'inscrire maintenant !</a>
 </section>
 <section class="section-informations">
     <div class="info-box">

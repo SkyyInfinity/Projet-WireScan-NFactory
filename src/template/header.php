@@ -16,6 +16,7 @@
     <body>
         <!-- HEADER -->
         <header id="header">
+            <div class="background-fix"></div>
             <div class="wrap">
                 <nav>
                     <div class="logo">
