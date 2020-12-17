@@ -56,7 +56,7 @@
         <div class="connexion_cont">
             <h1 class="title-form">Connexion</h1>
             
-            <form id="connexion" class="formulaire">
+            <form id="connexion" class="formulaire" novalidate>
                 <!-- EMAIL -->
                 <div class="champ email">
                     <label for="email2">Adresse Email</label>

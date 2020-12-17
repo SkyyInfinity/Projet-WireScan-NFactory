@@ -142,7 +142,7 @@ $( document ).ready(function() {
             success: function (response) {
                 console.log(response)
                 if (response['success'] == true) {
-                    window.location='dashboard.php'
+                    window.location='dashboard/index.php';
                 }  
                 else if (response['success'] == false){
                     $('#error_email_log').empty();
