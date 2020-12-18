@@ -34,11 +34,13 @@ $(document).ready(function () {
         showModal();
         return false
     });
-    $('#js_inscription').click(function (e) {
+    $('#js_inscription').click(function(e) {
+        e.preventDefault();
         showModal();
         return false
     });
-    $('#signinnow').click(function (e) {
+    $('#signinnow').click(function(e) {
+        e.preventDefault();
         showModal();
         return false
     });
