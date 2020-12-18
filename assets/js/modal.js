@@ -35,10 +35,12 @@ $( document ).ready(function() {
         return false
     });
     $('#js_inscription').click(function(e) {
+        e.preventDefault();
         showModal();
         return false
     });
     $('#signinnow').click(function(e) {
+        e.preventDefault();
         showModal();
         return false
     });

@@ -4,8 +4,9 @@ include('../../src/inc/pdo.php');
 $errors = array();
 $success = false;
 
-$json = trim(strip_tags($_POST['jsonfile']));
- 
+$json = array();
+$json = trim(strip_tags($_POST['trame']));
+// echo $_POST['trame'];
 
 
 if (!empty($json)) {
