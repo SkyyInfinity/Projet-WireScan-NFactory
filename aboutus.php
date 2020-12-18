@@ -2,13 +2,12 @@
 $title = 'Qui sommes-nous ?';
 ?>
 
-<?php 
+<?php
 include('src/inc/modal.php');
 include('./src/template/header.php'); ?>
 
   <!--  TITRE + PRESENTATION  -->
 
-  
 <div>
   <h1 class="titre3">Qui sommes-nous ?</h1>
 </div>
