@@ -58,7 +58,7 @@ function validPassword($errors, $data, $data2, $key, $key2, $min, $max) {
   $minuscule        = preg_match('@[a-z]@', $data);
   $chiffre          = preg_match('@[0-9]@', $data);
   // $caractereSpecial = preg_match('@[^\w]@', $data);
-  
+
   if(!empty($data)) {
     if(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,12}$/', $data)) {
       $errors[$key] = 'Le mot de passe doit contenirs ....';
@@ -127,9 +127,10 @@ function showJson($data) {
     die('Error in json encoding');
   }
 }
-// Fonction SQL 
+
+// Fonction SQL
 function SQL_INSERT($table_name,$columns,$values,$debug = false) {
-  $incre = 1; // Variable d'incrementation pour la creations de varaible dynamique 
+  $incre = 1; // Variable d'incrementation pour la creations de varaible dynamique
   //Completion automatique de la requete SQL
   $sql = "INSERT INTO $table_name ($columns) VALUES (";
   foreach ($values as $value) {
@@ -199,3 +200,56 @@ function isAdmin()
     header('Location: ../admin/403.php');
   }
 }
+
+//convertir les deux première unités de l'exadecimal de 8
+function convertToByte($hexa){
+  //
+  // c0
+  // c = Dizaine => 12
+  // pour la Dizaine
+  // On multiplie sa valeur(12) par 16 car en hexadecimal => base16
+  // $hexa[0] => c => 12
+  $totalDizaine = $hexa[0] * 16; // c + 12 => PAS POSSIBLE
+  $totalDizaine = $totalDizaine + $tableau_correspondance[$hexa[1]];
+  // 0 = Unité
+  $unite = 0;
+  $total = $totalDizaine + $unite;
+  $tableau_correspondance = [
+
+  '0' => '0',
+  '1' => '1',
+  '2' => '2',
+  '3' => '3',
+  '4' => '4',
+  '5' => '5',
+  '6' => '6',
+  '7' => '7',
+  '8' => '8',
+  '9' => '9',
+  'a' => '10',
+  'b' => '11',
+  'c' => '12',
+  'd' => '13',
+  'e' => '14',
+  'f' => '15',
+  'g' => '16',
+  'h' => '17',
+  'i' => '18',
+  'j' => '19',
+  'k' => '20',
+  'l' => '21',
+  'm' => '22',
+  'n' => '23',
+  'o' => '24',
+  'p' => '25',
+  'q' => '26',
+  'r' => '27',
+  's' => '28',
+  't' => '29',
+  'u' => '30',
+  'v' => '31',
+  'x' => '32',
+  'y' => '33',
+  'z' => '34',
+];
+};
