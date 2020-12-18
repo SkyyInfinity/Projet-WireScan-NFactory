@@ -30,8 +30,9 @@ body {
 }
 .wrap2 {
     width: 100%;
-    max-width: 1660px;
+    max-width: 100%;
     margin: 0 auto;
+    padding-left: 100px;
 }
 .btn-1 {
     border: 1px #1089ff solid;
@@ -102,6 +103,7 @@ body {
     margin: 30px 70px 15px 15px;
     padding: 15px;
     border: 1px #dedede solid;
+    border-radius: 15px;
 }
 #header .user-card .user-icon i {
     font-size: 5em;
@@ -140,3 +142,63 @@ body {
 #header nav ul li a:hover {
     color: #1089ff;
 }
+
+/* CONTENT */
+.items h3.graph-title {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+.item {
+    padding: 10px;
+    float: left;
+    width: 500px;
+    height: 150px;
+    border: 1px solid black;
+    background-color: #303030;
+    border-radius: 10px;
+    margin: 10px;
+}
+.itemw2 {
+    width: 300px;
+    height: 400px;
+}
+.itemw3 {
+    width: 300px;
+    height: 600px;
+}
+
+/* FOOTER */
+#footer {
+    position: fixed;
+    width: 100%;
+    top: 95%;
+    left: 0;
+    background-color: #f6f5f5;
+    border-bottom: 12px #1089ff solid;
+    padding: 10px 2%;
+    z-index: 999;
+}
+#footer .footer-content p {
+    text-align: center;
+    color: #202020;
+    cursor: default;
+}
+
+/* RESPONSIVE START */
+@media screen and (max-width: 500px) {
+    #header.openned {
+        width: 100%;
+    }
+    #footer .footer-content p {
+        font-size: .9em;
+    }
+}
+@media screen and (max-width: 375px) {
+    #header .user-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* CSS END */

@@ -21,13 +21,13 @@
             <div class="wrap">
                 <nav>
                     <div class="logo">
-                        <a href="./index.php"><img src="./assets/img/logox250.png" alt="logo du site"></a>
+                        <a href="./"><img src="./assets/img/logox250.png" alt="logo du site"></a>
                     </div>
                     <div class="hamburger">
                         <a id="js_hamburger" href="#"><i class="fas fa-bars"></i></a>
                     </div>
                     <ul id="js_nav-links">
-                        <li><a href="./index.php">Accueil</a></li>
+                        <li><a href="./">Accueil</a></li>
                         <li><a href="aboutUs.php">Qui sommes-nous ?</a></li>
                         <li><a id="js_connexion" class="btn-1" href="#login-modal">Connexion</a></li>
                         <li><a id="js_inscription" class="btn-2" href="#login-modal">Inscription</a></li>

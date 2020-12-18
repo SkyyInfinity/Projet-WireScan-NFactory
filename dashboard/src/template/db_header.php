@@ -19,7 +19,7 @@
             <div class="wrap">
                 <div class="first-bar">
                     <div class="logo">
-                        <a href="./index.php"><img src="assets/img/dashboardx130.png" alt="logo du site"></a>
+                        <a href="./"><img src="assets/img/dashboardx130.png" alt="logo du site"></a>
                     </div>
                     <div class="hamburger">
                         <a id="js_db-hamburger" href="#"><i class="fas fa-bars"></i></a>
@@ -37,12 +37,13 @@
                 </div>
                 <nav>
                     <ul id="js_nav-links">
-                        <li><a href="../index.php">Accueil</a></li>
-                        <li><a href="aboutus.php">Qui sommes-nous ?</a></li>
+                        <li><a href="../">Accueil</a></li>
+                        <li><a href="../aboutus.php">Qui sommes-nous ?</a></li>
                         <li><a href="contact.php">Nous contacter</a></li>
                     </ul>
                 </nav>
             </div>
+            <div class="overlay"></div>
         </header>
         
 
