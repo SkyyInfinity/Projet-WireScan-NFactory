@@ -127,6 +127,102 @@ function showJson($data) {
     die('Error in json encoding');
   }
 }
+function timeToMY($englishTime)
+{
+  return date('YYY-mm-dd H:i:s', strtotime($englishTime));
+}
+// Fonction breakJSONtoSQL
+function breakJSONToSQL($json)
+{
+    $i = 0;
+    foreach($json as $data) {
+        ${'data_'.$i} = $data;
+        $i += 1;
+    }
+    $x = $i;
+    $i = 0;
+    $sql_trames = '';
+    
+    foreach(${'data_'.$i} as $index) {
+        //array_search($index, ${'data_'.$i}); // affichage nom index   
+        // Creation variable flag (code)
+        if (array_search($index, ${'data_'.$i}) == 'flags') {
+          $value_trames[array_search($index, ${'data_'.$i})] = $index['code'];
+          $sql_trames .= array_search($index, ${'data_'.$i}) .',';
+
+        }
+
+        // Creation variables protocol (name,code,checksum,ports)
+        elseif (array_search($index, ${'data_'.$i}) == 'protocol') {
+          $value_trames2['name'] = $index['name'];
+          $value_trames2['flags'] = $index['flags']['code'];
+          if (!empty($index['checksum']['status'])) {
+            $value_trames2['checksum_status'] = $index['checksum']['status'];
+          } else {
+            $value_trames2['checksum_status'] = 'none';
+          }
+          if (!empty($index['checksum']['code'])) {
+            $value_trames2['checksum_code'] = $index['checksum']['code'];
+          } else {
+            $value_trames2['checksum_code'] = 'none';
+          }
+          $value_trames2['ports_from'] = $index['ports']['from'] ;
+          $value_trames2['ports_dest'] = $index['ports']['dest'] ;
+          if (!empty($index['type'])) {
+            $value_trames2['type'] = $index['type'];
+          } else {
+            $value_trames2['type'] = 'none';
+          }
+          if (!empty($index['code'])) {
+            $value_trames2['code'] = $index['code'];
+          } else {
+            $value_trames2['code'] = 'none';
+          }
+        }
+
+        // Creation variables ip (from,dest)
+        elseif (array_search($index, ${'data_'.$i}) == 'ip') {
+          // A FIXER (Rendre la recup des noms d'index automatique)
+            $value_trames2['ip_from']= $index['from'];
+            $value_trames2['ip_dest']= $index['dest'];
+        } 
+
+        // Conversion Date 
+        elseif (array_search($index, ${'data_'.$i}) == 'date') {
+          $dt = new DateTime("@$index");
+          $value_trames[array_search($index, ${'data_'.$i})] = $dt->format('Y-m-d H:i:s');
+          $sql_trames .= array_search($index, ${'data_'.$i}) .',';
+        }
+
+        // Creation des variables (date,version,headerLength,service,identification,ttl,headerChecksum)
+        else {
+            ${array_search($index, ${'data_'.$i})} = $index; // Variables dynamique(nom de l'index de la valeur clé) = $valeur de la clé
+            $value_trames[array_search($index, ${'data_'.$i})] = $index;
+            $sql_trames .= array_search($index, ${'data_'.$i}) .',';
+        }
+    }
+    // creation de l'id unique 
+    $unique_id = uniqid();
+    // Injection dans la table trames
+    $value_trames['unique_id'] = $unique_id;
+    $sql_trames .= 'unique_id';
+    // $sql_trames = substr($sql_trames, 0, -1);
+    echo($unique_id). '<br>';
+    echo($sql_trames);
+    debug($value_trames);
+    
+    SQL_INSERT('trames',$sql_trames,$value_trames);
+
+    // Injection dans la table trames_protocol_ip
+    $value_trames2['unique_id'] = $unique_id;
+    $sql_trames2 = 'name,flags_code,checksum_status,checksum_code,ports_from,ports_dest,code,type,ip_from,ip_dest,unique_id';
+    echo($unique_id). '<br>';
+    echo($sql_trames2);
+    debug($value_trames2);
+    SQL_INSERT('trames_protocol_ip',$sql_trames2,$value_trames2);
+    
+}
+
 // Fonction SQL 
 function SQL_INSERT($table_name,$columns,$values,$debug = false) {
   $incre = 1; // Variable d'incrementation pour la creations de varaible dynamique 
@@ -150,7 +246,9 @@ function SQL_INSERT($table_name,$columns,$values,$debug = false) {
     $incre += 1;
   }
   $query->execute();
+  // echo $sql;
 }
+
 function SQL_SELECT($table_name,$fetchall = false,$param = '',$value,$debug = false) {
   // Verification si where
   if (!empty($param)) {
@@ -184,7 +282,6 @@ function is_logged(): bool
     foreach ($_SESSION['user'] as $key => $value) {
       if (!isset($key) && !isset($value)) {
         return $isLogged = false;
-
       }
     }
   }

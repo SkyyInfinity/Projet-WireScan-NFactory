@@ -4,19 +4,11 @@ include('../../src/inc/pdo.php');
 $errors = array();
 $success = false;
 
-// $json = array();
-
-// $json = trim(strip_tags($_POST['trame']));
+// $json = trim(strip_tags($_POST['trame'])); // récuperation du contenu du fichier trame
 $json = file_get_contents('trame.txt');
-$json = json_decode($json, true);
+$json = json_decode($json, true); // JSON vers string
 // debug($json); 
-$i = 0;
-foreach($json as $data) {
-    ${'data_'.$i} = $data;
-    $i += 1;
-}
-echo $i;
-debug($data_2);
+
 
 if (!empty($json)) {
 
@@ -24,12 +16,18 @@ if (!empty($json)) {
     $errors['json'] = 'Veuillez ajouter un fichier .json';
 }
 
+
 if(count($errors) == 0 ) {
     $success = true;
+    //Ajouter a fonction.php une fois terminer !!!!
+
+    ///////////////////////////////////
+    breakJSONToSQL($json);
 }
 $data = array(
     'errors' => $errors,
     'success' => $success,
 );
+debug($data);
 // showJson($data);
 ?>
