@@ -19,11 +19,11 @@ $(document).ready(function () {
         }
         return verif;
     }
-    //Fuction Modal
+    //Function Modal
     function showModal() {
         $("#login-modal").modal({
             fadeDuration: 100,
-            clickClose: false,
+            clickClose: true,
         });
     }
     // START JQUERY

@@ -129,6 +129,7 @@ body {
 .modal {
     padding: 0 !important;
     border-radius: 0;
+    transition: .2s;
 }
 .modal form {
     padding: 0 40px 40px 40px;
