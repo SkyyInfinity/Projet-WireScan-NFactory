@@ -14,7 +14,8 @@
         <title>WireScan &bull; <?= $title; ?></title>
     </head>
     <body>
-    <?php include('src/inc/modal.php');?>
+        <?php include('src/inc/modal.php');?>
+        <div id="overlay"></div>
         <!-- HEADER -->
         <header id="header">
             <div class="background-fix"></div>

@@ -14,6 +14,7 @@
         <title>WireScan &bull; <?= $title; ?></title>
     </head>
     <body>
+        <div id="overlay"></div>
         <!-- HEADER -->
         <header id="header">
             <div class="wrap">
@@ -43,7 +44,6 @@
                     </ul>
                 </nav>
             </div>
-            <div class="overlay"></div>
         </header>
         
 
