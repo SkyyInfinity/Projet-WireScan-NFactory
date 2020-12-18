@@ -6,7 +6,7 @@ $title = 'Dashboard';
 
 include('src/template/db_header.php'); ?>
 
-<div class="wrap">
+<div class="wrap2">
     <form id="sendtrame" class="sendtrame">
         <input type="file" id="jsonfile" accept=".json" >
         <span class="error" id="error_json"></span>

@@ -14,22 +14,32 @@
         <title>WireScan &bull; <?= $title; ?></title>
     </head>
     <body>
-    <?php include('src/inc/modal.php');?>
         <!-- HEADER -->
         <header id="header">
             <div class="wrap">
-                <nav>
+                <div class="first-bar">
                     <div class="logo">
-                        <a href="./index.php"><img src="../assets/img/logox250.png" alt="logo du site"></a>
+                        <a href="./index.php"><img src="assets/img/dashboardx130.png" alt="logo du site"></a>
                     </div>
                     <div class="hamburger">
-                        <a id="js_hamburger" href="#"><i class="fas fa-bars"></i></a>
+                        <a id="js_db-hamburger" href="#"><i class="fas fa-bars"></i></a>
                     </div>
+                </div>
+                <div class="user-card">
+                    <div class="user-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="user-content">
+                        <h2>NOM</h2>
+                        <p>Informations</p>
+                        <a href="#" class="btn-1">Déconnexion <i class="fas fa-sign-out-alt"></i></a>
+                    </div>
+                </div>
+                <nav>
                     <ul id="js_nav-links">
-                        <li><a href="./index.php">Accueil</a></li>
+                        <li><a href="../index.php">Accueil</a></li>
                         <li><a href="aboutus.php">Qui sommes-nous ?</a></li>
-                        <li><a id="js_connexion" class="btn-1" href="#login-modal">Connexion</a></li>
-                        <li><a id="js_inscription" class="btn-2" href="#login-modal">Inscription</a></li>
+                        <li><a href="contact.php">Nous contacter</a></li>
                     </ul>
                 </nav>
             </div>
