@@ -154,6 +154,7 @@ function breakJSONToSQL($json)
 
         // Creation variables protocol (name,code,checksum,ports)
         elseif (array_search($index, ${'data_'.$i}) == 'protocol') {
+          // A FIXER (Rendre la recup des noms d'index automatique)
           $value_trames2['name'] = $index['name'];
           $value_trames2['flags'] = $index['flags']['code'];
           if (!empty($index['checksum']['status'])) {
@@ -183,8 +184,8 @@ function breakJSONToSQL($json)
         // Creation variables ip (from,dest)
         elseif (array_search($index, ${'data_'.$i}) == 'ip') {
           // A FIXER (Rendre la recup des noms d'index automatique)
-            $value_trames2['ip_from']= $index['from'];
-            $value_trames2['ip_dest']= $index['dest'];
+            $value_trames2['ip_from'] = $index['from'];
+            $value_trames2['ip_dest'] = $index['dest'];
         } 
 
         // Conversion Date 
@@ -206,19 +207,18 @@ function breakJSONToSQL($json)
     // Injection dans la table trames
     $value_trames['unique_id'] = $unique_id;
     $sql_trames .= 'unique_id';
-    // $sql_trames = substr($sql_trames, 0, -1);
-    echo($unique_id). '<br>';
-    echo($sql_trames);
-    debug($value_trames);
+    // echo($unique_id). '<br>';
+    // echo($sql_trames);
+    // debug($value_trames);
     
     SQL_INSERT('trames',$sql_trames,$value_trames);
 
     // Injection dans la table trames_protocol_ip
     $value_trames2['unique_id'] = $unique_id;
     $sql_trames2 = 'name,flags_code,checksum_status,checksum_code,ports_from,ports_dest,code,type,ip_from,ip_dest,unique_id';
-    echo($unique_id). '<br>';
-    echo($sql_trames2);
-    debug($value_trames2);
+    // echo($unique_id). '<br>';
+    // echo($sql_trames2);
+    // debug($value_trames2);
     SQL_INSERT('trames_protocol_ip',$sql_trames2,$value_trames2);
     
 }
