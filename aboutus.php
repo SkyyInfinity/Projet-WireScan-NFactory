@@ -8,6 +8,7 @@ include('./src/template/header.php'); ?>
 
   <!--  TITRE + PRESENTATION  -->
 
+  
 <div>
   <h1 class="titre3">Qui sommes-nous ?</h1>
 </div>
