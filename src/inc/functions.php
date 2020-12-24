@@ -134,6 +134,7 @@ function timeToMY($englishTime)
 // Fonction breakJSONtoSQL
 function breakJSONToSQL($json)
 {
+    debug($json);
     $i = 0;
     foreach($json as $data) {
         ${'data_'.$i} = $data;
@@ -142,7 +143,6 @@ function breakJSONToSQL($json)
     $x = $i;
     $i = 0;
     $sql_trames = '';
-    
     foreach(${'data_'.$i} as $index) {
         //array_search($index, ${'data_'.$i}); // affichage nom index   
         // Creation variable flag (code)
@@ -211,7 +211,7 @@ function breakJSONToSQL($json)
     // echo($sql_trames);
     // debug($value_trames);
     
-    SQL_INSERT('trames',$sql_trames,$value_trames);
+    // SQL_INSERT('trames',$sql_trames,$value_trames);
 
     // Injection dans la table trames_protocol_ip
     $value_trames2['unique_id'] = $unique_id;
@@ -219,7 +219,7 @@ function breakJSONToSQL($json)
     // echo($unique_id). '<br>';
     // echo($sql_trames2);
     // debug($value_trames2);
-    SQL_INSERT('trames_protocol_ip',$sql_trames2,$value_trames2);
+    // SQL_INSERT('trames_protocol_ip',$sql_trames2,$value_trames2);
     
 }
 
@@ -249,15 +249,18 @@ function SQL_INSERT($table_name,$columns,$values,$debug = false) {
   // echo $sql;
 }
 
-function SQL_SELECT($table_name,$fetchall = false,$param = '',$value,$debug = false) {
+function SQL_SELECT($table_name,$fetchall = false,$param = '',$value,$order_by = '',$debug = false) {
   // Verification si where
   if (!empty($param)) {
     $piece = explode(' ',$param);
     $name = $piece[1];
-    $sql = "SELECT * FROM $table_name ".$param;
+    $sql = "SELECT * FROM $table_name ".$param . ' :' .$name;
+    if (!empty($order_by)) {
+      $sql .=  ' '.$order_by;
+    }
     global $pdo;
     $query = $pdo->prepare($sql);
-    $query->bindValue(':'.$name,$value,PDO::PARAM_STR);
+    $query->bindValue (':'.$name,$value,PDO::PARAM_STR);
     $query->execute();
     if ($fetchall) {
       return $query->fetchall();

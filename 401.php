@@ -4,7 +4,6 @@ require('src/inc/pdo.php');
 
 $title = 'Oups, cette page n\'existe pas';
 
-include('src/inc/modal.php');
 include('src/template/header.php'); ?>
 
 <section class="section-errorCode">

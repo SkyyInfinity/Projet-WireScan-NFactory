@@ -29,7 +29,7 @@ $(document).ready(function () {
         e.preventDefault(); 
         $.ajax({
             type: 'POST',
-            url: 'ajax/trame.php',
+            url: 'ajax/addtrame.php',
             data: {
                 trame : trame
             },

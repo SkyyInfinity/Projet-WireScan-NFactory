@@ -17,6 +17,7 @@
         <script src="../dashboard/assets/js/db_navigation.js" type="text/javascript" charset="utf-8"></script>
         <script src="../dashboard/assets/js/masonry.js"></script>
         <script src="../dashboard/assets/js/charts.js"></script>
-        <script src="../dashboard/assets/js/trame.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../dashboard/assets/js/addtrame.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../dashboard/assets/js/loadtrame.js" type="text/javascript" charset="utf-8"></script>
     </body>
 </html>

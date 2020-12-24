@@ -79,126 +79,125 @@ $(document).ready(function () {
         $('#btn_connexion').removeClass('active_login');
         $('.connexion_cont').css('display', 'none');
         $('.inscription_cont').css('display', 'block');
-
-        //Gestion Formulaire
-        //Inscriptions
-        $('#inscription').on('submit', function (e) {
-            e.preventDefault();
-            let nom = $('#nom').val();
-            let prenom = $('#prenom').val();
-            let email = $('#email').val();
-            let password = $('#password').val();
-            let password2 = $('#password2').val();
-            let entreprise = $('#entreprise').val();
-            $.ajax({
-                type: 'POST',
-                url: 'ajax/verifEmail.php',
-                data: {
-                    email: email
-                },
-                dataType: 'json',
-                success: function (response) {
-                    if (response['success'] == true) {
-                        $.ajax({
-                            type: 'POST',
-                            url: 'ajax/signin.php',
-                            data: {
-                                nom: nom,
-                                prenom: prenom,
-                                email: email,
-                                password: password,
-                                password2: password2,
-                                entreprise: entreprise
-                            },
-                            dataType: 'json',
-                            success: function (response) {
-                                if (response['success'] == true) {
-                                    $('#inscription_cont').html('<div class="success"><p>Compte crée avec succés !</p><img src="assets/img/succes.png"></div>')
-                                }
-                                else if (response['success'] == false) {
-                                    $('#error_nom,#error_prenom,#error_email,#error_password,#error_password2,#error_entreprise').empty();
-                                    $('#error_nom').html(response['errors']['nom']);
-                                    $('#error_prenom').html(response['errors']['prenom']);
-                                    $('#error_email').html(response['errors']['email']);
-                                    $('#error_password').html(response['errors']['password']);
-                                    $('#error_password2').html(response['errors']['password2']);
-                                    $('#error_entreprise').html(response['errors']['entreprise']);
-                                }
-                            }, error: function (response) {
-
+    });
+    //Gestion Formulaire
+    //Inscriptions
+    $('#inscription').on('submit', function (e) {
+        e.preventDefault();
+        let nom = $('#nom').val();
+        let prenom = $('#prenom').val();
+        let email = $('#email').val();
+        let password = $('#password').val();
+        let password2 = $('#password2').val();
+        let entreprise = $('#entreprise').val();
+        $.ajax({
+            type: 'POST',
+            url: 'ajax/verifEmail.php',
+            data: {
+                email: email
+            },
+            dataType: 'json',
+            success: function (response) {
+                if (response['success'] == true) {
+                    $.ajax({
+                        type: 'POST',
+                        url: 'ajax/signin.php',
+                        data: {
+                            nom: nom,
+                            prenom: prenom,
+                            email: email,
+                            password: password,
+                            password2: password2,
+                            entreprise: entreprise
+                        },
+                        dataType: 'json',
+                        success: function (response) {
+                            if (response['success'] == true) {
+                                console.log(response)
+                                $('#inscription_cont').html('<div class="success"><p>Compte crée avec succés !</p><img src="assets/img/succes.png"></div>')
                             }
-                        })
-                    }
-                    else if (response['success'] == false) {
-                        $('#error_email').html(response['errors']['email']);
-                    }
+                            else if (response['success'] == false) {
+                                console.log(response)
+                                $('#error_nom,#error_prenom,#error_email,#error_password,#error_password2,#error_entreprise').empty();
+                                $('#error_nom').html(response['errors']['nom']);
+                                $('#error_prenom').html(response['errors']['prenom']);
+                                $('#error_email').html(response['errors']['email']);
+                                $('#error_password').html(response['errors']['password']);
+                                $('#error_password2').html(response['errors']['password2']);
+                                $('#error_entreprise').html(response['errors']['entreprise']);
+                            }
+                        }, error: function (response) {
+                        
+                        }
+                    })
                 }
-            })
-        });
-        // Connexion 
-        $('#connexion').on('submit', function (e) {
-            e.preventDefault();
-            let email = $('#email2').val();
-            let password = $('#password_log').val();
-            $.ajax({
-                type: 'POST',
-                url: 'ajax/login.php',
-                data: {
-                    email: email,
-                    password: password
-                },
-                dataType: 'json',
-                success: function (response) {
-                    console.log(response)
-                    if (response['success'] == true) {
-                        window.location = 'dashboard/index.php';
-                    }
-                    else if (response['success'] == false) {
-                        $('#error_email_log').empty();
-                        $('#error_password_log').empty();
-                        $('#error_email_log').html(response['errors']['email']);
-                        $('#error_password_log').html(response['errors']['password']);
-                    }
+                else if (response['success'] == false) {
+                    $('#error_email').html(response['errors']['email']);
                 }
-            })
-        });
-        // Detection Email
-        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-        $('#email').on('input', function () {
-
-            if (emailReg.test($('#email').val())) {
-                $('#email').html('Les mots de passe  ne sont pas identiquent');
             }
         })
-        // Detection et aide MDP
-        $('#password').on('input', function () {
-            checkPasswordStrength();
-            $('#info_mdp').hide();
-            $('#error_password').show();
-        });
-        $('#password').focusin(function () {
-            $('#error_password').hide();
-            var verif = checkPasswordStrength();
-            if (verif != true) {
-                $('#info_mdp').show();
+    });
+    // Connexion 
+    $('#connexion').on('submit', function (e) {
+        console.log('ok btn')
+        e.preventDefault();
+        let email = $('#email2').val();
+        let password = $('#password_log').val();
+        $.ajax({
+            type: 'POST',
+            url: 'ajax/login.php',
+            data: {
+                email: email,
+                password: password
+            },
+            dataType: 'json',
+            success: function (response) {
+                if (response['success'] == true) {
+                    window.location.replace('http://localhost/projet/Projet-Reseaux-NFactory/dashboard/index.php')
+                }
+                else if (response['success'] == false) {
+                    $('#error_email_log').empty();
+                    $('#error_password_log').empty();
+                    $('#error_email_log').html(response['errors']['email']);
+                    $('#error_password_log').html(response['errors']['password']);
+                }
             }
-        });
-        $('#password').focusout(function () {
-            $('#error_password').hide();
-            $('#info_mdp').hide();
-        });
-        $('#password2').on('input', function (e) {
-            $('#error_password2').show();
-            if ($('#password2').val() != $('#password').val()) {
-                $('#error_password2').css('color', 'red');
-                $('#error_password2').html('Les mots de passe  ne sont pas identiquent');
-            } else {
-                $('#error_password2').css('color', 'green');
-                $('#error_password2').html('Les mots de passe sont identiquent');
-            }
-
-        });
+        })
+    });
+    // Detection Email
+    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+    $('#email').on('input', function () {
+        if (emailReg.test($('#email').val())) {
+            $('#email').html('Les mots de passe  ne sont pas identiquent');
+        }
+    })
+    // Detection et aide MDP
+    $('#password').on('input', function () {
+        checkPasswordStrength();
+        $('#info_mdp').hide();
+        $('#error_password').show();
+    });
+    $('#password').focusin(function () {
+        $('#error_password').hide();
+        var verif = checkPasswordStrength();
+        if (verif != true) {
+            $('#info_mdp').show();
+        }
+    });
+    $('#password').focusout(function () {
+        $('#error_password').hide();
+        $('#info_mdp').hide();
+    });
+    $('#password2').on('input', function (e) {
+        $('#error_password2').show();
+        if ($('#password2').val() != $('#password').val()) {
+            $('#error_password2').css('color', 'red');
+            $('#error_password2').html('Les mots de passe  ne sont pas identiquent');
+        } else {
+            $('#error_password2').css('color', 'green');
+            $('#error_password2').html('Les mots de passe sont identiquent');
+        }
+    });
 
         // END JQUERY
     });
-});

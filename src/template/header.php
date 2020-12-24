@@ -29,8 +29,12 @@
                     <ul id="js_nav-links">
                         <li><a href="./">Accueil</a></li>
                         <li><a href="aboutUs.php">Qui sommes-nous ?</a></li>
+                        <?php if (!is_logged()) : ?>
                         <li><a id="js_connexion" class="btn-1" href="#login-modal">Connexion</a></li>
                         <li><a id="js_inscription" class="btn-2" href="#login-modal">Inscription</a></li>
+                        <?php else :?>
+                        <li><a class="btn-2" href="dashboard/index.php">Dashboard</a></li>    
+                        <?php endif;?>
                     </ul>
                 </nav>
             </div>

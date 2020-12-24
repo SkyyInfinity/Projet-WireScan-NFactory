@@ -1,10 +1,11 @@
 <?php
 require('src/inc/functions.php');
 require('src/inc/pdo.php');
-
+session_start();
 $title = 'Accueil';
-
-
+if (is_logged()) {
+    header('Location: dashboard/index.php');
+}
 include('src/template/header.php'); ?>
 
 <div class="flexslider flexslider-home">

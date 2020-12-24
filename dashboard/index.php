@@ -1,7 +1,10 @@
 <?php
-// require('src/inc/functions.php');
+require('../src/inc/functions.php');
 // require('src/inc/pdo.php');
-
+session_start();
+if (!is_logged()) {
+    header('Location: ../401.php');
+}
 $title = 'Dashboard';
 
 include('src/template/db_header.php'); ?>
