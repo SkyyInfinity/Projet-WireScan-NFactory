@@ -5,7 +5,7 @@ var myChart = new Chart(ctx, {
         labels: ['Reçus', 'Pertes',],
         datasets: [{
             label: '# of Votes',
-            data: [0, 27],
+            data: [45, 55],
             backgroundColor: [
                 'rgba(54, 162, 235, 0.2)',
                 'rgba(255, 99, 132, 0.2)'
@@ -26,3 +26,4 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+

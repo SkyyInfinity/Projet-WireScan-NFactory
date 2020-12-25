@@ -142,12 +142,21 @@ body {
 #header nav ul li a:hover {
     color: #1089ff;
 }
-
+.btn_addtrame {
+    border: 1px #1089ff solid;
+    background-color: #1089ff;
+    color: #f6f5f5 !important;
+    text-decoration: none;
+    padding: 10px 13px;
+    font-size: 1.3em;
+    transition: .2s;    
+}
 /* CONTENT */
 .items h3.graph-title {
     text-align: center;
     font-size: 1.2em;
     margin-bottom: 20px;
+    width: 100%;
 }
 .item {
     padding: 10px;
@@ -166,6 +175,42 @@ body {
 .itemw3 {
     width: 300px;
     height: 600px;
+}
+.itemwmax {
+    width: 900px;
+    height: 300px;
+}
+/* DATE ET NAVIGATION */
+.itemDate{
+    width: 97%;
+    height: 8%;
+    text-align: center;
+    display: flex;
+}
+.itemDate p {
+   width: 33.33333333%;
+   user-select: none; 
+}
+.db_left, .db_right {
+    width: 33.33333333%;
+    cursor: pointer;
+    user-select: none; 
+}
+
+.itemInfoPaquet {
+    width: 300px;
+    height: 400px;   
+}
+.itemIp {
+    width: 300px;
+    height: 400px;     
+}
+.notrames{
+    text-align: center;
+    padding-top: 23%;
+}
+.notrames p:not(:first-child) {
+    margin-bottom: 20px;
 }
 
 /* FOOTER */

@@ -352,3 +352,8 @@ function convertToByte($hexa){
   'z' => '34',
 ];
 };
+function ipfromHex($hex)
+{
+    $ip = hexdec($hex[0].$hex[1]) .'.'. hexdec($hex[2].$hex[3]) .'.'. hexdec($hex[4].$hex[5]) .'.'. hexdec($hex[6].$hex[7]);
+    return $ip;
+}
