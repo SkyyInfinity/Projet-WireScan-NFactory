@@ -52,7 +52,17 @@ body {
     border: 1px #0e69c2 solid;
     background-color: #0e69c2;
 }
-
+/* MODAL */
+.modal {
+    max-width: 40%;
+    background-color: #202020
+}
+.output_field,.user_id {
+    display: none;
+}
+.viaInput_container,.viaTA_container {
+    display: none;
+}
 /* HEADER */
 #header {
     padding: 10px 10px;

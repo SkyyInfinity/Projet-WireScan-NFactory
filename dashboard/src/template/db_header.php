@@ -13,7 +13,7 @@
         <title>WireScan &bull; <?= $title; ?></title>
     </head>
     <body>
-        <?php include('src/inc/modal.php') ?>
+        <?php include('src/inc/modal_db.php') ?>
         <!-- HEADER -->
         <header id="header">
             <div class="wrap">
