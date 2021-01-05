@@ -134,6 +134,23 @@ function timeToMY($englishTime)
 function notEmptyJSON($val,$array){
 
 }
+function find_parent($array, $needle, $parent = null) {
+  foreach ($array as $key => $value) {
+      if (is_array($value)) {
+          $pass = $parent;
+          if (is_string($key)) {
+              $pass = $key;
+          }
+          $found = find_parent($value, $needle, $pass);
+          if ($found !== false) {
+              return $found;
+          }
+      } else if ($key === 'id' && $value === $needle) {
+          return $parent;
+      }
+  }
+  return false;
+}
 // Fonction breakJSONtoSQL
 function breakJSONToSQL($json,$user_id)
 {
@@ -151,60 +168,107 @@ function breakJSONToSQL($json,$user_id)
     $value_trames['user_id'] = $user_id;
     $sql_trames = 'user_id,';
     $sql_trames2 = '';
-    // debug(${'data_'.$i});
-    foreach(${'data_'.$i} as $index) {
-      if (is_array($index)) {
-        $value_trames2[array_search($index, ${'data_'.$i})] = $index;
-        $sql_trames2 .= array_search($index, ${'data_'.$i}) .',';
+    foreach (${'data_'.$i} as $key => $value) {
+      if (is_array($value)) {
+        if ($key == 'flags') {
+          $value_trames[$key.'_code'] = $value['code'];
+          $sql_trames .= $key .'_code,';
+        } elseif ($key == 'protocol') {
+          $name = $key; 
+          foreach ($value as $key => $value_protocol) {
+            if (is_array($value_protocol)) { 
+              if ($key == 'flags') {
+                $value_trames[$name.'_'.$key.'_code'] = $value_protocol['code'];
+                $sql_trames .= $name.'_'.$key .'_code,';
+              } elseif ($key == 'checksum') {
+                $name_checksum = $key;
+                foreach ($value_protocol as $key => $value_checksum) {
+                  $value_trames[$key.'_'.$name_checksum] = $value_checksum;
+                  $sql_trames .= $key.'_'.$name_checksum.',';
+                }
+              } elseif ($key == 'ports') {
+                $name_ports = $key;
+                foreach ($value_protocol as $key => $value_port) {
+                  $value_trames[$key.'_'.$name_ports] = $value_port;
+                  $sql_trames .= $key.'_'.$name_ports.',';
+                } 
+              } 
+            } else {
+              if ($key == 'code') {
+                $value_trames[$name.'_code'] = $value['code'];
+                $sql_trames .= $name.'_code,';
+              } elseif ($key == 'version') {
+                echo $key;
+                $value_trames[$name.'_'.$key] = $value_protocol;
+                $sql_trames .= $name.'_'.$key.',';
+              } else {
+                $value_trames[$key] = $value_protocol;
+                $sql_trames .= $key.',';
+              }
+            }
+          }
+        } elseif ($key == 'ip') {
+          $name_ip = $key;
+          foreach ($value as $key => $value_ip) {
+            $value_trames[$key.'_'.$name_ip] = $value_ip;
+            $sql_trames .= $key.'_'.$name_ip.',';
+          }
+        }
       } else {
-        if (array_search($index, ${'data_'.$i}) == 'date') {
-          $dt = new DateTime("@$index");
-          $value_trames[array_search($index, ${'data_'.$i})] = $dt->format('Y-m-d H:i:s');
-          $sql_trames .= array_search($index, ${'data_'.$i}) .',';
+        if($key == 'date') {
+          $dt = new DateTime("@$value");
+          $value_trames[$key] = $dt->format('Y-m-d H:i:s');
+          $sql_trames .= $key.',';
         } else {
-          $value_trames[array_search($index, ${'data_'.$i})] = $index;
-          $sql_trames .= array_search($index, ${'data_'.$i}) .',';
+          $value_trames[$key] = $value;
+          $sql_trames .= $key .',';
         }
       }
     }
+    echo '-----------------------------------------------------------------------------';
     $i += 1;
-    $unique_id = uniqid();
-    $value_trames['unique_id'] = $unique_id;
-    $sql_trames .= 'unique_id';
-    echo($sql_trames);
+    $sql_trames= substr_replace($sql_trames,"",-1);
+    echo $sql_trames;
+    echo count($value_trames);
     debug($value_trames);
     SQL_INSERT('trames',$sql_trames,$value_trames);
-    // echo($sql_trames2);
-    // debug($value_trames2);
-  }    
-}
+    echo '-----------------------------------------------------------------------------';
+  }   
 
+}
 // Fonction SQL
 function SQL_INSERT($table_name,$columns,$values,$debug = false) {
-  $incre = 1; // Variable d'incrementation pour la creations de varaible dynamique
   //Completion automatique de la requete SQL
-  $sql = "INSERT INTO $table_name ($columns) VALUES (";
-  foreach ($values as $value) {
-    ${'val_'.$incre} = $value; //Creation d'une variable dynamique pour chaque elements dans l'array $value
-    if (substr($sql, -1) == '(') {
-      $sql .= ':val_'.$incre;
-    } else {
-      $sql .= ',:val_'.$incre;
+  if (is_array($values)) {
+    $incre = 1;
+    $sql = "INSERT INTO $table_name ($columns) VALUES (";
+    foreach ($values as $value) {
+      ${'val_'.$incre} = $value; //Creation d'une variable dynamique pour chaque elements dans l'array $value
+      if (substr($sql, -1) == '(') {
+        $sql .= ':val_'.$incre;
+      } else {
+        $sql .= ',:val_'.$incre;
+      }
+      $incre += 1;
     }
-    $incre += 1;
+  } else {
+    $sql = "INSERT INTO $table_name ($columns) VALUES (:val";
   }
   $sql .= ')';
   global $pdo;
   $query = $pdo->prepare($sql);
   $incre = 1;
-  foreach ($values as $value) {
-    $query->bindValue(':val_'.$incre,${'val_'.$incre},PDO::PARAM_STR);
-    $incre += 1;
+  if (is_array($values)) {
+    foreach ($values as $value) {
+      $query->bindValue(':val_'.$incre,${'val_'.$incre},PDO::PARAM_STR);
+      $incre += 1;
+    }
+  } else {
+    $query->bindValue(':val',$values,PDO::PARAM_STR);
   }
   $query->execute();
   // echo $sql;
 }
-
 function SQL_SELECT($table_name,$fetchall = false,$param = '',$value,$order_by = '',$debug = false) {
   // Verification si where
   if (!empty($param)) {
@@ -223,13 +287,30 @@ function SQL_SELECT($table_name,$fetchall = false,$param = '',$value,$order_by =
     } else {
       return $query->fetch();
     }
-  }else {
+  } else {
     $sql = "SELECT * FROM $table_name";
     global $pdo;
     $query = $pdo->prepare($sql);
     $query->execute();
     return $query->fetchall();
   }
+}
+// FONCTION SQL UPDATE
+// ATTENTION FONCTION NON DEBUGUE NE SURTOUT PAS INJECTER PLUSIEURS VALEUR
+function SQL_UPDATE($table_name,$updatevals,$param = '',$paramval) {
+  $sql = "UPDATE $table_name SET ";
+  foreach ($updatevals as $key => $updateval) {
+    $sql .= $key .' = :'.$key . ' , ' ;
+  }
+  $sql = substr_replace($sql," ",-2);
+  $sql .=  $param . ':param_val';
+  global $pdo;
+  $query = $pdo->prepare($sql);
+  foreach ($updatevals as $key => $updateval) {
+    $query->bindValue(':'.$key,$updateval,PDO::PARAM_INT);
+  }
+  $query->bindValue(':param_val',$paramval,PDO::PARAM_INT);
+  $query->execute();
 }
 
 function is_logged(): bool

@@ -1,3 +1,17 @@
+<!-- Modal Reset password -->
+<div class="modal" id="passwd-modal">
+    <div class="reset_cont" id="reset_cont">
+        <h1 class="title-form">Mot de passe oublié</h1>
+        <form id="mailresetform" class="formulaire" method="post" >
+            <div class="champ email">
+                <label for="mailreset">Email</label>
+                <input type="email" id="mailreset" name="mailreset">
+                <span class="error" id="error_email_reset"></span>
+            </div>
+            <input type="submit">
+        </form>
+    </div>
+</div>
 <!-- Modal Connexion/Deconnexion  -->
 <div class="modal" id="login-modal">
     <div class="login_select">
@@ -68,6 +82,7 @@
                     <label for="password_log">Mot de passe</label>
                     <input type="password" id="password_log" name="password">
                     <span class="error" id="error_password_log"></span>
+                    <a id="resetpasswd" href="#">Mot de passe oublié</a>
                 </div>
 
                 <input class="btn-2" type="submit" value="Connexion">

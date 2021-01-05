@@ -20,8 +20,9 @@
         <script src="../dashboard/assets/js/addtrame.js" type="text/javascript" charset="utf-8"></script>
         <!-- <script src="../dashboard/assets/js/loadtrame.js" type="text/javascript" charset="utf-8"></script> -->
         <script src="../dashboard/assets/js/charts.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../dashboard/assets/js/script_db.js" type="text/javascript" charset="utf-8"></script>
         <!-- <script src="../assets/js/flexslider.js" type="text/javascript" charset="utf-8"></script> -->
-        <script src="assets/js/modalAddTrame.js" type="text/javascript" charset="utf-8"></script>c 
+        <script src="assets/js/modalAddTrame.js" type="text/javascript" charset="utf-8"></script>
 
 
     </body>

@@ -1,0 +1,23 @@
+{
+    "require": {
+        "phpmailer/phpmailer": "^6.2"
+    },
+    "require-dev": {
+
+    },
+    "autoload": {
+      "psr-4": {
+        "modules\\": "modules/"
+      }
+    },
+    "config": {
+      "sort-packages": true,
+      "optimize-autoloader": true,
+      "platform": {
+        "php": "7.0"
+      }
+    },
+    "scripts": {
+
+    }
+  }

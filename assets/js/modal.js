@@ -26,9 +26,21 @@ $(document).ready(function () {
             clickClose: true,
         });
     }
+    function ModalResetpassword() {
+        $("#passwd-modal").modal({
+            fadeDuration: 100,
+            clickClose: true,
+            closeExisting: false
+        });  
+    }
     // START JQUERY
 
     // MODAL
+    $('#resetpasswd').click(function (e) { 
+        e.preventDefault();
+        ModalResetpassword();
+        return false
+    });
     $('#js_connexion').click(function (e) {
         e.preventDefault();
         showModal();
@@ -164,6 +176,32 @@ $(document).ready(function () {
             }
         })
     });
+    // Reset password
+    $('#mailresetform').on('submit', function (e) {
+        e.preventDefault();
+        let emailreset = $('#mailreset').val();
+        $.ajax({
+            type: 'POST',
+            url: 'ajax/mailreset.php',
+            data: {
+                email: emailreset,
+            },
+            dataType: 'json',
+            success: function (response) {
+                if (response['success'] == true) {
+                    console.log(response)
+                    console.log('success')
+                    $('#reset_cont').html('<div class="success"><p>Un lien de a etait envoyé a votre adresse email !</div>')
+                }
+                else if (response['success'] == false) {
+                    console.log(response)
+                    console.log('error')
+                    $('#error_email_reset').empty();
+                    $('#error_email_reset').html(response['errors']['email']);
+                }
+            }
+        })
+    });
     // Detection Email
     var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
     $('#email').on('input', function () {
@@ -198,6 +236,4 @@ $(document).ready(function () {
             $('#error_password2').html('Les mots de passe sont identiquent');
         }
     });
-
-        // END JQUERY
-    });
+});
