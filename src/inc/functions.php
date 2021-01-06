@@ -154,7 +154,6 @@ function find_parent($array, $needle, $parent = null) {
 // Fonction breakJSONtoSQL
 function breakJSONToSQL($json,$user_id)
 {
-  // debug($json);
   $i = 1;
   foreach($json as $data) {
       ${'data_'.$i} = $data;
@@ -237,31 +236,28 @@ function breakJSONToSQL($json,$user_id)
 
 }
 // Fonction SQL
+// SQL INSERT
 function SQL_INSERT($table_name,$columns,$values,$debug = false) {
   //Completion automatique de la requete SQL
   if (is_array($values)) {
-    $incre = 1;
     $sql = "INSERT INTO $table_name ($columns) VALUES (";
-    foreach ($values as $value) {
-      ${'val_'.$incre} = $value; //Creation d'une variable dynamique pour chaque elements dans l'array $value
+    foreach ($values as $key => $value) {
       if (substr($sql, -1) == '(') {
-        $sql .= ':val_'.$incre;
+        $sql .= ':'.$key;
       } else {
-        $sql .= ',:val_'.$incre;
+        $sql .= ',:'.$key;
       }
-      $incre += 1;
     }
   } else {
     $sql = "INSERT INTO $table_name ($columns) VALUES (:val";
   }
   $sql .= ')';
   global $pdo;
+  echo $sql;
   $query = $pdo->prepare($sql);
-  $incre = 1;
   if (is_array($values)) {
-    foreach ($values as $value) {
-      $query->bindValue(':val_'.$incre,${'val_'.$incre},PDO::PARAM_STR);
-      $incre += 1;
+    foreach ($values as $key => $value) {
+      $query->bindValue(':'.$key,$value,PDO::PARAM_STR);
     }
   } else {
     $query->bindValue(':val',$values,PDO::PARAM_STR);
@@ -269,6 +265,7 @@ function SQL_INSERT($table_name,$columns,$values,$debug = false) {
   $query->execute();
   // echo $sql;
 }
+// SQL SELECT
 function SQL_SELECT($table_name,$fetchall = false,$param = '',$value,$order_by = '',$debug = false) {
   // Verification si where
   if (!empty($param)) {

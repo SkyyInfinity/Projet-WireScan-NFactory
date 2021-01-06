@@ -34,9 +34,7 @@ if(count($errors) == 0 ) {
    $mail->Host = "smtp.gmail.com";
    $mail->Port = 465; // or 587
    $mail->IsHTML(true);
-   $mail->Username = "noreply.wirescan@gmail.com";
-   $mail->Password = "Nfactory76000@";
-   $mail->SetFrom("noreply.wirescan@gmail.com");
+
    $mail->Subject = "Reinitialisation de votre mot de passe";
    $mail->Body = "Bonjour" . $sql['prenom'] . "Veuillez cliqué sur le lien suivant afin de modifier votre mot de passe<br> http://localhost/projet/Projet-Reseaux-NFactory/passreset.php?token=".$token;
    $mail->AddAddress($useremail);

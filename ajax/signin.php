@@ -23,7 +23,7 @@ if(count($errors) == 0 ) {
     $passwordhash = password_hash($password, PASSWORD_DEFAULT);
     $token = openssl_random_pseudo_bytes(16);
     $token = bin2hex($token);
-    $values = array($nom,$prenom,$email,$passwordhash,$token,date('Y-m-d H:i:s'),'1',$_SERVER['REMOTE_ADDR'],$entreprise);
+    $values = array('nom' => $nom, 'prenom' => $prenom,'email' =>$email, 'password'=>$passwordhash, 'token'=>$token, 'created_at'=>date('Y-m-d H:i:s'),'status' =>'1','ip'=>$_SERVER['REMOTE_ADDR'],'entreprise'=>$entreprise);
     $dateNow = date('Y-m-d H:i:s');
     SQL_INSERT('users','nom,prenom,email,password,token,created_at,status,ip,entreprise',$values);
 }
