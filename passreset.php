@@ -38,6 +38,7 @@ echo '<p style="display:none" id="userid">'.$sql['id'].'</p>';
         <div class="champ mdp2">
             <label for="password2">Confirmation</label>
             <input type="password" name="password2" id="password2">
+            div>ul>l
             <span class="error" id="error_password2"></span>
         </div>
         <input type="submit">

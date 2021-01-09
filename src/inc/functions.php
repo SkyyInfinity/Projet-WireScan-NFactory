@@ -197,7 +197,6 @@ function breakJSONToSQL($json,$user_id)
                 $value_trames[$name.'_code'] = $value['code'];
                 $sql_trames .= $name.'_code,';
               } elseif ($key == 'version') {
-                echo $key;
                 $value_trames[$name.'_'.$key] = $value_protocol;
                 $sql_trames .= $name.'_'.$key.',';
               } else {
@@ -224,14 +223,9 @@ function breakJSONToSQL($json,$user_id)
         }
       }
     }
-    echo '-----------------------------------------------------------------------------';
     $i += 1;
     $sql_trames= substr_replace($sql_trames,"",-1);
-    echo $sql_trames;
-    echo count($value_trames);
-    debug($value_trames);
     SQL_INSERT('trames',$sql_trames,$value_trames);
-    echo '-----------------------------------------------------------------------------';
   }   
 
 }
@@ -253,7 +247,6 @@ function SQL_INSERT($table_name,$columns,$values,$debug = false) {
   }
   $sql .= ')';
   global $pdo;
-  echo $sql;
   $query = $pdo->prepare($sql);
   if (is_array($values)) {
     foreach ($values as $key => $value) {
@@ -263,7 +256,6 @@ function SQL_INSERT($table_name,$columns,$values,$debug = false) {
     $query->bindValue(':val',$values,PDO::PARAM_STR);
   }
   $query->execute();
-  // echo $sql;
 }
 // SQL SELECT
 function SQL_SELECT($table_name,$fetchall = false,$param = '',$value,$order_by = '',$debug = false) {

@@ -1,40 +1,53 @@
 $(document).ready(function () {
+    function changeTrame(trames,indexTrame) {
+        $('#date').text(trames[indexTrame]['date']);
+        $('#from_ip').text('De : ' + trames[indexTrame]['from_ip'] + ' Port : ' +trames[indexTrame]['from_ports']);
+        $('#dest_ip').text('Vers : ' + trames[indexTrame]['dest_ip']+ ' Port : ' +trames[indexTrame]['dest_ports']);
+    }
+    var indexTrame = 0;
+    var trames;
+    var tramesCount;
     $.ajax({
         type: 'GET',
         url: 'ajax/loadtrame.php',
         dataType: 'json',
-        success: function (response) {
-            var ctx = document.getElementById('myChart').getContext('2d');
-            var myChart = new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Reçus', 'Pertes',],
-                    datasets: [{
-                        label: '# of Votes',
-                        data: [45, 55],
-                        backgroundColor: [
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 99, 132, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 99, 132, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    legend: {
-                        display: true,
-                        labels: {
-                            fontColor: '#cccccc'
-                        }
-                    }
-                }
-            });
+        beforeSend: function(){
+            $("#loading").show()
         },
-        error: function(response) {
+        success: function (response) {
+            if (response['success']) {
+                $('#notrames').hide();
+                $('#trames').show();
+                trames = response['trames']
+                tramesCount = trames.length - 1
+                changeTrame(trames,indexTrame)
+            } else {
+                $('#trames').hide();
+                $('#notrames').show();
+            }
+        },
+        complete: function(data){
+            console.log('complete');
+            $("#loading").hide();
+        },
+    });
 
+    $('#db_left').on('click', function(e) {
+        e.preventDefault();
+        if (indexTrame == 0) {
+            indexTrame = 0;
+        } else {
+            indexTrame -= 1;
         }
+        changeTrame(trames,indexTrame)
+    });
+    $('#db_right').on('click', function(e) {
+        e.preventDefault();
+        if (indexTrame == tramesCount) {
+            indexTrame = tramesCount;
+        } else {
+            indexTrame += 1;
+        }
+        changeTrame(trames,indexTrame)
     });
 });

@@ -10,7 +10,6 @@ $useremail = trim(strip_tags($_POST['email']));
 // $useremail = "florian.galvani@gmail.com";
 $sql = SQL_SELECT('users',false,'WHERE email =',$useremail);
 
-
 if (empty($useremail)) {
    $errors['email'] = 'Veuillez renseigné ce champs';
 } else {
