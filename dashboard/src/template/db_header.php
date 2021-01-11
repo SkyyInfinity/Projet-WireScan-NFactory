@@ -14,6 +14,7 @@
     </head>
     <body>
         <?php include('src/inc/modal_db.php') ?>
+        <div id="overlay"></div>
         <!-- HEADER -->
         <header id="header">
             <div class="wrap">
@@ -44,7 +45,6 @@
                     </ul>
                 </nav>
             </div>
-            <div class="overlay"></div>
         </header>
         
 
