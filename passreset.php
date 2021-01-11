@@ -5,18 +5,18 @@ include('src/inc/pdo.php');
 $title = 'Changement de mot de passe';
 $usertoken = trim(strip_tags($_GET['token']));
 
-if (empty($usertoken)) {
-    header('Location: 401.php');
-}
+// if (empty($usertoken)) {
+//     header('Location: 401.php');
+// }
 $sql = SQL_SELECT('users',false,'WHERE token =',$usertoken);
 
-if (empty($sql)) {
-    header('Location: 401.php');
-}
+// if (empty($sql)) {
+//     header('Location: 401.php');
+// }
 
-if ($sql['status_passwrd'] == false) {
-    header('Location: 401.php');
-}
+// if ($sql['status_passwrd'] == false) {
+//     header('Location: 401.php');
+// }
 // EDIT SQL STATUS_PASSWRD APRES MODIF MDP
 // $userid = $sql['id'];
 
