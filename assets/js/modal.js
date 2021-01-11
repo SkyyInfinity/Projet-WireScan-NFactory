@@ -189,13 +189,9 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (response) {
                 if (response['success'] == true) {
-                    console.log(response)
-                    console.log('success')
                     $('#reset_cont').html('<div class="success"><p>Un lien de a etait envoyé a votre adresse email !</div>')
                 }
                 else if (response['success'] == false) {
-                    console.log(response)
-                    console.log('error')
                     $('#error_email_reset').empty();
                     $('#error_email_reset').html(response['errors']['email']);
                 }

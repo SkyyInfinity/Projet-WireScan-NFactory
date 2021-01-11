@@ -1,9 +1,17 @@
 <p id="output_field" class="output_field"></p>
 <div class="modal" id="modal_addTrame">
-    <div class="login_select">
-        <a href="#" class="btn_addcont" id="btn_viaLien">Lien</a>
-        <a href="#" class="btn_addcont" id="btn_viaInput">Fichier</a>
-        <a href="#" class="btn_addcont" id="btn_viaTA">Brut</a>
+    <div class="upload_select">
+        <ul>
+            <li>        
+                <a href="#" class="btn_addcont" id="btn_viaLien">Lien</a>
+            </li>
+            <li>        
+                <a href="#" class="btn_addcont" id="btn_viaTA">Brut</a>
+            </li>
+            <li>        
+                <a href="#" class="btn_addcont" id="btn_viaInput">Fichier</a>
+            </li>
+        </ul>
     </div>
 
     <div class="viaLien_container">

@@ -28,6 +28,11 @@ include('src/template/db_header.php');
                     <p id="from_ip"></p>
                     <p id="dest_ip"></p>
                 </div>
+                <div class="item itemflags">
+                    <h3 class="graph-title">Flags</h3>
+                    <p id="from_ip"></p>
+                    <p id="dest_ip"></p>
+                </div>
                 <div class="item itemw2">
                     <h3 class="graph-title">TTL (Time To Live)</h3>
                     <canvas id="myChart" width="400" height="400"></canvas>
