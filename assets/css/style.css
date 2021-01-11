@@ -105,11 +105,11 @@ body {
 #header .hamburger a {
     text-decoration: none;
     padding: 5px;
-    color: black;
+    color: #1089ff;
     transition: .2s;
 }
 #header .hamburger a:hover {
-    color: #1089ff;
+    opacity: .8;
 }
 #header .hamburger i {
     font-size: 1.7em;
