@@ -138,6 +138,9 @@ body {
     font-size: 1.3em;
     line-height: 1.2em;
 }
+#header .user-card .user-content h2 span {
+    display: block;
+}
 #header .user-card .user-content p {
     font-size: .9em;
     line-height: 1.2em;

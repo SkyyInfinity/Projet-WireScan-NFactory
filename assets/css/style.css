@@ -43,6 +43,15 @@ body {
     border: 1px #0e69c2 solid;
     background-color: #0e69c2;
 }
+.btn-3 {
+    border: 1px white solid !important;
+    background-color: white;
+    color: #1089ff !important;
+}
+.btn-3:hover {
+    background-color: #dedede;
+    border: 1px #dedede solid !important;
+}
 
 /* HEADER */
 #header {
@@ -458,6 +467,94 @@ body {
     margin-top: 100px;
 }
 
+/* Nous contacter */
+.section-contact {
+    padding: 50px 20%;
+    background-color: #1089ff;
+    background-image: url('../img/ou.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+.section-contact h1.title-form {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 2.7em;
+    font-weight: bold;
+}
+.section-contact form {
+    font-family: 'Poppins', sans-serif;
+}
+.section-contact form label {
+    display: block;
+    margin: 15px 0 5px 0;
+    font-size: 1.4em;
+}
+.section-contact form input[type=text], .section-contact form input[type=email], .section-contact form input[type=password], .section-contact form textarea {
+    width: 100%;
+    padding: 7px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    outline: none;
+    border: 1px #cccccc solid;
+    transition: .2s;
+    border-radius: none;
+    background-color: #1089ff;
+    color: white;
+}
+.section-contact form input[type=text]:focus, .section-contact form input[type=email]:focus, .section-contact form input[type=password]:focus, .section-contact form textarea:focus {
+    border: 1px white solid;
+    border-top: 1px #1089ff solid;
+}
+.section-contact form textarea {
+    font-family: 'Poppins', sans-serif;
+    resize: vertical;
+    height: 200px;
+}
+.section-contact form input[type=submit] {
+    width: 100%;
+    padding: 10px 0;
+    margin: 25px 0;
+    outline: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: .2s;
+}
+.section-contact .rs {
+    padding: 25px 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.section-contact .rs a {
+    margin: 35px 0;
+    text-decoration: none;
+    color: white;
+    font-size: 2em;
+    font-weight: 200;
+    transition: .2s;
+}
+.section-contact .rs a:hover {
+    color: #202020;
+}
+.section-contact .rs i {
+    font-size: 2em;
+}
+.section-logocontact {
+    padding: 50px 20%;
+    background-color: white;
+    position: relative;
+    text-align: center;
+}
+.section-logocontact img {
+    width: auto;
+}
+
 /* FOOTER */
 #footer {
     color: white;
@@ -525,35 +622,6 @@ body {
 }
 
 /* RESPONSIVE START */
-@media screen and (max-width: 800px) {
-    .fondateur-box {
-    flex-direction: column;
-    justify-content: center;
-    }
-    #footer .crafted-box p {
-        font-size: .8em;
-    }
-    #footer .copyright-box p {
-        font-size: .8em;
-    }
-}
-@media screen and (max-width: 900px) {
-    .section-errorCode {
-        padding: 50px 2%;
-    }
-    .section-errorCode p.para-errorCode {
-        font-size: 1.4em;
-    }
-    .section-errorCode img {
-        width: 300px;
-    }
-    .section-errorCode h2.title-errorCode {
-        font-size: 9em;
-    }
-    .section-errorCode a.backToHome {
-        font-size: 1em;
-    }
-}
 @media screen and (max-width: 1280px) {
     #header {
         z-index: 15;
@@ -614,8 +682,26 @@ body {
     .section-informations .info-box {
         margin: 25px 0;
     }
+    .section-contact {
+        background-image: none;
+    }
 }
 @media screen and (max-width: 900px) {
+    .section-errorCode {
+        padding: 50px 2%;
+    }
+    .section-errorCode p.para-errorCode {
+        font-size: 1.4em;
+    }
+    .section-errorCode img {
+        width: 300px;
+    }
+    .section-errorCode h2.title-errorCode {
+        font-size: 9em;
+    }
+    .section-errorCode a.backToHome {
+        font-size: 1em;
+    }
     #footer .nav-box nav ul {
         flex-direction: column;
         text-align: center;
@@ -626,6 +712,29 @@ body {
     .blocker {
         width: 250% !important;
         left: -75% !important;
+    }
+}
+@media screen and (max-width: 800px) {
+    .fondateur-box {
+    flex-direction: column;
+    justify-content: center;
+    }
+    #footer .crafted-box p {
+        font-size: .8em;
+    }
+    #footer .copyright-box p {
+        font-size: .8em;
+    }
+    .section-contact {
+        flex-direction: column;
+    }
+    .section-contact form {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .section-logocontact img {
+        width: 90%;
     }
 }
 @media screen and (max-width: 700px) {
@@ -640,6 +749,12 @@ body {
     .blocker {
         width: 300% !important;
         left: -100% !important;
+    }
+    .section-contact .rs {
+        flex-direction: column;
+    }
+    .section-contact .rs a {
+        margin: 15px 0;
     }
 }
 @media screen and (max-width: 400px) {

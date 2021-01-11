@@ -31,7 +31,7 @@
                         <i class="fas fa-user-circle"></i>
                     </div>
                     <div class="user-content">
-                        <h2><?php echo $_SESSION['user']['nom'].' '.$_SESSION['user']['prenom']?></h2>
+                        <h2><?php echo $_SESSION['user']['nom'].' <span>'.$_SESSION['user']['prenom'] . '</span>' ?></h2>
                         <p><?php echo $_SESSION['user']['entreprise']?></p>
                         <a href="logout.php" class="btn-1">Déconnexion <i class="fas fa-sign-out-alt"></i></a>
                     </div>

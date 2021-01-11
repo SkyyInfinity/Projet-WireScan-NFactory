@@ -1,6 +1,6 @@
 $(document).ready(function () {
     function changeTrame(trames,indexTrame) {
-        $('.itemInfoPaquet').append('<p>'+trames[indexTrame]['date']+'</p>')
+        
         console.log(trames);
         $('#date').text(trames[indexTrame]['date']);
         $('#from_ip').text('De : ' + trames[indexTrame]['from_ip'] + ' Port : ' +trames[indexTrame]['from_ports']);

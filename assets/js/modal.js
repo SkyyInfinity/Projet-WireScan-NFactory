@@ -23,13 +23,13 @@ $(document).ready(function () {
     function showModal() {
         $("#login-modal").modal({
             fadeDuration: 100,
-            clickClose: true,
+            clickClose: false,
         });
     }
     function ModalResetpassword() {
         $("#passwd-modal").modal({
             fadeDuration: 100,
-            clickClose: true,
+            clickClose: false,
             closeExisting: false
         });  
     }
@@ -165,7 +165,7 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (response) {
                 if (response['success'] == true) {
-                    window.location.replace('http://localhost/projet/Projet-Reseaux-NFactory/dashboard/index.php')
+                    window.location.replace('http://localhost/projet/2-reseaux/site/dashboard/')
                 }
                 else if (response['success'] == false) {
                     $('#error_email_log').empty();

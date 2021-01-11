@@ -68,7 +68,6 @@ $(document).ready(function () {
                     url: 'ajax/addtrame.php',
                     data: {
                         trame : response,
-                        user_id : user_id,
                         from : "jsonurl"
                     },
                     dataType: 'json',
@@ -111,7 +110,6 @@ $(document).ready(function () {
             url: 'ajax/addtrame.php',
             data: {
                 trame : trame,
-                user_id : user_id,
                 from : 'jsonTA'
             },
             dataType: 'json',
