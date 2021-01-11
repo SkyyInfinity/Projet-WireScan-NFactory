@@ -9,9 +9,6 @@ $password = trim(strip_tags($_POST['password']));
 $password2 = trim(strip_tags($_POST['password2']));
 $usertoken = trim(strip_tags($_POST['usertoken']));
 
-// $password = "Ytreza11@@"; 
-// $password2 = "Ytreza11@@";
-// $usertoken = "fd2230ba795af905034903950bb0fbac";
 
 $errors = validPassword($errors, $password, $password2,'password','password2',8,32);
 

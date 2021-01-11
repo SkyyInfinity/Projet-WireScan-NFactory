@@ -7,7 +7,8 @@ $nom = trim(strip_tags($_POST['nom']));
 $prenom = trim(strip_tags($_POST['prenom']));
 $email = trim(strip_tags($_POST['email']));
 // Validation Email deja utilisé ?
-$password = trim(strip_tags($_POST['password'])); 
+$password = trim(strip_tags($_POST['password']));
+ 
 $password2 = trim(strip_tags($_POST['password2']));
 $entreprise = trim(strip_tags($_POST['entreprise']));
 

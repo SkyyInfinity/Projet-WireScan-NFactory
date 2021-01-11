@@ -13,8 +13,17 @@ include('src/template/db_header.php');
             <img src="assets/img/preview.gif" alt="loading">
         </div>
         <div class="trames" id="trames">
-            <div class="items">
-                <div class="item itemDate">
+            <div class="menu_select">
+                <div class="menu">
+                    <a href=""></a>
+                </div>
+            </div>
+            <div class="items_all">
+            
+            </div>
+
+            <div class="items_solo">
+                <!-- <div class="item itemDate">
                     <a id="db_left" class="db_left"><</a>
                     <p id="date"></p>
                     <a id="db_right" class="db_right">></a>
@@ -36,7 +45,11 @@ include('src/template/db_header.php');
                 <div class="item itemw2">
                     <h3 class="graph-title">TTL (Time To Live)</h3>
                     <canvas id="myChart" width="400" height="400"></canvas>
-                </div>
+                </div> -->
+            </div>
+
+            <div class="item_text">
+
             </div>
         </div>
         <div class="notrames" id="notrames">

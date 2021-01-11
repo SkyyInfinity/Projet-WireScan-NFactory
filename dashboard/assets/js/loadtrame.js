@@ -2,9 +2,11 @@ $(document).ready(function () {
     function changeTrame(trames,indexTrame) {
         
         console.log(trames);
-        $('#date').text(trames[indexTrame]['date']);
+        $('#date').text(trames[indexTrame]['version']);
+        $('.items').append('<div class="item itemDate">')
         $('#from_ip').text('De : ' + trames[indexTrame]['from_ip'] + ' Port : ' +trames[indexTrame]['from_ports']);
         $('#dest_ip').text('Vers : ' + trames[indexTrame]['dest_ip']+ ' Port : ' +trames[indexTrame]['dest_ports']);
+        $
     }
     var indexTrame = 0;
     var trames;
@@ -29,7 +31,6 @@ $(document).ready(function () {
             }
         },
         complete: function(data){
-            console.log('complete');
             $("#loading").hide();
         },
     });
