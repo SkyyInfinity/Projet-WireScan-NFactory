@@ -1,15 +1,3 @@
-// function read(trame) {
-//     // var file = fileInput.files.item(0);
-//     var selectedFile = $('#jsonfile')[0].files[0];
-//     var reader = new FileReader();
-  
-//     reader.onload = function() {
-//       var trame = reader.result;
-//       console.log(trame);
-//     }
-  
-//     reader.readAsText(selectedFile);
-// }
 function readFile(file, onLoadCallback){
     var reader = new FileReader();
     reader.onload = onLoadCallback;
@@ -51,8 +39,6 @@ $(document).ready(function () {
                 }    
             },
             error: function(response) {
-                console.log('error');
-                console.log(response)
             }
         })  
     });
@@ -68,7 +54,6 @@ $(document).ready(function () {
                     url: 'ajax/addtrame.php',
                     data: {
                         trame : response,
-                        user_id : user_id,
                         from : "jsonurl"
                     },
                     dataType: 'json',
@@ -91,33 +76,25 @@ $(document).ready(function () {
                         }    
                     },
                     error: function(response) {
-                        console.log('error');
-                        console.log(response)
                     }
                 })
             },
             error: function(response) {
-                console.log('error');
-                console.log(response)
             }
         })  
     });
     $('#sendtrame_TA').on('submit', function (e){
         e.preventDefault(); 
         var trame = $('#jsonTA').val();
-        console.log(trame)
         $.ajax({
             type: 'POST',
             url: 'ajax/addtrame.php',
             data: {
                 trame : trame,
-                user_id : user_id,
                 from : 'jsonTA'
             },
             dataType: 'json',
             success: function (response) {
-                console.log('success')
-                console.log(response)
                 if (response['success'] == true) {
                     $('#ok_json').empty();
                     $('#ok_json').css('color','green');
@@ -134,8 +111,6 @@ $(document).ready(function () {
                 }    
             },
             error: function(response) {
-                console.log('error');
-                console.log(response)
             }
         })  
     });
