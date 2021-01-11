@@ -9,53 +9,46 @@ $title = 'Dashboard';
 include('src/template/db_header.php');
 ?>
     <div class="wrap2">
-        <div class="loading" id="loading">
-            <img src="assets/img/preview.gif" alt="loading">
+        <div class="select">
+            <a href="">Global</a>
+            <a href="">Unique</a>
         </div>
-        <div class="trames" id="trames">
-            <div class="menu_select">
-                <div class="menu">
-                    <a href=""></a>
-                </div>
-            </div>
-            <div class="items_all">
-            
-            </div>
 
-            <div class="items_solo">
-                <!-- <div class="item itemDate">
-                    <a id="db_left" class="db_left"><</a>
-                    <p id="date"></p>
-                    <a id="db_right" class="db_right">></a>
-                </div>
-                <div class="item itemInfoPaquet">
-                    <h3 class="graph-title">Info paquet</h3>
+        <div class="global">
 
-                </div>
-                <div class="item itemIp">
-                    <h3 class="graph-title">Info Expediteur/Destinataire</h3>
-                    <p id="from_ip"></p>
-                    <p id="dest_ip"></p>
-                </div>
-                <div class="item itemflags">
-                    <h3 class="graph-title">Flags</h3>
-                    <p id="from_ip"></p>
-                    <p id="dest_ip"></p>
-                </div>
-                <div class="item itemw2">
-                    <h3 class="graph-title">TTL (Time To Live)</h3>
-                    <canvas id="myChart" width="400" height="400"></canvas>
-                </div> -->
+            <div class=" select select_global">
+                <a href="">Graph</a>
+                <a href="">Text</a>
+                <a href="">Global</a>
             </div>
 
-            <div class="item_text">
+            <div class="graph">
+
+            </div>
+
+            <div class="text">
+
+            </div>
+
+        </div>
+
+        <div class="unique">
+        <div class=" select select_unique">
+            <a href="">Global</a>
+            <a href="">Unique</a>
+            <a href="">Global</a>
 
             </div>
         </div>
+
+
+
+        
         <div class="notrames" id="notrames">
             <p> Vous n'avez pas de trames pour le moment </p>
             <p> Veuillez en ajouter une en utilisant le bouton ci-dessous </p>
             <a href="#" class="btn_addtrame" id="btn_addtrame_no">Ajouter une trame<a>
         </div>
+        
     </div>
 <?php include('src/template/db_footer.php'); ?>
