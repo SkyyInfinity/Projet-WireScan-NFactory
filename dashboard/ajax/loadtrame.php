@@ -29,7 +29,7 @@ if (!empty($trames)) {
     }
     $info['ttl_sum'] = $ttl_sum;
     $info['ttl_count'] = $ttl_count;
-    $info['nbrTrames'] = count($trames) ;
+    $info['nbrTrames'] = count($trames);
 }
 
 $data = array(
