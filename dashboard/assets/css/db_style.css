@@ -70,7 +70,8 @@ body {
 /* MODAL */
 .modal {
     max-width: 40%;
-    background-color: #202020
+    background-color: white;
+    color: #202020;
 }
 .output_field,.user_id {
     display: none;
@@ -251,6 +252,143 @@ body {
 }
 .notrames p:not(:first-child) {
     margin-bottom: 20px;
+}
+/* MODAL  */
+.modal {
+    padding: 0 !important;
+    border-radius: 0;
+    transition: .2s;
+}
+.modal form {
+    padding: 0 40px 40px 40px;
+}
+.modal .upload_select {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #f6f5f5;
+    border-radius: 0 0 50px 50px;
+    background-size: 50px;
+}
+.modal a.close-modal {
+    background-image: url('../img/times-solid.svg') !important;
+    background-position-y: 7px !important;
+    background-color:  #202020;
+    border-radius: 50%;
+    transition: .2s;
+}
+.modal a.close-modal:hover {
+    background-color:  #1089ff;
+}
+.modal a.btn_addcont {
+    padding: 10px 13px;
+    text-decoration: none;
+    color: #1089ff;
+    border: 1px #1089ff solid;
+    background-color: #f6f5f5;
+    transition: .2s;
+}
+.modal a.btn_addcont:hover {
+    color: white;
+    border: 1px #1089ff solid;
+    background-color:#1089ff;
+}
+.modal a.active_login {
+    border: 1px #1089ff solid;
+    background-color: #1089ff;
+    color: white;
+    transition: .2s;
+    cursor: not-allowed;
+}
+.modal a.active_login:hover {
+    border: 1px #0e69c2 solid;
+    background-color: #0e69c2;
+}
+.modal h1.title-form {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 2.7em;
+    font-weight: bold;
+}
+.modal form label {
+    display: block;
+    margin: 15px 0 5px 0;
+    font-size: 1.4em;
+}
+.modal form input[type=text], .modal form input[type=email], .modal form input[type=password], .modal textarea {
+    width: 100%;
+    padding: 7px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    outline: none;
+    border: 1px #dedede solid;
+    transition: .2s;
+    border-radius: none;
+}
+.modal textarea {
+    resize: none;
+}
+.modal label.jsonfile {
+    padding: 7px;
+    border: 1px #dedede solid;
+    transition: .2s;
+    cursor: pointer;
+}
+.modal label.jsonfile:hover {
+    color: #1089ff;
+    border: 1px #1089ff solid;
+}
+.modal input[type=file] {
+    display: none;
+}
+.modal form input[type=text]:focus, .modal form input[type=email]:focus, .modal form input[type=password]:focus, .modal textarea:focus {
+    border: 1px #1089ff solid;
+    border-top: 1px white solid;
+}
+#inscription {
+    position: relative;
+}
+.info_mdp {
+    display: none;
+    background-color: #f6f5f5;
+    padding: 5px;
+    border: 1px solid grey;
+    text-align: center;
+    border-top: none;
+    width: 100%;
+    font-size: 0.8em;
+}
+
+.modal form input[type=submit] {
+    width: 100%;
+    padding: 10px 0;
+    margin: 25px 0;
+    outline: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: .2s;
+}
+.modal .error {
+    color: crimson;
+    margin-left: 15px;
+    margin-bottom: 100px;
+    font-style: italic;
+}
+.success {
+    text-align: center; 
+    padding: 50px 0; 
+}
+.success p {
+    font-size: 2em;
+    color: #08b708;
+}
+.success img {
+    margin-top: 50px;
+    width: 25%;
+}
+#error_password {
+    margin-top: 10px;
 }
 
 /* FOOTER */

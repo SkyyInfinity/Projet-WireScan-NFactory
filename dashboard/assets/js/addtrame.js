@@ -24,9 +24,9 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (response) {
                 if (response['success'] == true) {
-                    $('#ok_json').empty();
-                    $('#ok_json').css('color','green');
-                    $('#ok_json').html('Trame enregistrer !');
+                    $('#ok_json_file').empty();
+                    $('#ok_json_file').css('color','green');
+                    $('#ok_json_file').html('Trame enregistrer !');
                     setTimeout(
                         function() 
                         {
@@ -34,8 +34,8 @@ $(document).ready(function () {
                         }, 2000);
                 }  
                 else if (response['success'] == false){
-                    $('#error_json').empty();
-                    $('#error_json').html(response['errors']['json']);
+                    $('#error_json_file').empty();
+                    $('#error_json_file').html(response['errors']['json']);
                 }    
             },
             error: function(response) {
@@ -58,11 +58,12 @@ $(document).ready(function () {
                     },
                     dataType: 'json',
                     success: function (response) {
+                        console.log(response);
                         if (response['success'] == true) {
-                            $('#error_json').empty();
-                            $('#ok_json').empty();
-                            $('#ok_json').css('color','green');
-                            $('#ok_json').html('Trame enregistrer !');
+                            $('#error_json_url').empty();
+                            $('#ok_json_url').empty();
+                            $('#ok_json_url').css('color','green');
+                            $('#ok_json_url').html('Trame enregistrer !');
                             setTimeout(
                                 function() 
                                 {
@@ -71,11 +72,12 @@ $(document).ready(function () {
                             
                         }  
                         else if (response['success'] == false){
-                            $('#error_json').empty();
-                            $('#error_json').html(response['errors']['json']);
+                            $('#error_json_url').empty();
+                            $('#error_json_url').html(response['errors']['json']);
                         }    
                     },
                     error: function(response) {
+                        console.log(response);
                     }
                 })
             },
@@ -96,9 +98,9 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (response) {
                 if (response['success'] == true) {
-                    $('#ok_json').empty();
-                    $('#ok_json').css('color','green');
-                    $('#ok_json').html('Trame enregistrer !');
+                    $('#ok_json_TA').empty();
+                    $('#ok_json_TA').css('color','green');
+                    $('#ok_json_TA').html('Trame enregistrer !');
                     setTimeout(
                         function() 
                         {
