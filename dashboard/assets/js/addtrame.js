@@ -12,7 +12,7 @@ $(document).ready(function () {
     });
     $('#sendtrame_input').on('submit', function (e){
         var trame = $('#output_field').text();
-        e.preventDefault(); 
+        e.preventDefault();
         $.ajax({
             type: 'POST',
             url: 'ajax/addtrame.php',
@@ -28,11 +28,11 @@ $(document).ready(function () {
                     $('#ok_json_file').css('color','green');
                     $('#ok_json_file').html('Trame enregistrer !');
                     setTimeout(
-                        function() 
+                        function()
                         {
                             window.location.replace('index.php')
                         }, 2000);
-                }  
+                }
                 else if (response['success'] == false){
                     $('#error_json_file').empty();
                     $('#error_json_file').html(response['errors']['json']);
@@ -40,10 +40,10 @@ $(document).ready(function () {
             },
             error: function(response) {
             }
-        })  
+        })
     });
     $('#sendtrame_lien').on('submit', function (e){
-        e.preventDefault(); 
+        e.preventDefault();
         var url = $('#jsonurl').val();
         $.ajax({
             type: 'GET',
@@ -54,6 +54,7 @@ $(document).ready(function () {
                     url: 'ajax/addtrame.php',
                     data: {
                         trame : response,
+
                         from : "jsonurl"
                     },
                     dataType: 'json',
@@ -65,12 +66,12 @@ $(document).ready(function () {
                             $('#ok_json_url').css('color','green');
                             $('#ok_json_url').html('Trame enregistrer !');
                             setTimeout(
-                                function() 
+                                function()
                                 {
                                     window.location.replace('index.php')
                                 }, 2000);
-                            
-                        }  
+
+                        }
                         else if (response['success'] == false){
                             $('#error_json_url').empty();
                             $('#error_json_url').html(response['errors']['json']);
@@ -83,16 +84,17 @@ $(document).ready(function () {
             },
             error: function(response) {
             }
-        })  
+        })
     });
     $('#sendtrame_TA').on('submit', function (e){
-        e.preventDefault(); 
+        e.preventDefault();
         var trame = $('#jsonTA').val();
         $.ajax({
             type: 'POST',
             url: 'ajax/addtrame.php',
             data: {
                 trame : trame,
+                
                 from : 'jsonTA'
             },
             dataType: 'json',
@@ -102,18 +104,18 @@ $(document).ready(function () {
                     $('#ok_json_TA').css('color','green');
                     $('#ok_json_TA').html('Trame enregistrer !');
                     setTimeout(
-                        function() 
+                        function()
                         {
                             window.location.replace('index.php')
                         }, 2000);
-                }  
+                }
                 else if (response['success'] == false){
                     $('#error_json_TA').empty();
                     $('#error_json_TA').html(response['errors']['json']);
-                }    
+                }
             },
             error: function(response) {
             }
-        })  
+        })
     });
 });

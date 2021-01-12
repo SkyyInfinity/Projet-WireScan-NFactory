@@ -22,13 +22,13 @@ if(count($errors) == 0 ) {
    $success = true;
    $token = $sql['token'];
    require '../vendor/autoload.php';
-   $mail = new PHPMailer(); 
-   $mail->IsSMTP(); 
-   $mail->SMTPDebug = 1; 
-   $mail->SMTPAuth = true; 
-   $mail->SMTPSecure = 'ssl'; 
+   $mail = new PHPMailer();
+   $mail->IsSMTP();
+   $mail->SMTPDebug = 1;
+   $mail->SMTPAuth = true;
+   $mail->SMTPSecure = 'ssl';
    $mail->Host = "smtp.gmail.com";
-   $mail->Port = 465; 
+   $mail->Port = 465;
    $mail->IsHTML(true);
    // ID GOOGLE ACCOUNT
    $mail->Username = "noreply.wirescan";
@@ -54,6 +54,14 @@ showJson($data);
       SQL_UPDATE('users',$updatevals,$param = 'WHERE id = ',$userid);
    }
 }
+<<<<<<< HEAD
+$data = array(
+   'errors' => $errors,
+   'success' => $success,
+);
+showJson($data);
+=======
 
 
 
+>>>>>>> 5769a2c315b5b9c10581e3be66a83ac94b66e0ff
