@@ -1,14 +1,45 @@
 $(document).ready(function () {
     function changeTrame(trames,indexTrame) {
-        
-        $('#date').text(trames[indexTrame]['version']);
-        $('.items').append('<div class="item itemDate">')
+            var ctx = document.getElementById('myChart').getContext('2d');
+            if(myChart) {
+                myChart.destroy();
+            }
+            var myChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Reçus', 'Pertes',],
+                    datasets: [{
+                        label: '# of Votes',
+                        data: [trames[indexTrame]['ttl_pass%'], trames[indexTrame]['ttl_lost%']],
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    legend: {
+                        display: true,
+                        labels: {
+                            fontColor: '#cccccc'
+                        }
+                    }
+                }
+            });
+        $('#date').text(trames[indexTrame]['date']);
+        // $('.items').append('<div class="item itemDate">')
         $('#from_ip').text('De : ' + trames[indexTrame]['from_ip'] + ' Port : ' +trames[indexTrame]['from_ports']);
         $('#dest_ip').text('Vers : ' + trames[indexTrame]['dest_ip']+ ' Port : ' +trames[indexTrame]['dest_ports']);
 
     }
     var indexTrame = 0;
     var trames;
+    var info;
     var tramesCount;
     $.ajax({
         type: 'GET',
@@ -23,6 +54,7 @@ $(document).ready(function () {
                 $('#notrames').hide();
                 $('#trames').show();
                 trames = response['trames']
+                info = response['info']
                 tramesCount = trames.length - 1
                 changeTrame(trames,indexTrame)
             } else {

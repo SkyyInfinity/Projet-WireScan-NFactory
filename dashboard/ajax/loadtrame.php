@@ -18,17 +18,17 @@ if (!empty($trames)) {
                $trames[$key][$keyconv] = ipfromHex($conv);
             }
             if ($keyconv == 'ttl') {
-                if (!isset($trames[$key][$keyconv.'_sum'])) {
-                    $trames[$key][$keyconv.'_sum'] = 0;
-                }
                 $trames[$key][$keyconv.'_lost'] = 128 - $conv;
+                $trames[$key][$keyconv.'_pass%'] = abs(($conv / 128) * 100 );
+                $trames[$key][$keyconv.'_lost%'] = abs((($conv / 128) * 100 ) - 100);
                 $ttl_sum += $conv;
-                $ttl_count += 128;
             }
         }
     }
     $info['ttl_sum'] = $ttl_sum;
-    $info['ttl_count'] = $ttl_count;
+    $info['ttl_count'] = (128*count($trames));
+    $info['ttl_pass_%'] = (($ttl_sum / $info['ttl_count'])*100);
+    $info['ttl_lost_%'] = abs((($ttl_sum / $info['ttl_count'])*100) - 100);
     $info['nbrTrames'] = count($trames);
 }
 
