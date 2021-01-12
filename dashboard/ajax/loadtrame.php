@@ -11,6 +11,7 @@ $trames = SQL_SELECT('trames',true,'WHERE user_id =',$_SESSION['user']['id'],'OR
 if (!empty($trames)) {
     $success = true;
     $ttl_sum = 0;
+    $ttl_count = 0;
     foreach ($trames as $key => $trame) {
         foreach ($trame as $keyconv => $conv) {
             if ($keyconv == 'from_ip' or $keyconv == 'dest_ip') {
@@ -26,7 +27,9 @@ if (!empty($trames)) {
             }
         }
     }
-    $info['ttl_sum'] = $ttl_sum;   
+    $info['ttl_sum'] = $ttl_sum;
+    $info['ttl_count'] = $ttl_count;
+    $info['nbrTrames'] = count($trames) ;
 }
 
 $data = array(

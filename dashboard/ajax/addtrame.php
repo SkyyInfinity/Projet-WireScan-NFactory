@@ -16,7 +16,6 @@ $from = trim(strip_tags($_POST['from']));
 
 if ($from == "jsonurl") {
     if (!empty($json)) {
-        debug
     } else {
         $errors['json'] = 'Veuillez renseigner le champ';
     }
