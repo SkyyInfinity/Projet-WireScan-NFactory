@@ -474,7 +474,7 @@ body {
     background-image: url('../img/ou.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 50%;
     position: relative;
     color: white;
     display: flex;

@@ -49,7 +49,7 @@ include('src/template/header.php'); ?>
     <div class="parrs">
         <h1 class="title-form">Par réseaux sociaux</h1>
         <div class="rs">
-            <a href="https://linkedin.com" target="_blank" class="linkedin">Linkedin | <i class="fab fa-linkedin-in"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="linkedin">LinkedIn | <i class="fab fa-linkedin-in"></i></a>
             <a href="https://facebook.com" target="_blank" class="facebook">Facebook | <i class="fab fa-facebook"></i></a>
             <a href="https://twitter.com" target="_blank" class="twitter">Twitter | <i class="fab fa-twitter"></i></a>
             <a href="https://instagram.com" target="_blank" class="instagram">Instagram | <i class="fab fa-instagram"></i></a>
