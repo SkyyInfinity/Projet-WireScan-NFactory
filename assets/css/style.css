@@ -167,6 +167,14 @@ body {
     background-position: center;
     background-size: 50px;
 }
+.modal .reset_select {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #f6f5f5;
+    border-radius: 0 0 50px 50px;
+    background-size: 50px;
+}
 .modal a.close-modal {
     background-image: url('../img/times-solid.svg') !important;
     background-position-y: 7px !important;
@@ -190,6 +198,19 @@ body {
     border: 1px #1089ff solid;
     background-color:#1089ff;
 }
+.modal a.btn_cancel {
+    padding: 10px 13px;
+    text-decoration: none;
+    color: #1089ff;
+    border: 1px #1089ff solid;
+    background-color: #f6f5f5;
+    transition: .2s;
+}
+.modal a.btn_cancel:hover {
+    color: white;
+    border: 1px #1089ff solid;
+    background-color:#1089ff;
+}
 .modal a.active_login {
     border: 1px #1089ff solid;
     background-color: #1089ff;
@@ -206,6 +227,10 @@ body {
     margin: 30px 0;
     font-size: 2.7em;
     font-weight: bold;
+}
+.modal h1.title-reset {
+    margin: 0 0;
+    
 }
 .modal form label {
     display: block;
@@ -271,6 +296,32 @@ body {
 #error_password {
     margin-top: 10px;
 }
+.modal a#resetpasswd {
+    text-decoration: none;
+    color: #1089ff;
+}
+.modal a#resetpasswd:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    color: #1089ff;
+}
+.modal p.info-reset {
+    text-align: center;
+    font-style: italic;
+    line-height: 1.2em;
+    margin-bottom: 15px;
+}
+.modal p.info-reset::before {
+    content: 'Info';
+    font-size: 1.5em;
+    color: #1089ff;
+    font-weight: bold;
+    margin-right: 5px;
+    font-style: normal;
+    opacity: .6;
+
+}
+
 /* passreset */
 .blue {
   background-color: #1089ff
@@ -281,8 +332,7 @@ body {
   margin: 0 auto;
 }
 #reset_cont {
-  padding-top: 150px;
-  padding-bottom: 200px;
+    padding: 60px 0;
 }
 .title-form {
   padding-bottom: 40px;
@@ -576,6 +626,9 @@ body {
 .section-logocontact img {
     width: auto;
 }
+.section-contact .error {
+    color: orange;
+}
 
 /* FOOTER */
 #footer {
@@ -641,6 +694,54 @@ body {
     text-align: center;
     color: #dedede;
     cursor: default;
+}
+/* MENTIONS LEGALES */
+.fond {
+  background-color: #1089ff;
+}
+.wrap5 {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: white;
+      padding-left: 20px;
+      padding-right: 20px;
+  }
+.Tittle {
+  font-weight: bold;
+  font-size: 1.6em;
+  padding-top: 80px;
+  padding-bottom: 5px;
+}
+.wrap5 p {
+  padding-top: 15px;
+  margin-top: 6px;
+  opacity: 99%;
+  text-align: left;
+  line-height: 1.5em;
+}
+.wrap5 li {
+  padding-top: 15px;
+  margin-top: 6px;
+  text-align: left;
+  line-height: 1.1em;
+}
+.wrap5 b {
+  font-weight: bolder;
+}
+.wrap5 h3 {
+  font-weight: bolder;
+  padding-top: 20px;
+}
+.parak {
+  padding-bottom: 30px;
+}
+.Tittle2 {
+  font-weight: bold;
+  font-size: 3em;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  text-align: center;
 }
 
 /* RESPONSIVE START */

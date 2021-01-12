@@ -14,19 +14,19 @@ include('src/template/header.php'); ?>
         <form id="contact" novalidate>
             <!-- NOM -->
             <div class="champ nom">
-                <label for="nom">Nom</label>
+                <label for="nom2">Nom</label>
                 <input type="text" id="nom2" name="nom2">
                 <span class="error" id="error_nom2"></span>
             </div>
             <!-- PRENOM -->
             <div class="champ prenom">
-                <label for="prenom">Prénom</label>
+                <label for="prenom2">Prénom</label>
                 <input type="text" id="prenom2" name="prenom2">
                 <span class="error" id="error_prenom2"></span>
             </div>
             <!-- EMAIL -->
             <div class="champ email">
-                <label for="email">Adresse Email</label>
+                <label for="email3">Adresse Email</label>
                 <input type="email" id="email3" name="email3">
                 <span class="error" id="error_email3"></span>
             </div>

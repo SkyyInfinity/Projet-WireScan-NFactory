@@ -1,14 +1,19 @@
 <!-- Modal Reset password -->
 <div class="modal" id="passwd-modal">
+    <div class="reset_select">
+        <a href="#" rel="modal:close" class="btn_cancel" id="btn_cancel">Retour</a>
+    </div>
     <div class="reset_cont" id="reset_cont">
-        <h1 class="title-form">Mot de passe oublié</h1>
+        <h1 class="title-form title-reset">Mot de passe oublié</h1>
+        <p class="info-reset">Veuillez saisir votre adresse email. <br>
+        Nous allons vous envoyer un courrier de réinitialisation.</p>
         <form id="mailresetform" class="formulaire" method="post" >
             <div class="champ email">
                 <label for="mailreset">Email</label>
                 <input type="email" id="mailreset" name="mailreset">
                 <span class="error" id="error_email_reset"></span>
             </div>
-            <input type="submit">
+            <input class="btn-2" type="submit" value="Envoyer">
         </form>
     </div>
 </div>

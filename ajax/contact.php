@@ -30,6 +30,6 @@ if (count($errors) == 0) {
 $data = array(
     'errors' => $errors,
     'success' => $success
-);     
+);
 showJson($data);
 ?>
