@@ -13,31 +13,34 @@ include('src/template/db_header.php');
             <img src="assets/img/preview.gif" alt="loading">
         </div>
         <div class="trames" id="trames">
-            <div class="items">
-                <div class="item itemDate">
-                    <a id="db_left" class="db_left"><</a>
-                    <p id="date"></p>
-                    <a id="db_right" class="db_right">></a>
-                </div>
-                <div class="item itemInfoPaquet">
-                    <h3 class="graph-title">Info paquet</h3>
-
-                </div>
-                <div class="item itemIp">
-                    <h3 class="graph-title">Info Expediteur/Destinataire</h3>
-                    <p id="from_ip"></p>
-                    <p id="dest_ip"></p>
-                </div>
-                <div class="item itemflags">
-                    <h3 class="graph-title">Flags</h3>
-                    <p id="from_ip"></p>
-                    <p id="dest_ip"></p>
-                </div>
-                <div class="item itemw2">
-                    <h3 class="graph-title">TTL (Time To Live)</h3>
-                    <canvas id="myChart" width="400" height="400"></canvas>
-                </div>
+          <div class="select select_all">
+            <div class="select btn_switch">
+              <a href="#">Global</a>
+              <a href="#">Unique</a>
             </div>
+            <div class="items select_global">
+              <div class="item">
+                <p>Graph :</p>
+                <canvas id="myChart"></canvas>
+              </div>
+              <div class="item">
+                <p>text :</p>
+                <canvas id="myChart2"></canvas>
+              </div>
+              <div class="item">
+                <p>flags :</p>
+                <canvas id="myChart3"></canvas>
+              </div>
+            </div>
+            <div class="items">
+              <div class="select select_trame">
+                <a href="#">changer de trames</a>
+              </div>
+              <div class="item">tiyhjdtproityjpdom</div>
+              <div class="item">lkdjhmowdjdwhguijd</div>
+              <div class="item">wkfghnwdkghmwkdgh</div>
+            </div>
+          </div>
         </div>
         <div class="notrames" id="notrames">
             <p> Vous n'avez pas de trames pour le moment </p>
