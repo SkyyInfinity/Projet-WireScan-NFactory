@@ -12,7 +12,7 @@ $(document).ready(function () {
     });
     $('#sendtrame_input').on('submit', function (e){
         var trame = $('#output_field').text();
-        e.preventDefault(); 
+        e.preventDefault();
         $.ajax({
             type: 'POST',
             url: 'ajax/addtrame.php',
@@ -24,26 +24,26 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (response) {
                 if (response['success'] == true) {
-                    $('#ok_json').empty();
-                    $('#ok_json').css('color','green');
-                    $('#ok_json').html('Trame enregistrer !');
+                    $('#ok_json_file').empty();
+                    $('#ok_json_file').css('color','green');
+                    $('#ok_json_file').html('Trame enregistrer !');
                     setTimeout(
-                        function() 
+                        function()
                         {
                             window.location.replace('index.php')
                         }, 2000);
-                }  
+                }
                 else if (response['success'] == false){
-                    $('#error_json').empty();
-                    $('#error_json').html(response['errors']['json']);
+                    $('#error_json_file').empty();
+                    $('#error_json_file').html(response['errors']['json']);
                 }    
             },
             error: function(response) {
             }
-        })  
+        })
     });
     $('#sendtrame_lien').on('submit', function (e){
-        e.preventDefault(); 
+        e.preventDefault();
         var url = $('#jsonurl').val();
         $.ajax({
             type: 'GET',
@@ -54,64 +54,68 @@ $(document).ready(function () {
                     url: 'ajax/addtrame.php',
                     data: {
                         trame : response,
+
                         from : "jsonurl"
                     },
                     dataType: 'json',
                     success: function (response) {
+                        console.log(response);
                         if (response['success'] == true) {
-                            $('#error_json').empty();
-                            $('#ok_json').empty();
-                            $('#ok_json').css('color','green');
-                            $('#ok_json').html('Trame enregistrer !');
+                            $('#error_json_url').empty();
+                            $('#ok_json_url').empty();
+                            $('#ok_json_url').css('color','green');
+                            $('#ok_json_url').html('Trame enregistrer !');
                             setTimeout(
-                                function() 
+                                function()
                                 {
                                     window.location.replace('index.php')
                                 }, 2000);
-                            
-                        }  
+
+                        }
                         else if (response['success'] == false){
-                            $('#error_json').empty();
-                            $('#error_json').html(response['errors']['json']);
+                            $('#error_json_url').empty();
+                            $('#error_json_url').html(response['errors']['json']);
                         }    
                     },
                     error: function(response) {
+                        console.log(response);
                     }
                 })
             },
             error: function(response) {
             }
-        })  
+        })
     });
     $('#sendtrame_TA').on('submit', function (e){
-        e.preventDefault(); 
+        e.preventDefault();
         var trame = $('#jsonTA').val();
         $.ajax({
             type: 'POST',
             url: 'ajax/addtrame.php',
             data: {
                 trame : trame,
+                
                 from : 'jsonTA'
             },
             dataType: 'json',
             success: function (response) {
                 if (response['success'] == true) {
-                    $('#ok_json').empty();
-                    $('#ok_json').css('color','green');
-                    $('#ok_json').html('Trame enregistrer !');
+                    $('#ok_json_TA').empty();
+                    $('#ok_json_TA').css('color','green');
+                    $('#ok_json_TA').html('Trame enregistrer !');
                     setTimeout(
-                        function() 
+                        function()
                         {
                             window.location.replace('index.php')
                         }, 2000);
-                }  
+                }
                 else if (response['success'] == false){
                     $('#error_json_TA').empty();
                     $('#error_json_TA').html(response['errors']['json']);
-                }    
+                }
             },
             error: function(response) {
             }
-        })  
+        })
     });
 });
