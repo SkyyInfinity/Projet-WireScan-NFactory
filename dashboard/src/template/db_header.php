@@ -14,6 +14,7 @@
     </head>
     <body>
         <?php include('src/inc/modal_db.php') ?>
+        <div id="overlay"></div>
         <!-- HEADER -->
         <header id="header">
             <div class="wrap">
@@ -30,7 +31,7 @@
                         <i class="fas fa-user-circle"></i>
                     </div>
                     <div class="user-content">
-                        <h2><?php echo $_SESSION['user']['nom'].' '.$_SESSION['user']['prenom']?></h2>
+                        <h2><?php echo $_SESSION['user']['nom'].' <span>'.$_SESSION['user']['prenom'] . '</span>' ?></h2>
                         <p><?php echo $_SESSION['user']['entreprise']?></p>
                         <a href="logout.php" class="btn-1">Déconnexion <i class="fas fa-sign-out-alt"></i></a>
                     </div>
@@ -44,7 +45,6 @@
                     </ul>
                 </nav>
             </div>
-            <div class="overlay"></div>
         </header>
         
 

@@ -12,7 +12,7 @@
                             <li><a href="./index.php">Accueil</a></li>
                             <li><a href="./aboutUs.php">Qui sommes-nous ?</a></li>
                             <li><a href="#">Mentions Légales</a></li>
-                            <li><a href="#">Nous contacter</a></li>
+                            <li><a href="./contact.php">Nous contacter</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -22,7 +22,7 @@
             </div>
             <div class="copyright-box">
                 <div class="wrap">
-                    <p>&copy; Copyright WireScan 2020 | Tous droits réservés</p>
+                    <p>&copy; Copyright WireScan 2021 | Tous droits réservés</p>
                 </div>
             </div>
         </footer>

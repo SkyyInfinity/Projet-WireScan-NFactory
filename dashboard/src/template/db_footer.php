@@ -4,7 +4,7 @@
         <footer id="footer">
             <div class="wrap">
                 <div class="footer-content">
-                    <p>&copy; Copyright WireScan 2020 | Tous droits réservés</p>
+                    <p>&copy; Copyright WireScan 2021 | Tous droits réservés</p>
                 </div>
             </div>
         </footer>
