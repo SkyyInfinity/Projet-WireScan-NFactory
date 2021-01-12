@@ -15,7 +15,7 @@
                             <li><a href="./dashboard/">Dashboard</a></li>
                             <?php endif;?>
                             <li><a href="./aboutUs.php">Qui sommes-nous ?</a></li>
-                            <li><a href="#">Mentions Légales</a></li>
+                            <li><a href="./mentions_legales.php">Mentions Légales</a></li>
                             <li><a href="./contact.php">Nous contacter</a></li>
                         </ul>
                     </nav>
@@ -39,6 +39,6 @@
         <script src="./assets/js/modal.js" type="text/javascript" charset="utf-8"></script>
         <script src="./assets/js/navigation.js" type="text/javascript" charset="utf-8"></script>
         <script src="./assets/js/flexslider.js" type="text/javascript" charset="utf-8"></script>
-        <script src="./assets/js/contact.js" type="text/javascript" charset="utf-8"></script>        
+        <script src="./assets/js/contact.js" type="text/javascript" charset="utf-8"></script>
     </body>
 </html>
