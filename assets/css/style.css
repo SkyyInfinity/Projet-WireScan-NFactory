@@ -683,6 +683,13 @@ body {
 .parak {
   padding-bottom: 30px;
 }
+.Tittle2 {
+  font-weight: bold;
+  font-size: 3em;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  text-align: center;
+}
 
 /* RESPONSIVE START */
 @media screen and (max-width: 1280px) {

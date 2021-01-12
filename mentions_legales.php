@@ -8,6 +8,7 @@ $title = 'Nous contacter';
 include('src/template/header.php'); ?>
 <div class="fond">
   <div class="wrap5">
+    <h2 class="Tittle2">Mentions legales</h2>
     <h2 class="Tittle">Définitions</h2>
     <p><b>Client :</b> tout professionnel ou personne physique capable au sens des articles 1123 et suivants du Code civil, ou personne morale, qui visite le Site objet des présentes conditions générales.<br>
       <b>Prestations et Services :</b> <a href="http://localhost/Projet%20reseau/projet/Projet-WireScan-NFactory/index.php">http://localhost/Projet%20reseau/projet/Projet-WireScan-NFactory/index.php</a> met à disposition des Clients :
