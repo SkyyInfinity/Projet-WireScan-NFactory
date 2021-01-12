@@ -40,13 +40,13 @@
                     <ul id="js_nav-links">
                         <li><a href="../">Accueil</a></li>
                         <li><a href="../aboutus.php">Qui sommes-nous ?</a></li>
-                        <li><a href="contact.php">Nous contacter</a></li>
+                        <li><a href="../contact.php">Nous contacter</a></li>
                         <li><a href="#" id="btn_addtrame">Ajouter une trame<a></li>
                     </ul>
                 </nav>
             </div>
         </header>
-        
+
 
         <!-- CONTENT -->
         <div id="content">
