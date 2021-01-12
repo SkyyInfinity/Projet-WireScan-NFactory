@@ -23,7 +23,7 @@
         <h1 class="title-form">Via un fichier</h1>
         <form id="sendtrame_input" class="sendtrame_input">
             <div class="champ">
-                <label class="jsonfile" for="jsonfile">Télécharger votre fichier</label>
+                <label class="jsonfile" for="jsonfile">Télécharger votre fichier...</label>
                 <input type="file" id="jsonfile" accept=".json">
                 <span class="error" id="ok_json_file"></span>
                 <span class="error" id="error_json_file"></span>
@@ -33,7 +33,7 @@
     </div>
 
     <div class="viaTA_container">
-        <h1 class="title-form">Via du text brut</h1>
+        <h1 class="title-form">Via du texte brut</h1>
         <form id="sendtrame_TA" class="sendtrame_input">
             <div class="champ">
                 <label for="jsonTA">Insérer votre texte</label>
