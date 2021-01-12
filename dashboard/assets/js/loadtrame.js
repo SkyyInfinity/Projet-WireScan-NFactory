@@ -1,7 +1,6 @@
 $(document).ready(function () {
     function changeTrame(trames,indexTrame) {
         
-        console.log(trames);
         $('#date').text(trames[indexTrame]['version']);
         $('.items').append('<div class="item itemDate">')
         $('#from_ip').text('De : ' + trames[indexTrame]['from_ip'] + ' Port : ' +trames[indexTrame]['from_ports']);
@@ -16,10 +15,11 @@ $(document).ready(function () {
         url: 'ajax/loadtrame.php',
         dataType: 'json',
         beforeSend: function(){
-            $("#loading").show()
+            $("#loading").show();
         },
         success: function (response) {
             if (response['success']) {
+                console.log(response);
                 $('#notrames').hide();
                 $('#trames').show();
                 trames = response['trames']
@@ -29,6 +29,10 @@ $(document).ready(function () {
                 $('#trames').hide();
                 $('#notrames').show();
             }
+        },
+        error: function(response) {
+            console.log(response);
+
         },
         complete: function(data){
             $("#loading").hide();

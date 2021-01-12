@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-// function read(trame) {
-//     // var file = fileInput.files.item(0);
-//     var selectedFile = $('#jsonfile')[0].files[0];
-//     var reader = new FileReader();
-
-//     reader.onload = function() {
-//       var trame = reader.result;
-//       console.log(trame);
-//     }
-
-//     reader.readAsText(selectedFile);
-// }
-=======
->>>>>>> 5769a2c315b5b9c10581e3be66a83ac94b66e0ff
 function readFile(file, onLoadCallback){
     var reader = new FileReader();
     reader.onload = onLoadCallback;
@@ -39,9 +24,9 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (response) {
                 if (response['success'] == true) {
-                    $('#ok_json').empty();
-                    $('#ok_json').css('color','green');
-                    $('#ok_json').html('Trame enregistrer !');
+                    $('#ok_json_file').empty();
+                    $('#ok_json_file').css('color','green');
+                    $('#ok_json_file').html('Trame enregistrer !');
                     setTimeout(
                         function()
                         {
@@ -49,9 +34,9 @@ $(document).ready(function () {
                         }, 2000);
                 }
                 else if (response['success'] == false){
-                    $('#error_json').empty();
-                    $('#error_json').html(response['errors']['json']);
-                }
+                    $('#error_json_file').empty();
+                    $('#error_json_file').html(response['errors']['json']);
+                }    
             },
             error: function(response) {
             }
@@ -60,47 +45,50 @@ $(document).ready(function () {
     $('#sendtrame_lien').on('submit', function (e){
         e.preventDefault();
         var url = $('#jsonurl').val();
-        $.ajax({
-            type: 'GET',
-            url: url,
-            success: function (response) {
-                $.ajax({
-                    type: 'POST',
-                    url: 'ajax/addtrame.php',
-                    data: {
-                        trame : response,
-<<<<<<< HEAD
+        if (url == "") {
+            $('#error_json_url').empty();
+            $('#error_json_url').html('Veuillez renseigner ce champ');
+        } else {
+            $.ajax({
+                type: 'GET',
+                url: url,
+                success: function (response) {
+                    $.ajax({
+                        type: 'POST',
+                        url: 'ajax/addtrame.php',
+                        data: {
+                            trame : response,
+                            from : "jsonurl"
+                        },
+                        dataType: 'json',
+                        success: function (response) {
+                            console.log(response);
+                            if (response['success'] == true) {
+                                $('#error_json_url').empty();
+                                $('#ok_json_url').empty();
+                                $('#ok_json_url').css('color','green');
+                                $('#ok_json_url').html('Trame enregistrer !');
+                                setTimeout(
+                                    function()
+                                    {
+                                        window.location.replace('index.php')
+                                    }, 2000);
 
-=======
->>>>>>> 5769a2c315b5b9c10581e3be66a83ac94b66e0ff
-                        from : "jsonurl"
-                    },
-                    dataType: 'json',
-                    success: function (response) {
-                        if (response['success'] == true) {
-                            $('#error_json').empty();
-                            $('#ok_json').empty();
-                            $('#ok_json').css('color','green');
-                            $('#ok_json').html('Trame enregistrer !');
-                            setTimeout(
-                                function()
-                                {
-                                    window.location.replace('index.php')
-                                }, 2000);
-
+                            }
+                            else if (response['success'] == false){
+                                $('#error_json_url').empty();
+                                $('#error_json_url').html(response['errors']['json']);
+                            }    
+                        },
+                        error: function(response) {
+                            console.log(response);
                         }
-                        else if (response['success'] == false){
-                            $('#error_json').empty();
-                            $('#error_json').html(response['errors']['json']);
-                        }
-                    },
-                    error: function(response) {
-                    }
-                })
-            },
-            error: function(response) {
-            }
-        })
+                    })
+                },
+                error: function(response) {
+                }
+            })
+        }
     });
     $('#sendtrame_TA').on('submit', function (e){
         e.preventDefault();
@@ -110,18 +98,15 @@ $(document).ready(function () {
             url: 'ajax/addtrame.php',
             data: {
                 trame : trame,
-<<<<<<< HEAD
                 
-=======
->>>>>>> 5769a2c315b5b9c10581e3be66a83ac94b66e0ff
                 from : 'jsonTA'
             },
             dataType: 'json',
             success: function (response) {
                 if (response['success'] == true) {
-                    $('#ok_json').empty();
-                    $('#ok_json').css('color','green');
-                    $('#ok_json').html('Trame enregistrer !');
+                    $('#ok_json_TA').empty();
+                    $('#ok_json_TA').css('color','green');
+                    $('#ok_json_TA').html('Trame enregistrer !');
                     setTimeout(
                         function()
                         {

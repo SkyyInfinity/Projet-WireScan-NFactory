@@ -7,28 +7,28 @@ $title = 'Nous contacter';
 
 include('src/template/header.php'); ?>
 
-<section class="section-contact">
+<section class="section-contact" >
     <!-- PAR MESSAGE -->
     <div class="parmessage">
         <h1 class="title-form">Par email</h1>
-        <form id="contact" action="" method="post" novalidate>
+        <form id="contact" novalidate>
             <!-- NOM -->
             <div class="champ nom">
                 <label for="nom">Nom</label>
-                <input type="text" id="nom" name="nom">
-                <span class="error" id="error_nom"></span>
+                <input type="text" id="nom2" name="nom2">
+                <span class="error" id="error_nom2"></span>
             </div>
             <!-- PRENOM -->
             <div class="champ prenom">
                 <label for="prenom">Prénom</label>
-                <input type="text" id="prenom" name="prenom">
-                <span class="error" id="error_prenom"></span>
+                <input type="text" id="prenom2" name="prenom2">
+                <span class="error" id="error_prenom2"></span>
             </div>
             <!-- EMAIL -->
             <div class="champ email">
                 <label for="email">Adresse Email</label>
-                <input type="email" id="email" name="email">
-                <span class="error" id="error_email"></span>
+                <input type="email" id="email3" name="email3">
+                <span class="error" id="error_email3"></span>
             </div>
             <!-- SUJET -->
             <div class="champ subject">
@@ -39,7 +39,7 @@ include('src/template/header.php'); ?>
             <!-- MESSAGE -->
             <div class="champ message">
                 <label for="message">Votre message</label>
-                <textarea name="message"></textarea>
+                <textarea name="message" id="message"></textarea>
                 <span class="error" id="error_message"></span>
             </div>
             <input class="btn-3" type="submit" value="Envoyer">
@@ -59,5 +59,4 @@ include('src/template/header.php'); ?>
 <section class="section-logocontact">
     <img src="./assets/img/logox500.png" alt="logo du site">
 </section>
-
 <?php include('src/template/footer.php'); ?>

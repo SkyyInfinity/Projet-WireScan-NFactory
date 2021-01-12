@@ -9,7 +9,11 @@
                             <a href="./index.php"><img src="./assets/img/logox250-white.png" alt="logo du site"></a>
                         </div>
                         <ul>
+                            <?php if (!is_logged()) : ?>
                             <li><a href="./index.php">Accueil</a></li>
+                            <?php else :?>
+                            <li><a href="./dashboard/">Dashboard</a></li>
+                            <?php endif;?>
                             <li><a href="./aboutUs.php">Qui sommes-nous ?</a></li>
                             <li><a href="#">Mentions Légales</a></li>
                             <li><a href="./contact.php">Nous contacter</a></li>
@@ -35,5 +39,6 @@
         <script src="./assets/js/modal.js" type="text/javascript" charset="utf-8"></script>
         <script src="./assets/js/navigation.js" type="text/javascript" charset="utf-8"></script>
         <script src="./assets/js/flexslider.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./assets/js/contact.js" type="text/javascript" charset="utf-8"></script>        
     </body>
 </html>
