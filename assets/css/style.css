@@ -235,8 +235,8 @@ body {
     font-style: italic;
 }
 .success {
-    text-align: center; 
-    padding: 50px 0; 
+    text-align: center;
+    padding: 50px 0;
 }
 .success p {
     font-size: 2em;
@@ -249,7 +249,29 @@ body {
 #error_password {
     margin-top: 10px;
 }
-
+/* passreset */
+.blue {
+  background-color: #1089ff
+}
+.wrap8 {
+  max-width: 100%;
+  width: 600px;
+  margin: 0 auto;
+}
+#reset_cont {
+  padding-top: 150px;
+  padding-bottom: 200px;
+}
+.title-form {
+  padding-bottom: 40px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  opacity: 92%;
+}
+.champ mdp2 {
+  margin-top: 20px;
+}
 /* ACCUEIL */
 #content {
     padding-top: 120px;

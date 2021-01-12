@@ -24,16 +24,18 @@ if(count($errors) == 0 ) {
    $success = true;
    $token = $sql['token'];
    require '../vendor/autoload.php';
-   $mail = new PHPMailer(); 
-   $mail->IsSMTP(); 
-   $mail->SMTPDebug = 1; 
-   $mail->SMTPAuth = true; 
-   $mail->SMTPSecure = 'ssl'; 
+   $mail = new PHPMailer();
+   $mail->IsSMTP();
+   $mail->SMTPDebug = 1;
+   $mail->SMTPAuth = true;
+   $mail->SMTPSecure = 'ssl';
    $mail->Host = "smtp.gmail.com";
-   $mail->Port = 465; 
+   $mail->Port = 465;
    $mail->IsHTML(true);
    // ID GOOGLE ACCOUNT
-
+   $mail->Username = "noreply.wirescan";
+   $mail->Password = "Nfactory76000@";
+   $mail->SetFrom("noreply.wirescan@gmail.com");
    ////////////////////
    $mail->Subject = "Reinitialisation de votre mot de passe";
    $mail->Body = "Bonjour " . ucfirst($sql['prenom']) . ", veuillez cliqué sur le lien suivant afin de modifier votre mot de passe :<br> http://localhost/projet/Projet-Reseaux-NFactory/passreset.php?token=".$token;
@@ -55,5 +57,3 @@ $data = array(
    'success' => $success,
 );
 showJson($data);
-
-

@@ -2,12 +2,12 @@
 //     // var file = fileInput.files.item(0);
 //     var selectedFile = $('#jsonfile')[0].files[0];
 //     var reader = new FileReader();
-  
+
 //     reader.onload = function() {
 //       var trame = reader.result;
 //       console.log(trame);
 //     }
-  
+
 //     reader.readAsText(selectedFile);
 // }
 function readFile(file, onLoadCallback){
@@ -24,7 +24,7 @@ $(document).ready(function () {
     });
     $('#sendtrame_input').on('submit', function (e){
         var trame = $('#output_field').text();
-        e.preventDefault(); 
+        e.preventDefault();
         $.ajax({
             type: 'POST',
             url: 'ajax/addtrame.php',
@@ -40,24 +40,24 @@ $(document).ready(function () {
                     $('#ok_json').css('color','green');
                     $('#ok_json').html('Trame enregistrer !');
                     setTimeout(
-                        function() 
+                        function()
                         {
                             window.location.replace('index.php')
                         }, 2000);
-                }  
+                }
                 else if (response['success'] == false){
                     $('#error_json').empty();
                     $('#error_json').html(response['errors']['json']);
-                }    
+                }
             },
             error: function(response) {
                 console.log('error');
                 console.log(response)
             }
-        })  
+        })
     });
     $('#sendtrame_lien').on('submit', function (e){
-        e.preventDefault(); 
+        e.preventDefault();
         var url = $('#jsonurl').val();
         $.ajax({
             type: 'GET',
@@ -68,7 +68,7 @@ $(document).ready(function () {
                     url: 'ajax/addtrame.php',
                     data: {
                         trame : response,
-                        user_id : user_id,
+
                         from : "jsonurl"
                     },
                     dataType: 'json',
@@ -79,16 +79,16 @@ $(document).ready(function () {
                             $('#ok_json').css('color','green');
                             $('#ok_json').html('Trame enregistrer !');
                             setTimeout(
-                                function() 
+                                function()
                                 {
                                     window.location.replace('index.php')
                                 }, 2000);
-                            
-                        }  
+
+                        }
                         else if (response['success'] == false){
                             $('#error_json').empty();
                             $('#error_json').html(response['errors']['json']);
-                        }    
+                        }
                     },
                     error: function(response) {
                         console.log('error');
@@ -100,10 +100,10 @@ $(document).ready(function () {
                 console.log('error');
                 console.log(response)
             }
-        })  
+        })
     });
     $('#sendtrame_TA').on('submit', function (e){
-        e.preventDefault(); 
+        e.preventDefault();
         var trame = $('#jsonTA').val();
         console.log(trame)
         $.ajax({
@@ -111,7 +111,7 @@ $(document).ready(function () {
             url: 'ajax/addtrame.php',
             data: {
                 trame : trame,
-                user_id : user_id,
+                
                 from : 'jsonTA'
             },
             dataType: 'json',
@@ -123,20 +123,20 @@ $(document).ready(function () {
                     $('#ok_json').css('color','green');
                     $('#ok_json').html('Trame enregistrer !');
                     setTimeout(
-                        function() 
+                        function()
                         {
                             window.location.replace('index.php')
                         }, 2000);
-                }  
+                }
                 else if (response['success'] == false){
                     $('#error_json_TA').empty();
                     $('#error_json_TA').html(response['errors']['json']);
-                }    
+                }
             },
             error: function(response) {
                 console.log('error');
                 console.log(response)
             }
-        })  
+        })
     });
 });

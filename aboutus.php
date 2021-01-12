@@ -67,17 +67,17 @@ include('./src/template/header.php'); ?>
   <div class="fondateur">
     <i class="fas fa-user-circle"></i>
     <h1 class="prenom">Lui c'est Thierry</h1>
-    <p>Hmm j'adore la bonne tapenade de Marseille</p>
+    <p>Salut !</p>
   </div>
   <div class="fondateur">
     <i class="fas fa-user-circle"></i>
     <h1 class="prenom">Lui c'est Michel</h1>
-    <p>J'adore les chocapic, c'est fort en chocolat</p>
+    <p>Bonjour !</p>
   </div>
   <div class="fondateur">
     <i class="fas fa-user-circle"></i>
     <h1 class="prenom">Lui c'est Patrick</h1>
-    <p>J'adore l'humour, c'est vraiment très drole</p>
+    <p>Enchanté !</p>
   </div>
 </div>
 </div>
