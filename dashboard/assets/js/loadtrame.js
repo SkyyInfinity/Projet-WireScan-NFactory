@@ -77,8 +77,9 @@ $(document).ready(function () {
             indexTrame = 0;
         } else {
             indexTrame -= 1;
+            changeTrame(trames,indexTrame)
         }
-        changeTrame(trames,indexTrame)
+        
     });
     $('#db_right').on('click', function(e) {
         e.preventDefault();
@@ -86,7 +87,7 @@ $(document).ready(function () {
             indexTrame = tramesCount;
         } else {
             indexTrame += 1;
+            changeTrame(trames,indexTrame)
         }
-        changeTrame(trames,indexTrame)
     });
 });
