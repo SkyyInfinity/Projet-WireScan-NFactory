@@ -54,14 +54,8 @@ showJson($data);
       SQL_UPDATE('users',$updatevals,$param = 'WHERE id = ',$userid);
    }
 }
-<<<<<<< HEAD
 $data = array(
    'errors' => $errors,
    'success' => $success,
 );
 showJson($data);
-=======
-
-
-
->>>>>>> 5769a2c315b5b9c10581e3be66a83ac94b66e0ff

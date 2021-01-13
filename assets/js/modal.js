@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    //Function 
+    //Function
     function checkPasswordStrength() {
         var number = /([0-9])/;
         var alphabets = /([a-zA-Z])/;
@@ -14,7 +14,7 @@ $(document).ready(function () {
                 $('#error_password').html("Mot de passe Valide");
                 verif = true;
             } else {
-                $('#error_password').html("Votre mot de passe doit contenir ...");
+                $('#error_password').html("Votre mot de passe doit contenir au moins 8 caractères avec une majuscule, une minuscule, un chiffre et un caractère spécial.");
             }
         }
         return verif;
@@ -31,12 +31,12 @@ $(document).ready(function () {
             fadeDuration: 100,
             clickClose: false,
             closeExisting: false
-        });  
+        });
     }
     // START JQUERY
 
     // MODAL
-    $('#resetpasswd').click(function (e) { 
+    $('#resetpasswd').click(function (e) {
         e.preventDefault();
         ModalResetpassword();
         return false
@@ -139,7 +139,7 @@ $(document).ready(function () {
                                 $('#error_entreprise').html(response['errors']['entreprise']);
                             }
                         }, error: function (response) {
-                        
+
                         }
                     })
                 }
@@ -149,7 +149,7 @@ $(document).ready(function () {
             }
         })
     });
-    // Connexion 
+    // Connexion
     $('#connexion').on('submit', function (e) {
         console.log('ok btn')
         e.preventDefault();
@@ -165,7 +165,7 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (response) {
                 if (response['success'] == true) {
-                    window.location.replace('http://localhost/projet/2-reseaux/site/dashboard/')
+                    window.location.replace('http://localhost/projet/2-reseaux/site/dashboard/index.php')
                 }
                 else if (response['success'] == false) {
                     $('#error_email_log').empty();
@@ -178,6 +178,7 @@ $(document).ready(function () {
     });
     // Reset password
     $('#mailresetform').on('submit', function (e) {
+        console.log
         e.preventDefault();
         let emailreset = $('#mailreset').val();
         $.ajax({
@@ -188,6 +189,7 @@ $(document).ready(function () {
             },
             dataType: 'json',
             success: function (response) {
+                console.log(response)
                 if (response['success'] == true) {
                     $('#reset_cont').html('<div class="success"><p>Un lien de a etait envoyé a votre adresse email !</div>')
                 }
@@ -195,6 +197,9 @@ $(document).ready(function () {
                     $('#error_email_reset').empty();
                     $('#error_email_reset').html(response['errors']['email']);
                 }
+            } ,
+            error: function (response) {
+                console.log(response)
             }
         })
     });

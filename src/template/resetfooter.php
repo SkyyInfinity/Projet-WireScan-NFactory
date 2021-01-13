@@ -6,10 +6,13 @@
         <div class="wrap">
             <nav>
                 <div class="logo">
-                    <a href="./index.php"><img src="./assets/img/logox250-white.png" alt="logo du site"></a>
+                    <img src="./assets/img/logox250-white.png" alt="logo du site">
                 </div>
             </nav>
         </div>
+    </div>
+    <div class="crafted-box">
+        <p>Fabriqué avec <i class="fas fa-heart"></i> par Florian, Kévin, Valentin et Dylan</p>
     </div> 
     <div class="copyright-box">
         <div class="wrap">
