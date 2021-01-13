@@ -36,7 +36,7 @@ if(count($errors) == 0 ) {
    $mail->SetFrom("noreply.wirescan@gmail.com");
    ////////////////////
    $mail->Subject = "Reinitialisation de votre mot de passe";
-   $mail->Body = "Bonjour " . ucfirst($sql['prenom']) . ", veuillez cliqué sur le lien suivant afin de modifier votre mot de passe :<br> http://localhost/projet/Projet-Reseaux-NFactory/passreset.php?token=".$token;
+   $mail->Body = "Bonjour " . ucfirst($sql['prenom']) . ", veuillez cliqué sur le lien suivant afin de modifier votre mot de passe :<br> http://localhost/projet/2-reseaux/site/passreset.php?token=".$token;
    $mail->AddAddress($useremail);
    if(!$mail->Send()) {
       $mailerror = $mail->ErrorInfo;
@@ -54,14 +54,8 @@ showJson($data);
       SQL_UPDATE('users',$updatevals,$param = 'WHERE id = ',$userid);
    }
 }
-<<<<<<< HEAD
 $data = array(
    'errors' => $errors,
    'success' => $success,
 );
 showJson($data);
-=======
-
-
-
->>>>>>> 5769a2c315b5b9c10581e3be66a83ac94b66e0ff
