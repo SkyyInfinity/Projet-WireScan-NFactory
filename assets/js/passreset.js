@@ -14,15 +14,15 @@ $(document).ready(function () {
         var special_characters = /([~,!,@,#,$,%,^,&,*,-,_,+,=,?,>,<])/;
         var verif = false;
         if ($('#password').val().length < 7) {
-            $('#error_password').css('color', 'red');
+            $('#error_password').css('color', 'orange');
             $('#error_password').html("Votre mot de passe doit faire plus de 8 caracteres");
         } else {
             if ($('#password').val().match(number) && $('#password').val().match(alphabets) && $('#password').val().match(special_characters)) {
-                $('#error_password').css('color', 'green');
+                $('#error_password').css('color', '#8cff8c');
                 $('#error_password').html("Mot de passe Valide");
                 verif = true;
             } else {
-                $('#error_password').html("Votre mot de passe doit contenir ...");
+                $('#error_password').html("Votre mot de passe doit contenir au moins 8 caractères avec une majuscule, une minuscule, un chiffre et un caractère spécial.");
             }
         }
         return verif;
@@ -77,10 +77,10 @@ $(document).ready(function () {
     $('#password2').on('input', function (e) {
         $('#error_password2').show();
         if ($('#password2').val() != $('#password').val()) {
-            $('#error_password2').css('color', 'red');
+            $('#error_password2').css('color', 'orange');
             $('#error_password2').html('Les mots de passe  ne sont pas identiquent');
         } else {
-            $('#error_password2').css('color', 'green');
+            $('#error_password2').css('color', '#8cff8c');
             $('#error_password2').html('Les mots de passe sont identiquent');
         }
     });

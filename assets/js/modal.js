@@ -14,7 +14,7 @@ $(document).ready(function () {
                 $('#error_password').html("Mot de passe Valide");
                 verif = true;
             } else {
-                $('#error_password').html("Votre mot de passe doit contenir ...");
+                $('#error_password').html("Votre mot de passe doit contenir au moins 8 caractères avec une majuscule, une minuscule, un chiffre et un caractère spécial.");
             }
         }
         return verif;
