@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    //Function 
+    //Function
     function checkPasswordStrength() {
         var number = /([0-9])/;
         var alphabets = /([a-zA-Z])/;
@@ -31,12 +31,12 @@ $(document).ready(function () {
             fadeDuration: 100,
             clickClose: false,
             closeExisting: false
-        });  
+        });
     }
     // START JQUERY
 
     // MODAL
-    $('#resetpasswd').click(function (e) { 
+    $('#resetpasswd').click(function (e) {
         e.preventDefault();
         ModalResetpassword();
         return false
@@ -139,7 +139,7 @@ $(document).ready(function () {
                                 $('#error_entreprise').html(response['errors']['entreprise']);
                             }
                         }, error: function (response) {
-                        
+
                         }
                     })
                 }
@@ -149,7 +149,7 @@ $(document).ready(function () {
             }
         })
     });
-    // Connexion 
+    // Connexion
     $('#connexion').on('submit', function (e) {
         console.log('ok btn')
         e.preventDefault();
@@ -165,7 +165,7 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (response) {
                 if (response['success'] == true) {
-                    window.location.replace('http://localhost/projet/2-reseaux/site/dashboard/')
+                    window.location.replace('localhost/php/projet-reseaux/Projet-WireScan-NFactory/dashboard/index.php')
                 }
                 else if (response['success'] == false) {
                     $('#error_email_log').empty();
