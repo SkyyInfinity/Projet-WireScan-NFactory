@@ -109,7 +109,8 @@ $(document).ready(function () {
             $("#loading").show();
         },
         success: function (response) {
-            if (response['success']) {
+            console.log(response);
+            if (response['success'] == true) {
                 console.log(response);
                 $('#notrames').hide();
                 $('#trames').show();
@@ -117,7 +118,7 @@ $(document).ready(function () {
                 info = response['info']
                 tramesCount = trames.length - 1
                 changeTrame(trames,info,indexTrame)
-            } else {
+            } else if(response['success'] == false) {
                 $('#trames').hide();
                 $('#notrames').show();
             }
