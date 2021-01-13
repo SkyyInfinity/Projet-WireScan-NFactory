@@ -12,6 +12,7 @@ include('src/template/db_header.php');
       <div class="loading" id="loading">
         <img src="assets/img/preview.gif" alt="loading">
       </div>
+
       <div class="trames" id="trames">
         <div class="select select_all">
           <div class="select btn_switch">
@@ -21,10 +22,17 @@ include('src/template/db_header.php');
         </div>
         <div class="globalmode" id="globalmode">
           <div class="select select_glob">
-            <a href="#">changer de trames</a>
+            <a href="#" id="recap_btn">Recapitulatif</a>
+            <a href="#" id="graphique_btn">Graphique</a>
+            <a href="#" id="textuel_btn">Textuel</a>
           </div>
-          <div class="items select_global">
-            <div class="item">
+
+          <div class="recap" id="recap">
+          
+          </div>
+
+          <div class="graphique" id ="graphique">
+          <div class="item">
               <p>Graph :</p>
               <canvas id="myChart"></canvas>
             </div>
@@ -37,16 +45,25 @@ include('src/template/db_header.php');
               <canvas id="myChart3"></canvas>
             </div>
           </div>
+
+          <div class="textuel" id="textuel">
+            
+          </div>
+
         </div>
+
         <div class="uniquemode" id="uniquemode">
           <div class="select select_trame">
-            <a href="#">changer de trames</a>
+            <a id="db_left" class="db_left"><</a>
+            <p id="date"></p>
+            <a id="db_right" class="db_right">></a>
           </div>
           <div class="item" id="tTexte">tiyhjdtproityjpdom</div>
           <div class="item">lkdjhmowdjdwhguijd</div>
           <div class="item">wkfghnwdkghmwkdgh</div>
         </div>
       </div>
+
       <div class="notrames" id="notrames">
         <p> Vous n'avez pas de trames pour le moment </p>
         <p> Veuillez en ajouter une en utilisant le bouton ci-dessous </p>

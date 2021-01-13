@@ -1,5 +1,6 @@
 $(document).ready(function () {
     function changeTrame(trames,info,indexTrame) {
+        var i = 1;
         if ($( "#myChart" ).length) {
             var ctx = document.getElementById('myChart').getContext('2d');
             var myChart = new Chart(ctx, {
@@ -95,7 +96,20 @@ $(document).ready(function () {
         // $('.items').append('<div class="item itemDate">')
         $('#from_ip').text('De : ' + trames[indexTrame]['from_ip'] + ' Port : ' +trames[indexTrame]['from_ports']);
         $('#dest_ip').text('Vers : ' + trames[indexTrame]['dest_ip']+ ' Port : ' +trames[indexTrame]['dest_ports']);
-        $('#tTexte').append('')
+        trames.forEach(element => {
+            $('#textuel').append('<p id="trame'+ i+'">Le '+ element['date']+ ', L\'adresse '+ element['from_ip'] +':'+ element['from_ports']+ ' a envoyé une requete à l\'adresse '+ element['dest_ip']+ ':' + element['dest_ports'] +' il y a eu '+ element['ttl_lost'] +' de perte (soit ' + Math.round(element['ttl_lost%'])+'% de perte)' +'</p>')
+            if (Math.round(element['ttl_lost%']) >= 10) {
+                $('#trame'+i).css('color','yellow')
+            } else if (Math.round(element['ttl_lost%']) >= 30) {
+                $('#trame'+i).css('color','orange')
+            } else if (Math.round(element['ttl_lost%']) >= 70) {
+                $('#trame'+i).css('color','red')
+            } else if (element['status'] == 'timeout') {
+                $('#trame'+i).css('color','red')
+            }
+            i += 1;
+        });
+        
     }
     var indexTrame = 0;
     var trames;
@@ -161,4 +175,25 @@ $(document).ready(function () {
         $('#globalmode').hide();
         $('#uniquemode').show();
     });
+
+    $('#recap_btn').on('click', function (e) {
+        console.log('ok')
+        e.preventDefault();
+        $('#graphique').hide();
+        $('#textuel').hide();
+        $('#recap').show();
+    });
+    $('#graphique_btn').on('click', function (e) {
+        e.preventDefault();
+        $('#recap').hide();
+        $('#textuel').hide();
+        $('#graphique').show();
+    });
+    $('#textuel_btn').on('click', function (e) {
+        e.preventDefault();
+        $('#recap').hide();
+        $('#graphique').hide();
+        $('#textuel').show();
+    });
+
 });

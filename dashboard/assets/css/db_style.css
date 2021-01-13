@@ -194,6 +194,16 @@ body {
 }
 
 /* CONTENT */
+.uniquemode {
+    display: none;
+}
+.graphique {
+    display: none;
+}
+.textuel {
+    display: none;
+}
+
 .items h3.graph-title {
     text-align: center;
     font-size: 1.2em;
