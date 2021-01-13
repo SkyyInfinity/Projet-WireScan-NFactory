@@ -36,7 +36,7 @@ $(document).ready(function () {
                 else if (response['success'] == false){
                     $('#error_json_file').empty();
                     $('#error_json_file').html(response['errors']['json']);
-                }    
+                }
             },
             error: function(response) {
             }
@@ -78,7 +78,7 @@ $(document).ready(function () {
                             else if (response['success'] == false){
                                 $('#error_json_url').empty();
                                 $('#error_json_url').html(response['errors']['json']);
-                            }    
+                            }
                         },
                         error: function(response) {
                             console.log(response);
@@ -98,7 +98,7 @@ $(document).ready(function () {
             url: 'ajax/addtrame.php',
             data: {
                 trame : trame,
-                
+
                 from : 'jsonTA'
             },
             dataType: 'json',
