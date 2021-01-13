@@ -324,7 +324,8 @@ body {
 
 /* passreset */
 .blue {
-  background-color: #1089ff
+  background-color: #1089ff;
+  padding-bottom: 91px;
 }
 .wrap8 {
   max-width: 100%;
@@ -334,15 +335,56 @@ body {
 #reset_cont {
     padding: 60px 0;
 }
-.title-form {
-  padding-bottom: 40px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.5em;
-  opacity: 92%;
-}
 .champ mdp2 {
   margin-top: 20px;
+}
+#reset_cont h1.title-form {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 2.7em;
+    font-weight: bold;
+    color: white;
+}
+#reset_cont form {
+    font-family: 'Poppins', sans-serif;
+}
+#reset_cont form label {
+    display: block;
+    margin: 15px 0 5px 0;
+    font-size: 1.4em;
+    color: white;
+}
+#reset_cont form input[type=password] {
+    width: 100%;
+    padding: 7px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    outline: none;
+    border: 1px #cccccc solid;
+    transition: .2s;
+    border-radius: none;
+    background-color: #1089ff;
+    color: white;
+}
+#reset_cont form input[type=password]:focus {
+    border: 1px white solid;
+    border-top: 1px #1089ff solid;
+}
+#reset_cont form input[type=submit] {
+    width: 100%;
+    padding: 10px 0;
+    margin: 25px 0;
+    outline: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: .2s;
+}
+#reset_cont .error {
+    color: orange;
+    margin-left: 15px;
+    margin-bottom: 100px;
+    font-style: italic;
 }
 /* ACCUEIL */
 #content {
@@ -852,6 +894,14 @@ body {
         flex-direction: column;
     }
     .section-contact form {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    #reset_cont {
+        padding: 15px;
+    }
+    #reset_cont form {
         width: 100%;
         max-width: 100%;
         margin: 0 auto;
