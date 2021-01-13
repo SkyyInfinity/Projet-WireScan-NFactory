@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    function changeTrame(trames,indexTrame) {
+    function changeTrame(trames,info,indexTrame) {
         if ($( "#myChart" ).length) {
             var ctx = document.getElementById('myChart').getContext('2d');
             var myChart = new Chart(ctx, {
@@ -8,7 +8,7 @@ $(document).ready(function () {
                     labels: ['Reçus', 'Pertes',],
                     datasets: [{
                         label: '# of Votes',
-                        data: [45, 55],
+                        data: [info['ttl_pass_%'], info['ttl_lost_%']],
                         backgroundColor: [
                             'rgba(54, 162, 235, 0.2)',
                             'rgba(255, 99, 132, 0.2)'
@@ -30,7 +30,6 @@ $(document).ready(function () {
                 }
             });
         }
-        
         if ($( "#myChart" ).length) {
             var ctx = document.getElementById('myChart2').getContext('2d');
             var myChart = new Chart(ctx, {
@@ -96,7 +95,7 @@ $(document).ready(function () {
         // $('.items').append('<div class="item itemDate">')
         $('#from_ip').text('De : ' + trames[indexTrame]['from_ip'] + ' Port : ' +trames[indexTrame]['from_ports']);
         $('#dest_ip').text('Vers : ' + trames[indexTrame]['dest_ip']+ ' Port : ' +trames[indexTrame]['dest_ports']);
-
+        $('#tTexte').append('')
     }
     var indexTrame = 0;
     var trames;
@@ -117,7 +116,7 @@ $(document).ready(function () {
                 trames = response['trames']
                 info = response['info']
                 tramesCount = trames.length - 1
-                changeTrame(trames,indexTrame)
+                changeTrame(trames,info,indexTrame)
             } else {
                 $('#trames').hide();
                 $('#notrames').show();
@@ -138,7 +137,7 @@ $(document).ready(function () {
             indexTrame = 0;
         } else {
             indexTrame -= 1;
-            changeTrame(trames,indexTrame)
+            changeTrame(trames,info,indexTrame)
         }
         
     });
@@ -148,7 +147,17 @@ $(document).ready(function () {
             indexTrame = tramesCount;
         } else {
             indexTrame += 1;
-            changeTrame(trames,indexTrame)
+            changeTrame(trames,info,indexTrame)
         }
+    });
+    $('#glob').on('click', function (e) {
+        e.preventDefault();
+        $('#uniquemode').hide();
+        $('#globalmode').show();
+    });
+    $('#uniq').on('click', function (e) {
+        e.preventDefault();
+        $('#globalmode').hide();
+        $('#uniquemode').show();
     });
 });
