@@ -8,6 +8,7 @@ $success = false;
 
 $trames = SQL_SELECT('trames',true,'WHERE user_id =',$_SESSION['user']['id'],'ORDER BY date DESC');
 
+
 if (!empty($trames)) {
     $success = true;
     $ttl_sum = 0;
