@@ -178,6 +178,7 @@ $(document).ready(function () {
     });
     // Reset password
     $('#mailresetform').on('submit', function (e) {
+        console.log
         e.preventDefault();
         let emailreset = $('#mailreset').val();
         $.ajax({
@@ -188,6 +189,7 @@ $(document).ready(function () {
             },
             dataType: 'json',
             success: function (response) {
+                console.log(response)
                 if (response['success'] == true) {
                     $('#reset_cont').html('<div class="success"><p>Un lien de a etait envoyé a votre adresse email !</div>')
                 }
@@ -195,6 +197,9 @@ $(document).ready(function () {
                     $('#error_email_reset').empty();
                     $('#error_email_reset').html(response['errors']['email']);
                 }
+            } ,
+            error: function (response) {
+                console.log(response)
             }
         })
     });
