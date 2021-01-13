@@ -3,7 +3,7 @@ require('../src/inc/functions.php');
 require('../src/inc/pdo.php');
 session_start();
 if (!is_logged()) {
-    header('Location: ../401.php');
+  header('Location: ../401.php');
 }
 $title = 'Dashboard';
 include('src/template/db_header.php');
@@ -53,4 +53,4 @@ include('src/template/db_header.php');
         <a href="#" class="btn_addtrame" id="btn_addtrame_no">Ajouter une trame<a>
       </div>
     </div>
-<?php include('src/template/db_footer.php'); ?>
+    <?php include('src/template/db_footer.php'); ?>

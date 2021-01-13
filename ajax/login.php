@@ -1,19 +1,19 @@
-<?php 
+<?php
 require('../src/inc/functions.php');
 include('../src/inc/pdo.php');
 session_start();
 $errors = array();
 $success = false;
 $email = trim(strip_tags($_POST['email']));
-$password = trim(strip_tags($_POST['password'])); 
+$password = trim(strip_tags($_POST['password']));
 $sql = SQL_SELECT('users',false,'WHERE email =',$email);
 
 
 if (empty($email)) {
-    $errors['email'] = 'Veuillez renseigné ce champs';
+    $errors['email'] = 'Veuillez renseigner ce champ';
 }
 if (empty($password)) {
-    $errors['password'] = 'Veuillez renseigné ce champs';
+    $errors['password'] = 'Veuillez renseigner ce champ';
 }
 if (!empty($sql)) {
     if(!password_verify($password, $sql['password'])) {
@@ -39,5 +39,5 @@ if(count($errors) == 0 ) {
 $data = array(
     'errors' => $errors,
     'success' => $success
-);     
+);
 showJson($data);

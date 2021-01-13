@@ -9,13 +9,13 @@ $success = false;
 $useremail = trim(strip_tags($_POST['email']));
 $sql = SQL_SELECT('users',false,'WHERE email =',$useremail);
 if (empty($useremail)) {
-   $errors['email'] = 'Veuillez renseigné ce champs';
+   $errors['email'] = 'Veuillez renseigner ce champ';
 } else {
    if (empty($sql)) {
    $errors['email'] = 'Cette adresse ne correspond à aucun compte.';
    }
    if ($sql['status_passwrd'] == TRUE) {
-      $errors['email'] = 'Un email vous a déja etait envoyé';
+      $errors['email'] = 'Un email vous a déja eté envoyé';
    }
 }
 if(count($errors) == 0 ) {
@@ -36,7 +36,7 @@ if(count($errors) == 0 ) {
    $mail->SetFrom("noreply.wirescan@gmail.com");
    ////////////////////
    $mail->Subject = "Reinitialisation de votre mot de passe";
-   $mail->Body = "Bonjour " . ucfirst($sql['prenom']) . ", veuillez cliqué sur le lien suivant afin de modifier votre mot de passe :<br> http://localhost/projet/2-reseaux/site/passreset.php?token=".$token;
+   $mail->Body = "Bonjour " . ucfirst($sql['prenom']) . ", veuillez cliquer sur le lien suivant afin de modifier votre mot de passe :<br> http://localhost/projet/Projet-Reseaux-NFactory/passreset.php?token=".$token;
    $mail->AddAddress($useremail);
    if(!$mail->Send()) {
       $mailerror = $mail->ErrorInfo;
