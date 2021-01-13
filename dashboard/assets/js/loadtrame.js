@@ -1,16 +1,14 @@
 $(document).ready(function () {
     function changeTrame(trames,indexTrame) {
+        if ($( "#myChart" ).length) {
             var ctx = document.getElementById('myChart').getContext('2d');
-            if(myChart) {
-                myChart.destroy();
-            }
             var myChart = new Chart(ctx, {
                 type: 'doughnut',
                 data: {
                     labels: ['Reçus', 'Pertes',],
                     datasets: [{
                         label: '# of Votes',
-                        data: [trames[indexTrame]['ttl_pass%'], trames[indexTrame]['ttl_lost%']],
+                        data: [45, 55],
                         backgroundColor: [
                             'rgba(54, 162, 235, 0.2)',
                             'rgba(255, 99, 132, 0.2)'
@@ -31,6 +29,69 @@ $(document).ready(function () {
                     }
                 }
             });
+        }
+        
+        if ($( "#myChart" ).length) {
+            var ctx = document.getElementById('myChart2').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Reçus', 'Pertes',],
+                    datasets: [{
+                        label: '# of Votes',
+                        data: [45, 55],
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    legend: {
+                        display: true,
+                        labels: {
+                            fontColor: '#cccccc'
+                        }
+                    }
+                }
+            });
+        }
+        
+        if ($( "#myChart" ).length) {
+            var ctx = document.getElementById('myChart3').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Reçus', 'Pertes',],
+                    datasets: [{
+                        label: '# of Votes',
+                        data: [45, 55],
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    legend: {
+                        display: true,
+                        labels: {
+                            fontColor: '#cccccc'
+                        }
+                    }
+                }
+            });
+        }
         $('#date').text(trames[indexTrame]['date']);
         // $('.items').append('<div class="item itemDate">')
         $('#from_ip').text('De : ' + trames[indexTrame]['from_ip'] + ' Port : ' +trames[indexTrame]['from_ports']);

@@ -178,7 +178,7 @@ body {
     text-decoration: none;
     padding: 10px 13px;
     font-size: 1.3em;
-    transition: .2s;    
+    transition: .2s;
 }
 #overlay {
     transition: .2s;
@@ -204,7 +204,7 @@ body {
     padding: 10px;
     float: left;
     width: 500px;
-    height: 150px;
+    height: 450px;
     border: 1px solid black;
     background-color: #303030;
     border-radius: 10px;
@@ -235,16 +235,16 @@ body {
 .db_left, .db_right {
     width: 33.33333333%;
     cursor: pointer;
-    user-select: none; 
+    user-select: none;
 }
 
 .itemInfoPaquet {
     width: 300px;
-    height: 400px;   
+    height: 400px;
 }
 .itemIp {
     width: 300px;
-    height: 400px;     
+    height: 400px;
 }
 .notrames{
     text-align: center;
