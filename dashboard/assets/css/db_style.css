@@ -82,6 +82,7 @@ body {
 .textuel {
     width: 95%;
     padding: 35px 0;
+    margin-bottom: 30px;
 }
 h1.title-dashboard {
     font-size: 2.5em;
@@ -275,6 +276,7 @@ h1.title-dashboard::after {
 
 .item p:not(#date) {
     line-height: 1.2em;
+    margin-bottom: 20px;
 }
 
 .itemw2 {

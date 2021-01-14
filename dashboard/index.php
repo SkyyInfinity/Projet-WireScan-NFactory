@@ -6,6 +6,7 @@ if (!is_logged()) {
   header('Location: ../401.php');
 }
 $title = 'Dashboard';
+
 include('src/template/db_header.php');
 ?>
     <div class="wrap2">
