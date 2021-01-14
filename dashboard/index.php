@@ -47,7 +47,7 @@ include('src/template/db_header.php');
           </div>
 
           <div class="textuel" id="textuel">
-
+            <h1>Journaux d'évenements</h1>
           </div>
 
         </div>

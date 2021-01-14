@@ -99,13 +99,13 @@ $(document).ready(function () {
         trames.forEach(element => {
             $('#textuel').append('<p id="trame'+ i+'">Le '+ element['date']+ ', L\'adresse '+ element['from_ip'] +':'+ element['from_ports']+ ' a envoyé une requete à l\'adresse '+ element['dest_ip']+ ':' + element['dest_ports'] +' il y a eu '+ element['ttl_lost'] +' de perte (soit ' + Math.round(element['ttl_lost%'])+'% de perte)' +'</p>')
             if (Math.round(element['ttl_lost%']) >= 10) {
-                $('#trame'+i).css('color','yellow')
+                $('#trame'+i).css('color','#ffd66b')
             } else if (Math.round(element['ttl_lost%']) >= 30) {
                 $('#trame'+i).css('color','orange')
             } else if (Math.round(element['ttl_lost%']) >= 70) {
-                $('#trame'+i).css('color','red')
+                $('#trame'+i).css('color','')
             } else if (element['status'] == 'timeout') {
-                $('#trame'+i).css('color','red')
+                $('#trame'+i).css('color','#ff4646')
             }
             i += 1;
         });
