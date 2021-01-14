@@ -78,7 +78,7 @@ $(document).ready(function () {
         });
         
         var ctx = document.getElementById('myChart4').getContext('2d');
-        var myChart = new Chart(ctx, {
+        var myChart4 = new Chart(ctx, {
             type: 'doughnut',
             data: {
                 labels: ['Reçus', 'Pertes',],
@@ -108,22 +108,27 @@ $(document).ready(function () {
         $('#date').text(trames[indexTrame]['date']);
         // $('.items').append('<div class="item itemDate">')
         trames.forEach(element => {
-            $('#textuel').append('<p id="trame'+ i+'">'+ element['status'] +' - '+ element['name'] +' - Le '+ element['date']+ ', L\'adresse '+ element['from_ip'] +':'+ element['from_ports']+ ' a envoyé une requete à l\'adresse '+ element['dest_ip']+ ':' + element['dest_ports'] +' il y a eu '+ element['ttl_lost'] +' de perte (soit ' + Math.round(element['ttl_lost%'])+'% de perte)' +'</p>')
+            console.log(element)
+            $('#textuel').append('<p id="trame'+ i+'"><span id="span_status'+i+'">'+ element['status'] +'</span> - '+ element['name'] +' - Le '+ element['date']+ ', L\'adresse '+ element['from_ip'] +':'+ element['from_ports']+ ' a envoyé une requete à l\'adresse '+ element['dest_ip']+ ':' + element['dest_ports'] +'<span id="ttl_perte'+i+'"> il y a eu '+ element['ttl_lost'] +' de perte (soit ' + Math.round(element['ttl_lost%'])+'% de perte)' +'</span></p>')
             if (Math.round(element['ttl_lost%']) >= 10) {
-                $('#trame'+i).css('color','yellow')
+                $('#ttl_perte'+i).css('color','#ffd66b')
             } else if (Math.round(element['ttl_lost%']) >= 30) {
-                $('#trame'+i).css('color','orange')
+                $('#ttl_perte'+i).css('color','orange')
             } else if (Math.round(element['ttl_lost%']) >= 70) {
-                $('#trame'+i).css('color','red')
-            } else if (element['status'] == 'timeout') {
-                $('#trame'+i).css('color','red')
+                $('#ttl_perte'+i).css('color','#ff4646')
+            }
+            if (element['status'] == 'timeout') {
+                $('#span_status'+i).css('color','#ff4646')
+            } else if (element['status'] == "Ok") {
+                $('#span_status'+i).css('color','#6BEA12')
             }
             i += 1;
         });
         
         //AFFICHAGE UNIQUE 
-        $('#from_unique').html('<p>De : ' + trames[indexTrame]['from_ip'] + ' Port : ' +trames[indexTrame]['from_ports']  + '</p>');
-        $('#from_unique').append('<p>Vers : ' + trames[indexTrame]['dest_ip']+ ' Port : ' +trames[indexTrame]['dest_ports'] + '</p>');
+        $('#from_unique').html('<p>Expediteur : ' + trames[indexTrame]['from_ip'] + ' Port : ' +trames[indexTrame]['from_ports']  + '</p>');
+        $('#from_unique').append('<p>Destinataire : ' + trames[indexTrame]['dest_ip']+ ' Port : ' +trames[indexTrame]['dest_ports'] + '</p>');
+        myChart.update();
     }
     var indexTrame = 0;
     var trames;
@@ -166,7 +171,7 @@ $(document).ready(function () {
             indexTrame -= 1;
             changeTrame(trames,info,indexTrame)
         }
-        
+
     });
     $('#db_right').on('click', function(e) {
         e.preventDefault();

@@ -21,33 +21,35 @@ include('src/template/db_header.php');
           </div>
         </div>
         <div class="globalmode" id="globalmode">
-          <div class="select select_glob">
-            <a href="#" id="recap_btn">Recapitulatif</a>
-            <a href="#" id="graphique_btn">Graphique</a>
-            <a href="#" id="textuel_btn">Textuel</a>
+          <div class="select_btnGlob" id="select_btnGlob">
+            <div class="select select_glob">
+              <a href="#" id="recap_btn">Recapitulatif</a>
+              <a href="#" id="graphique_btn">Graphique</a>
+              <a href="#" id="textuel_btn">Journal d'évènements</a>
+            </div>
           </div>
 
           <div class="recap" id="recap">
-          
+
           </div>
 
           <div class="graphique" id ="graphique">
           <div class="item">
-              <p>Graph :</p>
+              <p>Pertes de TTL :</p>
               <canvas id="myChart"></canvas>
             </div>
             <div class="item">
-              <p>Nombre de requete :</p>
+              <p>Trames par type de requête :</p>
               <canvas id="myChart2"></canvas>
             </div>
             <div class="item">
-              <p>Requete en echec :</p>
+              <p>Requête en echec :</p>
               <canvas id="myChart3"></canvas>
             </div>
           </div>
 
           <div class="textuel" id="textuel">
-
+            <h1>Journaux d'évenements</h1>
           </div>
 
         </div>
