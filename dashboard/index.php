@@ -34,7 +34,8 @@ include('src/template/db_header.php');
           </div>
 
           <div class="graphique" id ="graphique">
-          <div class="item">
+            <h1 class="title-dashboard">Graphiques</h1>
+            <div class="item">
               <p>Pertes de TTL :</p>
               <canvas id="myChart"></canvas>
             </div>
@@ -49,7 +50,7 @@ include('src/template/db_header.php');
           </div>
 
           <div class="textuel" id="textuel">
-            <h1>Journaux d'évenements</h1>
+            <h1 class="title-dashboard">Journal d'évènements</h1>
           </div>
 
         </div>
