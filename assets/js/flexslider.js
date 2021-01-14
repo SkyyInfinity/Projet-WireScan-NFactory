@@ -3,7 +3,7 @@ $(document).ready(function () {
     animation: "slide",
     animationLoop: false,
     itemWidth: 500,
-    itemMargin: 5,
+    itemMargin: 0,
     controlNav: false,
   });
 

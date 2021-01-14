@@ -9,14 +9,12 @@ include('./src/template/header.php'); ?>
 
   <!--  TITRE + PRESENTATION  -->
 
-<div>
-  <h1 class="titre3">Qui sommes-nous ?</h1>
-</div>
-<div class="wrap">
-  <div class="paraG">
-    <p>En tant qu’intégrateur d’infrastructure informatique, <span class="gras">Wire<span class="or">scan</span></span> vous explique, à travers ce tout nouvel article, les enjeux de son métier. De la phase d’audit et d’analyse du contexte d’un client jusqu’au déploiement et à la maintenance du réseau d’entreprise, l’équipe Expert Line vous accompagne tout au long de votre projet et vous assure un niveau de sécurisation maximum.</p>
+<section class="section-intro">
+  <div class="wrap">
+    <h1 class="titre3">Qui sommes-nous ?</h1>
+    <p class="paraG">En tant qu’intégrateur d’infrastructure informatique, <span class="gras">WireScan</span> vous explique, à travers ce tout nouvel article, les enjeux de son métier. De la phase d’audit et d’analyse du contexte d’un client jusqu’au déploiement et à la maintenance du réseau d’entreprise, l’équipe Expert Line vous accompagne tout au long de votre projet et vous assure un niveau de sécurisation maximum.</p>
   </div>
-</div>
+</section>
       <!--   CARROUSEL     -->
 
 <div class="flexslider carousel flexslider-carroussel">
@@ -40,9 +38,9 @@ include('./src/template/header.php'); ?>
 <section class="section_solution">
   <div class="wrap">
     <h1 class="titre4">Des solutions de sécurité intégrées robustes</h1>
-    <p class="paraT">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p class="paraT">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p class="paraT">Vous voulez en savoir plus sur notre expertise et notre savoir-faire en intégration et sécurité réseau ?
+    <p class="paraG">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id</p>
+    <p class="paraG">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim</p>
+    <p class="paraG"></br>Vous voulez en savoir plus sur notre expertise et notre savoir-faire en intégration et sécurité réseau ?
       <a href="#">Contactez-nous !</a> </p>
   </div>
 </section>
@@ -52,32 +50,31 @@ include('./src/template/header.php'); ?>
 <section class="section_presentation">
   <div class="wrap">
     <h1 class="titre4">Nous, c'est qui exactement ?</h1>
-    <p class="paraH">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p class="paraG">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </section>
 
         <!-- PRESENTATION DES DIFFERENTS MEMBRES -->
 
-<h1 class="titre5"></h1>
 <div class="fondateur-box">
   <div class="fondateur">
     <i class="fas fa-user-circle"></i>
-    <h1 class="prenom">Lui c'est Laurent</h1>
-    <p>Je suis le seul gars sérieux de la bande</p>
+    <h1 class="prenom">Lui c'est Kévin</h1>
+    <p>Lorem ipsum dolor sit amet.</p>
   </div>
   <div class="fondateur">
     <i class="fas fa-user-circle"></i>
-    <h1 class="prenom">Lui c'est Thierry</h1>
-    <p>Salut !</p>
+    <h1 class="prenom">Lui c'est Valentin</h1>
+    <p>Lorem ipsum dolor sit amet.</p>
   </div>
   <div class="fondateur">
     <i class="fas fa-user-circle"></i>
-    <h1 class="prenom">Lui c'est Michel</h1>
-    <p>Bonjour !</p>
+    <h1 class="prenom">Lui c'est Florian</h1>
+    <p>Lorem ipsum dolor sit amet.</p>
   </div>
   <div class="fondateur">
     <i class="fas fa-user-circle"></i>
-    <h1 class="prenom">Lui c'est Patrick</h1>
-    <p>Enchanté !</p>
+    <h1 class="prenom">Lui c'est Dylan</h1>
+    <p>Lorem ipsum dolor sit amet.</p>
   </div>
 </div>
 </div>
