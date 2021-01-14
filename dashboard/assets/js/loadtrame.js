@@ -116,6 +116,7 @@ $(document).ready(function () {
         });
         $('#date').text(trames[indexTrame]['date']);
         // $('.items').append('<div class="item itemDate">')
+        $('#textuel').html('');
         trames.forEach(element => {
             console.log(element)
             $('#textuel').append('<p id="trame'+ i+'"><span id="span_status'+i+'">'+ element['status'] +'</span> - '+ element['name'] +' - Le '+ element['date']+ ', L\'adresse '+ element['from_ip'] +':'+ element['from_ports']+ ' a envoyé une requete à l\'adresse '+ element['dest_ip']+ ':' + element['dest_ports'] +'<span id="ttl_perte'+i+'"> il y a eu '+ element['ttl_lost'] +' de perte (soit ' + Math.round(element['ttl_lost%'])+'% de perte)' +'</span></p>')
@@ -205,7 +206,7 @@ $(document).ready(function () {
     $('#recap_btn').on('click', function (e) {
         console.log('ok')
         e.preventDefault();
-        $('#graphique').hide();
+        $('#graphique').fade();
         $('#textuel').hide();
         $('#recap').show();
     });
