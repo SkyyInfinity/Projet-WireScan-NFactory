@@ -29,42 +29,33 @@ $(document).ready(function () {
                 }
             }
         });
-        var ctx = document.getElementById('myChart2').getContext('2d');
-        var myChart2 = new Chart(ctx, {
+        new Chart(document.getElementById("myChart2"), {
             type: 'bar',
             data: {
-                labels: ['Reçus', 'Pertes',],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [45, 55],
-                    backgroundColor: [
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 99, 132, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 99, 132, 1)'
-                    ],
-                    borderWidth: 1
-                }]
+              labels: ["UDP", "TLSv1.2", "ICMP", "TCP"],
+              datasets: [
+                {
+                  label: "Requete",
+                  backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9"],
+                  data: [info['udp'], info['tls'], info['icmp'], info['tcp']]
+                }
+              ]
             },
             options: {
-                legend: {
-                    display: true,
-                    labels: {
-                        fontColor: '#cccccc'
-                    }
-                }
+              legend: { display: false },
+              title: {
+                display: false,
+              }
             }
         });
         var ctx = document.getElementById('myChart3').getContext('2d');
         var myChart3 = new Chart(ctx, {
-            type: 'doughnut',
+            type: 'pie',
             data: {
-                labels: ['Reçus', 'Pertes',],
+                labels: ['Reçus', 'Echec',],
                 datasets: [{
                     label: '# of Votes',
-                    data: [45, 55],
+                    data: [info['trameN'],info['echecN']],
                     backgroundColor: [
                         'rgba(54, 162, 235, 0.2)',
                         'rgba(255, 99, 132, 0.2)'
@@ -85,6 +76,7 @@ $(document).ready(function () {
                 }
             }
         });
+        
         var ctx = document.getElementById('myChart4').getContext('2d');
         var myChart = new Chart(ctx, {
             type: 'doughnut',
@@ -116,7 +108,7 @@ $(document).ready(function () {
         $('#date').text(trames[indexTrame]['date']);
         // $('.items').append('<div class="item itemDate">')
         trames.forEach(element => {
-            $('#textuel').append('<p id="trame'+ i+'">'+ element['status'] +' - Le '+ element['date']+ ', L\'adresse '+ element['from_ip'] +':'+ element['from_ports']+ ' a envoyé une requete à l\'adresse '+ element['dest_ip']+ ':' + element['dest_ports'] +' il y a eu '+ element['ttl_lost'] +' de perte (soit ' + Math.round(element['ttl_lost%'])+'% de perte)' +'</p>')
+            $('#textuel').append('<p id="trame'+ i+'">'+ element['status'] +' - '+ element['name'] +' - Le '+ element['date']+ ', L\'adresse '+ element['from_ip'] +':'+ element['from_ports']+ ' a envoyé une requete à l\'adresse '+ element['dest_ip']+ ':' + element['dest_ports'] +' il y a eu '+ element['ttl_lost'] +' de perte (soit ' + Math.round(element['ttl_lost%'])+'% de perte)' +'</p>')
             if (Math.round(element['ttl_lost%']) >= 10) {
                 $('#trame'+i).css('color','yellow')
             } else if (Math.round(element['ttl_lost%']) >= 30) {

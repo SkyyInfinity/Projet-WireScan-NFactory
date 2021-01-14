@@ -37,11 +37,11 @@ include('src/template/db_header.php');
               <canvas id="myChart"></canvas>
             </div>
             <div class="item">
-              <p>text :</p>
+              <p>Nombre de requete :</p>
               <canvas id="myChart2"></canvas>
             </div>
             <div class="item">
-              <p>flags :</p>
+              <p>Requete en echec :</p>
               <canvas id="myChart3"></canvas>
             </div>
           </div>
