@@ -21,14 +21,16 @@ include('src/template/db_header.php');
           </div>
         </div>
         <div class="globalmode" id="globalmode">
-          <div class="select select_glob">
-            <a href="#" id="recap_btn">Recapitulatif</a>
-            <a href="#" id="graphique_btn">Graphique</a>
-            <a href="#" id="textuel_btn">Textuel</a>
+          <div class="select_btnGlob" id="select_btnGlob">
+            <div class="select select_glob">
+              <a href="#" id="recap_btn">Recapitulatif</a>
+              <a href="#" id="graphique_btn">Graphique</a>
+              <a href="#" id="textuel_btn">Textuel</a>
+            </div>
           </div>
 
           <div class="recap" id="recap">
-          
+
           </div>
 
           <div class="graphique" id ="graphique">
@@ -47,7 +49,7 @@ include('src/template/db_header.php');
           </div>
 
           <div class="textuel" id="textuel">
-            
+
           </div>
 
         </div>
