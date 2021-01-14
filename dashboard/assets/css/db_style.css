@@ -25,7 +25,7 @@ body {
 }
 .loading {
     width: 100%;
-    background-color: #333333;
+    background-color: #171e2b;
 }
 .loading img {
     display: block;
