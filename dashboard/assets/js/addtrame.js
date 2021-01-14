@@ -63,7 +63,6 @@ $(document).ready(function () {
                         },
                         dataType: 'json',
                         success: function (response) {
-                            console.log(response);
                             if (response['success'] == true) {
                                 $('#error_json_url').empty();
                                 $('#ok_json_url').empty();
@@ -82,7 +81,6 @@ $(document).ready(function () {
                             }
                         },
                         error: function(response) {
-                            console.log(response);
                         }
                     })
                 },
