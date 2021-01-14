@@ -24,7 +24,7 @@ include('src/template/db_header.php');
           <div class="select select_glob">
             <a href="#" id="recap_btn">Recapitulatif</a>
             <a href="#" id="graphique_btn">Graphique</a>
-            <a href="#" id="textuel_btn">Textuel</a>
+            <a href="#" id="textuel_btn">Journal d'évènements</a>
           </div>
 
           <div class="recap" id="recap">
