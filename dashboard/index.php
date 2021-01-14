@@ -67,7 +67,7 @@ include('src/template/db_header.php');
               <p>TTL :</p>
               <canvas id="myChart4"></canvas>
             </div>
-            <div class="item_unique_ip" id="from_unique">
+            <div class="item item_unique_ip" id="from_unique">
               <p>Expediteur et destinataire</p>
               <br>
 

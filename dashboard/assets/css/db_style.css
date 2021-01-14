@@ -257,23 +257,27 @@ h1.title-dashboard::after {
 /* AFFICHAGE UNIQUE  */
 .item_unique_ip {
     padding: 10px;
-    width: 340px;
+    width: 500px;
     height: 100px;
 }
 .item_unique_TTLGRAPH {
     padding: 10px;
-    width: 500px;
-    height: 300px;
+    width: 380px;
+    height: 330px;
 }
-
 .item p {
     font-size: 1.2em;
     color: #c9cfdf;
     text-transform: uppercase;
     letter-spacing: 1px;
     text-align: center;
-    margin-bottom: 25px;
+
 }
+
+.item p:not(#date) {
+    line-height: 1.2em;
+}
+
 .itemw2 {
     width: 300px;
     height: 400px;

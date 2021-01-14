@@ -37,15 +37,24 @@ $(document).ready(function () {
                 {
                   label: "Requete",
                   backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9"],
-                  data: [info['udp'], info['tls'], info['icmp'], info['tcp']]
+                  data: [info['udp'], info['tls'], info['icmp'], info['tcp']],
+                  scaleStartValue : 0 
                 }
               ]
             },
             options: {
-              legend: { display: false },
-              title: {
-                display: false,
-              }
+                scales: {
+                    yAxes: [{
+                        display: true,
+                        ticks: {  
+                            beginAtZero: true   
+                        }
+                    }]
+                }, 
+                legend: { display: false },
+                title: {
+                    display: false,
+                }
             }
         });
         var ctx = document.getElementById('myChart3').getContext('2d');
