@@ -508,6 +508,7 @@ p.paraG {
   margin-bottom: 40px;
   text-align: center;
   animation: titleAnimationOnLoad .5s ease-in;
+  line-height: 1.2em;
 }
 .titre5 {
   text-align: center;
@@ -518,7 +519,7 @@ p.paraG {
 }
 .section_solution {
   background-color: #202020;
-  padding: 80px 0;
+  padding: 80px 25px;
   line-height: 1.6em;
 }
 .section_solution a {
@@ -540,7 +541,7 @@ p.paraG {
 .section_presentation {
     background-color: #1089ff;
   color: black;
-  padding: 50px 0 0 0;
+  padding: 50px 25px 0 25px;
 }
 .section_presentation h1, .section_presentation p {
     color: white;
@@ -550,7 +551,7 @@ p.paraG {
     display: flex;
     text-align: center;
     justify-content: space-around;
-    padding: 40px 0;
+    padding: 40px 25px;
 }
 .fondateur {
   padding: 45px 25px;
@@ -909,6 +910,19 @@ p.paraG {
         width: 200% !important;
         left: -50% !important;
     }
+    .fondateur {
+        margin: 0 15px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .section-contact .parmessage {
+        width: 50%;
+        margin: 0 10px;
+    }
+    .section-contact .parrs {
+        width: 50%;
+        margin: 0 10px;
+    }
 }
 @media screen and (max-width: 1080px) {
     .section-informations {
@@ -919,6 +933,15 @@ p.paraG {
     }
     .section-contact {
         background-image: none;
+    }
+    .fondateur {
+        width: 100%;
+        max-width: 500px;
+        margin: 15px auto;
+    }
+    .fondateur-box {
+        flex-direction: column;
+        justify-content: center;
     }
 }
 @media screen and (max-width: 900px) {
@@ -950,10 +973,6 @@ p.paraG {
     }
 }
 @media screen and (max-width: 800px) {
-    .fondateur-box {
-    flex-direction: column;
-    justify-content: center;
-    }
     #footer .crafted-box p {
         font-size: .8em;
     }
@@ -978,6 +997,14 @@ p.paraG {
     }
     .section-logocontact img {
         width: 90%;
+    }
+    .section-contact .parmessage {
+        width: 100%;
+        margin: 15px 0;
+    }
+    .section-contact .parrs {
+        width: 100%;
+        margin: 15px 0;
     }
 }
 @media screen and (max-width: 700px) {

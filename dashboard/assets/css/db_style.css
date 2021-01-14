@@ -85,7 +85,7 @@ body {
     margin-bottom: 30px;
 }
 h1.title-dashboard {
-    font-size: 2.5em;
+    font-size: 2.4em;
     font-weight: bold;
     position: relative;
     margin-bottom: 50px;
@@ -295,7 +295,7 @@ h1.title-dashboard::after {
 .itemDate{
     padding: 0;
     width: 97%;
-    height: 8%;
+    height: 8% !important;
     text-align: center;
     display: flex;
 }
@@ -570,6 +570,10 @@ h1.title-dashboard::after {
         width: 250% !important;
         left: -75% !important;
     }
+    .title-dashboard {
+        text-align: center;
+        font-size: 2em !important;
+    }
 }
 @media screen and (max-width: 700px) {
     .modal .upload_select {
@@ -596,11 +600,21 @@ h1.title-dashboard::after {
     .select_glob a {
         margin: 0 10px;
     }
+    .item {
+        width: 90%;
+        height: 400px;
+    }
+    .item_unique_ip {
+        height: 110px !important;
+    }
 }
 @media screen and (max-width: 655px) {
     h1.title-dashboard::after {
         width: 0;
         height: 0;
+    }
+    .item {
+        height: 350px;
     }
 }
 @media screen and (max-width: 500px) {
@@ -616,6 +630,9 @@ h1.title-dashboard::after {
     .select_glob a {
       margin: 5px 0;
       width: 150px;
+    }
+    .item {
+        height: 300px;
     }
 }
 @media screen and (max-width: 400px) {
