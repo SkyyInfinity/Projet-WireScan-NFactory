@@ -47,20 +47,28 @@ include('src/template/db_header.php');
           </div>
 
           <div class="textuel" id="textuel">
-            
+
           </div>
 
         </div>
 
         <div class="uniquemode" id="uniquemode">
           <div class="select select_trame">
-            <a id="db_left" class="db_left"><</a>
-            <p id="date"></p>
-            <a id="db_right" class="db_right">></a>
+          <div class="item itemDate">
+                    <a id="db_left" class="db_left"><</a>
+                    <p id="date"></p>
+                    <a id="db_right" class="db_right">></a>
+                </div>
           </div>
-          <div class="item" id="tTexte">tiyhjdtproityjpdom</div>
-          <div class="item">lkdjhmowdjdwhguijd</div>
-          <div class="item">wkfghnwdkghmwkdgh</div>
+            <div class="item item_unique_TTLGRAPH">
+              <p>TTL :</p>
+              <canvas id="myChart4"></canvas>
+            </div>
+            <div class="item item_unique_ip" id="from_unique">
+              <p>Expediteur et destinataire</p>
+              <br>
+
+            </div>
         </div>
       </div>
 
