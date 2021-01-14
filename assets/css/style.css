@@ -230,7 +230,7 @@ body {
 }
 .modal h1.title-reset {
     margin: 0 0;
-    
+
 }
 .modal form label {
     display: block;
@@ -784,6 +784,11 @@ body {
   padding-top: 40px;
   padding-bottom: 10px;
   text-align: center;
+}
+/* Dashboard */
+.btn_switch {
+  text-decoration: none;
+  color: yellow;
 }
 
 /* RESPONSIVE START */

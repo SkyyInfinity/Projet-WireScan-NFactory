@@ -28,26 +28,26 @@ include('src/template/db_header.php');
           </div>
 
           <div class="recap" id="recap">
-          
+
           </div>
 
           <div class="graphique" id ="graphique">
           <div class="item">
-              <p>Graph :</p>
+              <p>Pertes de TTL :</p>
               <canvas id="myChart"></canvas>
             </div>
             <div class="item">
-              <p>text :</p>
+              <p>Trames par type de requête :</p>
               <canvas id="myChart2"></canvas>
             </div>
             <div class="item">
-              <p>flags :</p>
+              <p>Requête en echec :</p>
               <canvas id="myChart3"></canvas>
             </div>
           </div>
 
           <div class="textuel" id="textuel">
-            
+
           </div>
 
         </div>
