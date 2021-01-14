@@ -193,6 +193,7 @@ body {
     z-index: 80;
 }
 
+
 /* CONTENT */
 .uniquemode {
     display: none;
@@ -391,8 +392,8 @@ body {
     font-style: italic;
 }
 .success {
-    text-align: center; 
-    padding: 50px 0; 
+    text-align: center;
+    padding: 50px 0;
 }
 .success p {
     font-size: 2em;
