@@ -125,11 +125,9 @@ $(document).ready(function () {
                         dataType: 'json',
                         success: function (response) {
                             if (response['success'] == true) {
-                                console.log(response)
                                 $('#inscription_cont').html('<div class="success"><p>Compte crée avec succés !</p><img src="assets/img/succes.png"></div>')
                             }
                             else if (response['success'] == false) {
-                                console.log(response)
                                 $('#error_nom,#error_prenom,#error_email,#error_password,#error_password2,#error_entreprise').empty();
                                 $('#error_nom').html(response['errors']['nom']);
                                 $('#error_prenom').html(response['errors']['prenom']);
@@ -151,7 +149,6 @@ $(document).ready(function () {
     });
     // Connexion
     $('#connexion').on('submit', function (e) {
-        console.log('ok btn')
         e.preventDefault();
         let email = $('#email2').val();
         let password = $('#password_log').val();
@@ -178,7 +175,6 @@ $(document).ready(function () {
     });
     // Reset password
     $('#mailresetform').on('submit', function (e) {
-        console.log
         e.preventDefault();
         let emailreset = $('#mailreset').val();
         $.ajax({
@@ -189,7 +185,6 @@ $(document).ready(function () {
             },
             dataType: 'json',
             success: function (response) {
-                console.log(response)
                 if (response['success'] == true) {
                     $('#reset_cont').html('<div class="success"><p>Un lien de a etait envoyé a votre adresse email !</div>')
                 }
@@ -199,7 +194,6 @@ $(document).ready(function () {
                 }
             } ,
             error: function (response) {
-                console.log(response)
             }
         })
     });

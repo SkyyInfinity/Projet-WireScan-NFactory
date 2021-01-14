@@ -234,7 +234,7 @@ h1.title-dashboard::after {
 .graphique {
     display: none;
 }
-.textuel {
+.textuel_cont {
     display: none;
 }
 
@@ -293,20 +293,38 @@ h1.title-dashboard::after {
 }
 /* DATE ET NAVIGATION */
 .itemDate{
+    padding: 0;
     width: 97%;
     height: 8%;
     text-align: center;
     display: flex;
 }
-.itemDate p {
-   width: 33.33333333%;
-}
-.db_left, .db_right {
+
+.left_cont,.date_cont, .right_cont{
     width: 33.33333333%;
     cursor: pointer;
     user-select: none;
+    transition: 0.3s;
 }
-
+.date_cont  {
+    width: 33.33333333%;
+    cursor: default;
+ }
+.left_cont {
+    border-radius: 10px 0 0 10px;
+}
+.right_cont {
+    border-radius: 0 10px 10px 0;
+}
+.db_left img, .db_right img {
+    width: 14px;
+    filter: invert(1);
+    transition: 0.3s;
+}
+.db_left img:hover ,.db_right img:hover {
+    filter: invert(0);
+    transition: 0.3s;
+}
 .itemInfoPaquet {
     width: 300px;
     height: 400px;

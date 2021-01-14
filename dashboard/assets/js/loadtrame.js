@@ -115,10 +115,8 @@ $(document).ready(function () {
             }
         });
         $('#date').text(trames[indexTrame]['date']);
-        // $('.items').append('<div class="item itemDate">')
         $('#textuel').html('');
         trames.forEach(element => {
-            console.log(element)
             $('#textuel').append('<p id="trame'+ i+'"><span id="span_status'+i+'">'+ element['status'] +'</span> - '+ element['name'] +' - Le '+ element['date']+ ', L\'adresse '+ element['from_ip'] +':'+ element['from_ports']+ ' a envoyé une requete à l\'adresse '+ element['dest_ip']+ ':' + element['dest_ports'] +'<span id="ttl_perte'+i+'"> il y a eu '+ element['ttl_lost'] +' de perte (soit ' + Math.round(element['ttl_lost%'])+'% de perte)' +'</span></p>')
             if (Math.round(element['ttl_lost%']) >= 10) {
                 $('#ttl_perte'+i).css('color','#ffd66b')
@@ -165,7 +163,6 @@ $(document).ready(function () {
             }
         },
         error: function(response) {
-            console.log(response);
 
         },
         complete: function(data){
@@ -183,6 +180,13 @@ $(document).ready(function () {
         }
 
     });
+    $('#left_cont,#right_cont').mouseenter(function() {
+        console.log('ok')
+        $(this).css('background','#15213c')
+    }).mouseleave(function() {
+        $(this).css('background','none')
+    })
+
     $('#db_right').on('click', function(e) {
         e.preventDefault();
         if (indexTrame == tramesCount) {
@@ -204,23 +208,21 @@ $(document).ready(function () {
     });
 
     $('#recap_btn').on('click', function (e) {
-        console.log('ok')
         e.preventDefault();
-        $('#graphique').fade();
-        $('#textuel').hide();
+        $('#graphique').hide();
+        $('#textuel_cont').hide();
         $('#recap').show();
     });
     $('#graphique_btn').on('click', function (e) {
         e.preventDefault();
         $('#recap').hide();
-        $('#textuel').hide();
+        $('#textuel_cont').hide();
         $('#graphique').show();
     });
     $('#textuel_btn').on('click', function (e) {
         e.preventDefault();
         $('#recap').hide();
         $('#graphique').hide();
-        $('#textuel').show();
+        $('#textuel_cont').show();
     });
-
 });

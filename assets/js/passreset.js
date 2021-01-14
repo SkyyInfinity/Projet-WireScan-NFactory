@@ -48,15 +48,12 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (response) {
                 if (response['success'] == true) {
-                    console.log(response)
-                    console.log('OK')
                     $('#reset_cont').html('<div class="success"><p>Votre mot de passe a était modifié avec succés !</div>');
                     
                     setTimeout(redir,3000);
     
                 }
                 else if (response['success'] == false) {
-                    console.log(response)
                     $('#error_password').empty();
                     $('#error_password2').empty();
                     $('#error_password').html(response['errors']['password']);
