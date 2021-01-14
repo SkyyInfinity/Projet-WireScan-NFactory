@@ -165,7 +165,7 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (response) {
                 if (response['success'] == true) {
-                    window.location.replace('localhost/projet/Projet-Reseaux-NFactory/dashboard/index.php')
+                    window.location.replace('./dashboard/')
                 }
                 else if (response['success'] == false) {
                     $('#error_email_log').empty();

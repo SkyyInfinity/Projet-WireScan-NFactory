@@ -25,7 +25,7 @@ include('src/template/db_header.php');
             <div class="select select_glob">
               <a href="#" id="recap_btn">Recapitulatif</a>
               <a href="#" id="graphique_btn">Graphique</a>
-              <a href="#" id="textuel_btn">Textuel</a>
+              <a href="#" id="textuel_btn">Journal d'évènements</a>
             </div>
           </div>
 
@@ -35,15 +35,15 @@ include('src/template/db_header.php');
 
           <div class="graphique" id ="graphique">
           <div class="item">
-              <p>Graph :</p>
+              <p>Pertes de TTL :</p>
               <canvas id="myChart"></canvas>
             </div>
             <div class="item">
-              <p>text :</p>
+              <p>Trames par type de requête :</p>
               <canvas id="myChart2"></canvas>
             </div>
             <div class="item">
-              <p>flags :</p>
+              <p>Requête en echec :</p>
               <canvas id="myChart3"></canvas>
             </div>
           </div>

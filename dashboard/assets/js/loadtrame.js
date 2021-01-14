@@ -61,7 +61,7 @@ $(document).ready(function () {
                 }
             });
         }
-        
+
         if ($( "#myChart" ).length) {
             var ctx = document.getElementById('myChart3').getContext('2d');
             var myChart = new Chart(ctx, {
@@ -109,7 +109,7 @@ $(document).ready(function () {
             }
             i += 1;
         });
-        
+
     }
     var indexTrame = 0;
     var trames;
@@ -154,7 +154,7 @@ $(document).ready(function () {
             indexTrame -= 1;
             changeTrame(trames,info,indexTrame)
         }
-        
+
     });
     $('#db_right').on('click', function(e) {
         e.preventDefault();
