@@ -24,7 +24,7 @@ if(count($errors) == 0 ) {
    require '../vendor/autoload.php';
    $mail = new PHPMailer();
    $mail->IsSMTP();
-   $mail->SMTPDebug = 1;
+   $mail->SMTPDebug = 0;
    $mail->SMTPAuth = true;
    $mail->SMTPSecure = 'ssl';
    $mail->Host = "smtp.gmail.com";
@@ -40,11 +40,7 @@ if(count($errors) == 0 ) {
    $mail->AddAddress($useremail);
    if(!$mail->Send()) {
       $mailerror = $mail->ErrorInfo;
-       echo "Mailer Error: " . $mail->ErrorInfo;$data = array(
-   'errors' => $errors,
-   'success' => $success,
-);
-showJson($data);
+       echo "Mailer Error: " . $mail->ErrorInfo;
    } else {
       // EDIT SQL STATUS_PASSWRD APRES MODIF MDP
       $userid = $sql['id'];

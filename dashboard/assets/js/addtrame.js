@@ -19,7 +19,6 @@ $(document).ready(function () {
             data: {
                 trame : trame,
                 from : "jsoninput"
-
             },
             dataType: 'json',
             success: function (response) {
@@ -97,12 +96,12 @@ $(document).ready(function () {
             url: 'ajax/addtrame.php',
             data: {
                 trame : trame,
-
                 from : 'jsonTA'
             },
             dataType: 'json',
             success: function (response) {
                 if (response['success'] == true) {
+                    console.log(response)
                     $('#ok_json_TA').empty();
                     $('#ok_json_TA').css('color','green');
                     $('#ok_json_TA').html('Trame enregistrer !');
@@ -113,11 +112,13 @@ $(document).ready(function () {
                         }, 2000);
                 }
                 else if (response['success'] == false){
+                    
                     $('#error_json_TA').empty();
                     $('#error_json_TA').html(response['errors']['json']);
                 }
             },
             error: function(response) {
+                console.log(response)
             }
         })
     });
