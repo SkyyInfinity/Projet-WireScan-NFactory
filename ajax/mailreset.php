@@ -36,7 +36,7 @@ if(count($errors) == 0 ) {
    $mail->SetFrom("noreply.wirescan@gmail.com");
    ////////////////////
    $mail->Subject = "Reinitialisation de votre mot de passe";
-   $mail->Body = "Bonjour " . ucfirst($sql['prenom']) . ", veuillez cliquer sur le lien suivant afin de modifier votre mot de passe :<br> http://localhost/projet/Projet-Reseaux-NFactory/passreset.php?token=".$token;
+   $mail->Body = "Bonjour " . ucfirst($sql['prenom']) . ", veuillez cliquer sur le lien suivant afin de modifier votre mot de passe :<br> http://localhost/projet/2-reseaux/site/passreset.php?token=".$token;
    $mail->AddAddress($useremail);
    if(!$mail->Send()) {
       $mailerror = $mail->ErrorInfo;
