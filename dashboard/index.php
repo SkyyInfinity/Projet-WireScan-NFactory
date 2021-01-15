@@ -24,14 +24,9 @@ include('src/template/db_header.php');
     <div class="globalmode" id="globalmode">
       <div class="select_btnGlob" id="select_btnGlob">
         <div class="select select_glob">
-          <a href="#" id="recap_btn">Recapitulatif</a>
           <a href="#" id="graphique_btn">Graphique</a>
           <a href="#" id="textuel_btn">Journal d'évènements</a>
         </div>
-      </div>
-
-      <div class="recap" id="recap">
-      <h1 class="title-dashboard">Recapitulatif</h1>
       </div>
 
       <div class="graphique" id="graphique">

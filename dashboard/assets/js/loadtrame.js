@@ -125,7 +125,7 @@ $(document).ready(function () {
             } else if (Math.round(element['ttl_lost%']) >= 70) {
                 $('#ttl_perte'+i).css('color','#ff4646')
             }
-            if (element['status'] == 'timeout') {
+            if (element['status'] == 'Echec') {
                 $('#span_status'+i).css('color','#ff4646')
             } else if (element['status'] == "Ok") {
                 $('#span_status'+i).css('color','#6BEA12')
@@ -188,7 +188,6 @@ $(document).ready(function () {
         $(this).css('background','none')
         $(this).children().css('filter','invert(0)')
     })
-
     $('#right_cont').on('click', function(e) {
         e.preventDefault();
         if (indexTrame == tramesCount) {
@@ -208,7 +207,6 @@ $(document).ready(function () {
         $('#globalmode').hide();
         $('#uniquemode').show();
     });
-
     $('#recap_btn').on('click', function (e) {
         e.preventDefault();
         $('#graphique').hide();

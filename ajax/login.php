@@ -31,6 +31,7 @@ if(count($errors) == 0 ) {
           'id' => $sql['id'],
           'nom' => $sql['nom'],
           'prenom' => $sql['prenom'],
+          'email' => $sql['email'],
           'entreprise' => $sql['entreprise'],
         );
 }

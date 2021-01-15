@@ -7,6 +7,7 @@ $title = 'Nous contacter';
 
 include('src/template/header.php'); ?>
 
+
 <section class="section-contact" >
     <!-- PAR MESSAGE -->
     <div class="parmessage">
@@ -15,19 +16,19 @@ include('src/template/header.php'); ?>
             <!-- NOM -->
             <div class="champ nom">
                 <label for="nom2">Nom</label>
-                <input type="text" id="nom2" name="nom2">
+                <input type="text" id="nom2" name="nom2"<?php if (!empty($_SESSION)) { echo 'value="'. $_SESSION['user']['nom'] .'"';}?> <?php if(!empty($_SESSION)) { echo 'readonly' ;} ?>>
                 <span class="error" id="error_nom2"></span>
             </div>
             <!-- PRENOM -->
             <div class="champ prenom">
                 <label for="prenom2">Prénom</label>
-                <input type="text" id="prenom2" name="prenom2">
+                <input type="text" id="prenom2" name="prenom2" <?php if (!empty($_SESSION)) { echo 'value="'. $_SESSION['user']['prenom'] .'"';}?> <?php if(!empty($_SESSION)) { echo 'readonly' ;} ?>>
                 <span class="error" id="error_prenom2"></span>
             </div>
             <!-- EMAIL -->
             <div class="champ email">
                 <label for="email3">Adresse Email</label>
-                <input type="email" id="email3" name="email3">
+                <input type="email" id="email3" name="email3" <?php if (!empty($_SESSION)) { echo 'value="'. $_SESSION['user']['email'] .'"';}?> <?php if(!empty($_SESSION)) { echo 'readonly' ;} ?>>
                 <span class="error" id="error_email3"></span>
             </div>
             <!-- SUJET -->
