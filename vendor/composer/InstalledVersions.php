@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'e6067c8afe59a8561f648f1d5dff8a8935152b01',
+    'reference' => 'c70ac7700c954772d9e0dc4f98d388a121763542',
     'name' => '__root__',
   ),
   'versions' => 
@@ -31,7 +31,16 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'e6067c8afe59a8561f648f1d5dff8a8935152b01',
+      'reference' => 'c70ac7700c954772d9e0dc4f98d388a121763542',
+    ),
+    'jasongrimes/paginator' => 
+    array (
+      'pretty_version' => '1.0.3',
+      'version' => '1.0.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '3411e3cd0c6479a0b514f26e4358f0273552f221',
     ),
     'phpmailer/phpmailer' => 
     array (

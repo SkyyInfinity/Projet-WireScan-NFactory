@@ -28,8 +28,19 @@ class ComposerStaticInit923c53156f8f60ff5bd7f4c84a321b8e
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'J' => 
+        array (
+            'JasonGrimes' => 
+            array (
+                0 => __DIR__ . '/..' . '/jasongrimes/paginator/src',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'JasonGrimes\\Paginator' => __DIR__ . '/..' . '/jasongrimes/paginator/src/JasonGrimes/Paginator.php',
         'PHPMailer\\PHPMailer\\Exception' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/Exception.php',
         'PHPMailer\\PHPMailer\\OAuth' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/OAuth.php',
         'PHPMailer\\PHPMailer\\PHPMailer' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/PHPMailer.php',
@@ -42,6 +53,7 @@ class ComposerStaticInit923c53156f8f60ff5bd7f4c84a321b8e
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit923c53156f8f60ff5bd7f4c84a321b8e::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit923c53156f8f60ff5bd7f4c84a321b8e::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit923c53156f8f60ff5bd7f4c84a321b8e::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit923c53156f8f60ff5bd7f4c84a321b8e::$classMap;
 
         }, null, ClassLoader::class);

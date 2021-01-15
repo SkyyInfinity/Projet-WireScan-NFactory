@@ -20,16 +20,16 @@ include('./src/template/header.php'); ?>
 <div class="flexslider carousel flexslider-carroussel">
   <ul class="slides">
     <li>
-      <img src="https://picsum.photos/1920/1080" />
+      <img src="./assets/img/aboutUs/slide1.jpg" />
     </li>
     <li>
-      <img src="https://picsum.photos/1920/1080" />
+      <img src="./assets/img/aboutUs/slide1.jpg" />
     </li>
     <li>
-      <img src="https://picsum.photos/1920/1080" />
+      <img src="./assets/img/aboutUs/slide1.jpg" />
     </li>
     <li>
-      <img src="https://picsum.photos/1920/1080" />
+      <img src="./assets/img/aboutUs/slide1.jpg" />
     </li>
   </ul>
 </div>
