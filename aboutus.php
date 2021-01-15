@@ -23,13 +23,13 @@ include('./src/template/header.php'); ?>
       <img src="./assets/img/aboutUs/slide1.jpg" />
     </li>
     <li>
-      <img src="./assets/img/aboutUs/slide1.jpg" />
+      <img src="./assets/img/aboutUs/slide2.jpg" />
     </li>
     <li>
-      <img src="./assets/img/aboutUs/slide1.jpg" />
+      <img src="./assets/img/aboutUs/slide3.jpg" />
     </li>
     <li>
-      <img src="./assets/img/aboutUs/slide1.jpg" />
+      <img src="./assets/img/aboutUs/slide2.jpg" />
     </li>
   </ul>
 </div>
