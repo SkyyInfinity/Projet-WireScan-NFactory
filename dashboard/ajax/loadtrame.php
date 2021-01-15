@@ -31,6 +31,7 @@ if (!empty($trames)) {
             }
             if ($keyconv == 'status') {
                 if ($conv == 'timeout') {
+                    $trames[$key][$keyconv] = 'Echec' ;
                     $echecN += 1;
                 } else {
                     $trames[$key][$keyconv] = 'Ok';
