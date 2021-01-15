@@ -6,12 +6,9 @@ $errors = array();
 $success = false;
 
 $user_id = $_SESSION['user']['id'];
-$trames = $_POST['trame']; // récuperation du contenu du fichier trame
+$trames = trim(strip_tags($_POST['trame'])); 
 $from = trim(strip_tags($_POST['from']));
-//$user_id = "45";
-//$from = 'jsonurl';
-//$json = file_get_contents('tram.txt');
-// JSON vers string
+
 if ($from == "jsonurl") {
     if (!empty($trames)) {
 
@@ -25,7 +22,7 @@ if ($from == "jsonurl") {
         $errors['json'] = 'Veuillez ajouter un fichier .json';
     }
 } elseif ($from == "jsonTA") {
-    if (!empty($json)) {
+    if (!empty($trames)) {
         $trames = json_decode($trames, true);
     } else {
         $errors['json'] = 'Veuillez renseigné le champ';

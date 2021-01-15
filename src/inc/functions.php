@@ -60,7 +60,7 @@ function validPassword($errors, $data, $data2, $key, $key2, $min, $max) {
   // $caractereSpecial = preg_match('@[^\w]@', $data);
 
   if(!empty($data)) {
-    if(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,12}$/', $data)) {
+    if(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%&.)(}{_-]{8,12}$/', $data)) {
       $errors[$key] = 'Le mot de passe doit contenirs ....';
     }
     // if(mb_strlen($data) < $min) {
