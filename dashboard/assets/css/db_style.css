@@ -319,10 +319,6 @@ h1.title-dashboard::after {
     filter: invert(1);
     transition: 0.3s;
 }
-.db_left img:hover ,.db_right img:hover {
-    filter: invert(0);
-    transition: 0.3s;
-}
 .itemInfoPaquet {
     width: 300px;
     height: 400px;

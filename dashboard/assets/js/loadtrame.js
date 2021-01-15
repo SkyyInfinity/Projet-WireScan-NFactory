@@ -170,7 +170,7 @@ $(document).ready(function () {
         },
     });
 
-    $('#db_left').on('click', function(e) {
+    $('#left_cont').on('click', function(e) {
         e.preventDefault();
         if (indexTrame == 0) {
             indexTrame = 0;
@@ -183,11 +183,13 @@ $(document).ready(function () {
     $('#left_cont,#right_cont').mouseenter(function() {
         console.log('ok')
         $(this).css('background','#15213c')
+        $(this).children().css('filter','invert(1)')
     }).mouseleave(function() {
         $(this).css('background','none')
+        $(this).children().css('filter','invert(0)')
     })
 
-    $('#db_right').on('click', function(e) {
+    $('#right_cont').on('click', function(e) {
         e.preventDefault();
         if (indexTrame == tramesCount) {
             indexTrame = tramesCount;

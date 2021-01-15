@@ -79,7 +79,9 @@ include('src/template/db_header.php');
       <div class="item item_unique_ip" id="from_unique">
         <p>Expediteur et destinataire</p>
         <br>
-
+      </div>
+      <div class="item item_unique_protocol">
+        
       </div>
     </div>
   </div>
