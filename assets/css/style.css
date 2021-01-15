@@ -345,6 +345,9 @@ body {
     font-weight: bold;
     color: white;
 }
+#reset_cont h1.title-reset {
+    color: black;
+}
 #reset_cont form {
     font-family: 'Poppins', sans-serif;
 }
